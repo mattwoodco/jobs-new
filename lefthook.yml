@@ -1,0 +1,14 @@
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      run: npx biome check --write --staged --unsafe || (echo "No files to lint" && exit 0)
+    types:
+      run: npx tsgo --noEmit
+
+pre-push:
+  commands:
+    check-types:
+      run: npx tsgo --noEmit
+    lint-ci:
+      run: npx biome ci .
