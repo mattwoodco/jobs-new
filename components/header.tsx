@@ -1,6 +1,6 @@
 "use client";
 
-import { Bell, MoreVertical, Search } from "lucide-react";
+import { Bell, MessageSquare, MoreVertical, Search } from "lucide-react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -19,9 +19,11 @@ import {
 } from "@/components/ui/select";
 import { navConfig } from "@/lib/config";
 import { mockJobs } from "@/lib/mock-data";
+import { useViewStore } from "@/lib/store";
 
 export function Header() {
-  // const { setIsCameraOpen } = useAppStore();
+  const { toggleViewMode } = useViewStore();
+
   return (
     <header className="w-full bg-background border-b">
       <div className="flex items-center justify-between pl-2 pr-2 md:pr-8 h-14">
@@ -93,6 +95,14 @@ export function Header() {
 
         {/* Right side: Dropdown icon buttons */}
         <div className="flex items-center gap-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleViewMode}
+            className="cursor-pointer"
+          >
+            <MessageSquare className="w-4 h-4" />
+          </Button>
           <Button
             variant="ghost"
             size="icon"

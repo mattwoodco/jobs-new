@@ -47,3 +47,22 @@ export const jobBrowserConfig: BrowserConfig = {
   ],
   storageKey: "job-browser-panels",
 };
+
+export const threadBrowserConfig: BrowserConfig = {
+  labels: {
+    listTitle: "Conversations",
+    listCount: "threads",
+    backToList: "Back to threads",
+    backToDetail: "Back",
+    noItemSelected: "No thread selected",
+    selectPrompt: "Select a conversation to view messages",
+    moreInfo: "Thread Details",
+    moreDetails: "More Details",
+  },
+  metadataFields: [
+    { key: "company" },
+    { key: "location", separator: "•" },
+    { key: "salary", separator: "•" },
+  ],
+  storageKey: "thread-browser-panels",
+};

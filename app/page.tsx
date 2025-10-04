@@ -1,11 +1,17 @@
+"use client";
+
 import type { RecursiveItem } from "@/components/recursive-browser";
 import { RecursiveBrowser } from "@/components/recursive-browser";
-import { jobBrowserConfig } from "@/lib/config";
+import { jobBrowserConfig, threadBrowserConfig } from "@/lib/config";
 import { mockJobs } from "@/lib/mock-data";
+import { mockThreads } from "@/lib/mock-thread";
+import { useViewStore } from "@/lib/store";
 
 export default function Home() {
-  // Transform old Job type to new RecursiveItem type
-  const items: RecursiveItem[] = mockJobs.map((job) => ({
+  const { viewMode } = useViewStore();
+
+  // Transform job data to RecursiveItem type
+  const jobItems: RecursiveItem[] = mockJobs.map((job) => ({
     id: job.id,
     title: job.title,
     description: job.description,
@@ -17,5 +23,23 @@ export default function Home() {
     views: job.views,
   }));
 
-  return <RecursiveBrowser items={items} config={jobBrowserConfig} />;
+  // Transform thread data to RecursiveItem type
+  const threadItems: RecursiveItem[] = mockThreads.map((thread) => ({
+    id: thread.id,
+    title: thread.title,
+    description: thread.description,
+    metadata: {
+      company: thread.company,
+      location: thread.location,
+      salary: thread.salary,
+    },
+    views: thread.views,
+  }));
+
+  return (
+    <RecursiveBrowser
+      items={viewMode === "jobs" ? jobItems : threadItems}
+      config={viewMode === "jobs" ? jobBrowserConfig : threadBrowserConfig}
+    />
+  );
 }
