@@ -165,7 +165,7 @@ export function RecursiveBrowser({ items }: RecursiveBrowserProps) {
       <div className="w-full order-2 shrink-0 md:order-0">
         <Header />
       </div>
-      <div className="flex-1 overflow-x-auto overflow-y-hidden snap-x snap-mandatory md:overflow-hidden overscroll-none">
+      <div className="flex-1 overflow-x-auto snap-x snap-mandatory md:overflow-y-auto overscroll-none">
         <div className="h-full flex md:contents">
           {/* First snap point: Desktop resizable panels / Mobile job list */}
           <div
@@ -185,7 +185,7 @@ export function RecursiveBrowser({ items }: RecursiveBrowserProps) {
                   defaultSize={leftPanelSize}
                   minSize={20}
                   maxSize={40}
-                  className="overflow-hidden"
+                  className="overflow-y-auto"
                 >
                   <JobList
                     jobs={items}
@@ -203,7 +203,7 @@ export function RecursiveBrowser({ items }: RecursiveBrowserProps) {
                       ? 100 - leftPanelSize - rightPanelSize
                       : 100 - leftPanelSize
                   }
-                  className="overflow-hidden hidden md:block"
+                  className="overflow-y-auto hidden md:block"
                 >
                   {selectedJob ? (
                     <JobDetail
@@ -235,7 +235,7 @@ export function RecursiveBrowser({ items }: RecursiveBrowserProps) {
                       defaultSize={rightPanelSize}
                       minSize={20}
                       maxSize={40}
-                      className="overflow-hidden hidden md:block"
+                      className="overflow-y-auto hidden md:block"
                       onResize={(size) => setRightPanelSize(size)}
                     >
                       <ViewDetail
@@ -322,7 +322,7 @@ function JobList({
   onSelectJob: (job: RecursiveItem) => void;
 }) {
   return (
-    <div className="h-full flex flex-col overflow-hidden">
+    <div className="h-full flex flex-col overflow-y-auto">
       <div className="px-4 py-4 border-b shrink-0">
         <h2 className="text-lg font-semibold">Job Listings</h2>
         <p className="text-sm text-muted-foreground">{jobs.length} positions</p>
@@ -376,7 +376,7 @@ function JobDetail({
   onBack: () => void;
 }) {
   return (
-    <div className="h-full flex flex-col overflow-hidden">
+    <div className="h-full flex flex-col overflow-y-auto">
       <div className="px-4 py-4 border-b shrink-0">
         <Button
           variant="ghost"
@@ -453,7 +453,7 @@ function ViewDetail({
   onBack: () => void;
 }) {
   return (
-    <div className="h-full flex flex-col overflow-hidden">
+    <div className="h-full flex flex-col overflow-y-auto">
       <div className="px-4 py-4 border-b shrink-0">
         <Button variant="ghost" size="sm" onClick={onBack} className="mb-2">
           <ArrowLeft className="h-4 w-4 mr-2" />
@@ -519,7 +519,7 @@ function SubViewDetail({
   onBack: () => void;
 }) {
   return (
-    <div className="h-full flex flex-col overflow-hidden">
+    <div className="h-full flex flex-col overflow-y-auto">
       <div className="px-4 py-4 border-b shrink-0">
         <Button variant="ghost" size="sm" onClick={onBack} className="mb-2">
           <ArrowLeft className="h-4 w-4 mr-2" />
