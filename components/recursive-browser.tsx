@@ -33,12 +33,102 @@ export type RecursiveView = {
 export type RecursiveItem = {
   id: string;
   title: string;
-  company: string;
-  location: string;
-  salary: string;
   description: string;
+  metadata: Record<string, string>;
   views: RecursiveView[];
 };
+
+// Configuration for the browser
+export type BrowserConfig = {
+  labels: {
+    listTitle: string;
+    listCount: string;
+    backToList: string;
+    backToDetail: string;
+    noItemSelected: string;
+    selectPrompt: string;
+    moreInfo: string;
+    moreDetails: string;
+  };
+  metadataFields: Array<{
+    key: string;
+    label?: string;
+    separator?: string;
+  }>;
+  storageKey: string;
+};
+
+// Helper component for rendering metadata
+function MetadataDisplay({
+  metadata,
+  fields,
+  variant = "default",
+}: {
+  metadata: Record<string, string>;
+  fields: BrowserConfig["metadataFields"];
+  variant?: "default" | "compact";
+}) {
+  if (fields.length === 0) return null;
+
+  return (
+    <>
+      <p
+        className={
+          variant === "compact"
+            ? "text-sm text-muted-foreground truncate"
+            : "text-muted-foreground"
+        }
+      >
+        {metadata[fields[0].key]}
+      </p>
+      {fields.length > 1 && (
+        <div
+          className={
+            variant === "compact"
+              ? "flex gap-2 mt-1 text-xs text-muted-foreground"
+              : "flex gap-3 mt-2 text-sm text-muted-foreground"
+          }
+        >
+          {fields.slice(1).map((field, idx) => (
+            <span key={field.key}>
+              {idx > 0 && field.separator && `${field.separator} `}
+              {metadata[field.key]}
+            </span>
+          ))}
+        </div>
+      )}
+    </>
+  );
+}
+
+// Helper component for rendering view selection button
+function ViewSelectionButton({
+  view,
+  isSelected,
+  onSelect,
+}: {
+  view: RecursiveView;
+  isSelected: boolean;
+  onSelect: (view: RecursiveView) => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={() => onSelect(view)}
+      className={`w-full text-left p-3 border rounded-lg cursor-pointer transition-colors hover:bg-accent/50 ${
+        isSelected ? "bg-accent border-primary" : ""
+      }`}
+    >
+      <div className="flex items-center justify-between">
+        <div className="flex-1 min-w-0">
+          <h4 className="font-medium">{view.title}</h4>
+          <p className="text-sm text-muted-foreground">{view.description}</p>
+        </div>
+        <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
+      </div>
+    </button>
+  );
+}
 
 // Store for panel sizes
 interface PanelStore {
@@ -48,37 +138,40 @@ interface PanelStore {
   setRightPanelSize: (size: number) => void;
 }
 
-const usePanelStore = create<PanelStore>()(
-  persist(
-    (set) => ({
-      leftPanelSize: 30,
-      rightPanelSize: 25,
-      setLeftPanelSize: (size) => set({ leftPanelSize: size }),
-      setRightPanelSize: (size) => set({ rightPanelSize: size }),
-    }),
-    {
-      name: "job-browser-panels",
-    },
-  ),
-);
+const createPanelStore = (storageKey: string) =>
+  create<PanelStore>()(
+    persist(
+      (set) => ({
+        leftPanelSize: 30,
+        rightPanelSize: 25,
+        setLeftPanelSize: (size) => set({ leftPanelSize: size }),
+        setRightPanelSize: (size) => set({ rightPanelSize: size }),
+      }),
+      {
+        name: storageKey,
+      },
+    ),
+  );
 
 interface RecursiveBrowserProps {
   items: RecursiveItem[];
+  config: BrowserConfig;
 }
 
-export function RecursiveBrowser({ items }: RecursiveBrowserProps) {
-  const [selectedJob, setSelectedJob] = useState<RecursiveItem | null>(null);
+export function RecursiveBrowser({ items, config }: RecursiveBrowserProps) {
+  const [selectedItem, setSelectedItem] = useState<RecursiveItem | null>(null);
   const [selectedView, setSelectedView] = useState<RecursiveView | null>(null);
   const [selectedSubView, setSelectedSubView] = useState<RecursiveView | null>(
     null,
   );
   const [isHydrated, setIsHydrated] = useState(false);
+  const [panelStore] = useState(() => createPanelStore(config.storageKey));
 
   const { leftPanelSize, rightPanelSize, setLeftPanelSize, setRightPanelSize } =
-    usePanelStore();
+    panelStore();
 
-  const jobListRef = useRef<HTMLDivElement>(null);
-  const jobDetailRef = useRef<HTMLDivElement>(null);
+  const itemListRef = useRef<HTMLDivElement>(null);
+  const itemDetailRef = useRef<HTMLDivElement>(null);
   const viewDetailRef = useRef<HTMLDivElement>(null);
   const subViewDetailRef = useRef<HTMLDivElement>(null);
   const isInitialMount = useRef(true);
@@ -88,21 +181,21 @@ export function RecursiveBrowser({ items }: RecursiveBrowserProps) {
     setIsHydrated(true);
   }, []);
 
-  // Auto-scroll on mobile when job is selected (skip initial mount)
+  // Auto-scroll on mobile when item is selected (skip initial mount)
   useEffect(() => {
     if (isInitialMount.current) {
       isInitialMount.current = false;
       return;
     }
 
-    if (selectedJob) {
-      jobDetailRef.current?.scrollIntoView({
+    if (selectedItem) {
+      itemDetailRef.current?.scrollIntoView({
         behavior: "smooth",
         block: "nearest",
         inline: "start",
       });
     }
-  }, [selectedJob]);
+  }, [selectedItem]);
 
   // Auto-scroll on mobile when view is selected
   useEffect(() => {
@@ -135,8 +228,8 @@ export function RecursiveBrowser({ items }: RecursiveBrowserProps) {
     setTimeout(() => setSelectedSubView(null), 300);
   };
 
-  const handleBackToJobDetail = () => {
-    jobDetailRef.current?.scrollIntoView({
+  const handleBackToItemDetail = () => {
+    itemDetailRef.current?.scrollIntoView({
       behavior: "smooth",
       block: "nearest",
       inline: "start",
@@ -147,14 +240,14 @@ export function RecursiveBrowser({ items }: RecursiveBrowserProps) {
     }, 300);
   };
 
-  const handleBackToJobList = () => {
-    jobListRef.current?.scrollIntoView({
+  const handleBackToItemList = () => {
+    itemListRef.current?.scrollIntoView({
       behavior: "smooth",
       block: "nearest",
       inline: "start",
     });
     setTimeout(() => {
-      setSelectedJob(null);
+      setSelectedItem(null);
       setSelectedView(null);
       setSelectedSubView(null);
     }, 300);
@@ -167,9 +260,9 @@ export function RecursiveBrowser({ items }: RecursiveBrowserProps) {
       </div>
       <div className="flex-1 overflow-x-auto snap-x snap-mandatory md:overflow-y-auto overscroll-none">
         <div className="h-full flex md:contents">
-          {/* First snap point: Desktop resizable panels / Mobile job list */}
+          {/* First snap point: Desktop resizable panels / Mobile item list */}
           <div
-            ref={jobListRef}
+            ref={itemListRef}
             className="w-full h-full shrink-0 snap-start md:contents"
           >
             {isHydrated && (
@@ -180,23 +273,24 @@ export function RecursiveBrowser({ items }: RecursiveBrowserProps) {
                   if (sizes[0]) setLeftPanelSize(sizes[0]);
                 }}
               >
-                {/* Job List Panel */}
+                {/* Item List Panel */}
                 <ResizablePanel
                   defaultSize={leftPanelSize}
                   minSize={20}
                   maxSize={40}
                   className="overflow-y-auto"
                 >
-                  <JobList
-                    jobs={items}
-                    selectedJob={selectedJob}
-                    onSelectJob={setSelectedJob}
+                  <ItemList
+                    items={items}
+                    selectedItem={selectedItem}
+                    onSelectItem={setSelectedItem}
+                    config={config}
                   />
                 </ResizablePanel>
 
                 <ResizableHandle withHandle className="hidden md:flex" />
 
-                {/* Job Detail Panel (Desktop only) */}
+                {/* Item Detail Panel (Desktop only) */}
                 <ResizablePanel
                   defaultSize={
                     selectedView
@@ -205,12 +299,13 @@ export function RecursiveBrowser({ items }: RecursiveBrowserProps) {
                   }
                   className="overflow-y-auto hidden md:block"
                 >
-                  {selectedJob ? (
-                    <JobDetail
-                      job={selectedJob}
+                  {selectedItem ? (
+                    <ItemDetail
+                      item={selectedItem}
                       selectedView={selectedView}
                       onSelectView={setSelectedView}
-                      onBack={handleBackToJobList}
+                      onBack={handleBackToItemList}
+                      config={config}
                     />
                   ) : (
                     <Empty>
@@ -218,9 +313,9 @@ export function RecursiveBrowser({ items }: RecursiveBrowserProps) {
                         <EmptyMedia variant="icon">
                           <Briefcase />
                         </EmptyMedia>
-                        <EmptyTitle>No job selected</EmptyTitle>
+                        <EmptyTitle>{config.labels.noItemSelected}</EmptyTitle>
                         <EmptyDescription>
-                          Select a job from the list to view details
+                          {config.labels.selectPrompt}
                         </EmptyDescription>
                       </EmptyHeader>
                     </Empty>
@@ -242,7 +337,8 @@ export function RecursiveBrowser({ items }: RecursiveBrowserProps) {
                         view={selectedView}
                         selectedSubView={selectedSubView}
                         onSelectSubView={setSelectedSubView}
-                        onBack={handleBackToJobDetail}
+                        onBack={handleBackToItemDetail}
+                        config={config}
                       />
                     </ResizablePanel>
                   </>
@@ -251,17 +347,18 @@ export function RecursiveBrowser({ items }: RecursiveBrowserProps) {
             )}
           </div>
 
-          {/* Second snap point: Job Detail (Mobile only) */}
+          {/* Second snap point: Item Detail (Mobile only) */}
           <div
-            ref={jobDetailRef}
+            ref={itemDetailRef}
             className="w-full h-full shrink-0 snap-start md:hidden"
           >
-            {selectedJob ? (
-              <JobDetail
-                job={selectedJob}
+            {selectedItem ? (
+              <ItemDetail
+                item={selectedItem}
                 selectedView={selectedView}
                 onSelectView={setSelectedView}
-                onBack={handleBackToJobList}
+                onBack={handleBackToItemList}
+                config={config}
               />
             ) : (
               <Empty>
@@ -269,9 +366,9 @@ export function RecursiveBrowser({ items }: RecursiveBrowserProps) {
                   <EmptyMedia variant="icon">
                     <Briefcase />
                   </EmptyMedia>
-                  <EmptyTitle>No job selected</EmptyTitle>
+                  <EmptyTitle>{config.labels.noItemSelected}</EmptyTitle>
                   <EmptyDescription>
-                    Select a job from the list to view details
+                    {config.labels.selectPrompt}
                   </EmptyDescription>
                 </EmptyHeader>
               </Empty>
@@ -288,7 +385,8 @@ export function RecursiveBrowser({ items }: RecursiveBrowserProps) {
                 view={selectedView}
                 selectedSubView={selectedSubView}
                 onSelectSubView={setSelectedSubView}
-                onBack={handleBackToJobDetail}
+                onBack={handleBackToItemDetail}
+                config={config}
               />
             </div>
           )}
@@ -311,46 +409,47 @@ export function RecursiveBrowser({ items }: RecursiveBrowserProps) {
   );
 }
 
-// Job List Component
-function JobList({
-  jobs,
-  selectedJob,
-  onSelectJob,
+// Item List Component
+function ItemList({
+  items,
+  selectedItem,
+  onSelectItem,
+  config,
 }: {
-  jobs: RecursiveItem[];
-  selectedJob: RecursiveItem | null;
-  onSelectJob: (job: RecursiveItem) => void;
+  items: RecursiveItem[];
+  selectedItem: RecursiveItem | null;
+  onSelectItem: (item: RecursiveItem) => void;
+  config: BrowserConfig;
 }) {
   return (
     <div className="h-full flex flex-col overflow-y-auto">
       <div className="px-4 py-4 border-b shrink-0">
-        <h2 className="text-lg font-semibold">Job Listings</h2>
-        <p className="text-sm text-muted-foreground">{jobs.length} positions</p>
+        <h2 className="text-lg font-semibold">{config.labels.listTitle}</h2>
+        <p className="text-sm text-muted-foreground">
+          {items.length} {config.labels.listCount}
+        </p>
       </div>
       <ScrollArea className="flex-1">
         <div className="space-y-0">
-          {jobs.map((job) => {
-            const isSelected = selectedJob?.id === job.id;
+          {items.map((item) => {
+            const isSelected = selectedItem?.id === item.id;
             return (
               <button
                 type="button"
-                key={job.id}
-                onClick={() => onSelectJob(job)}
+                key={item.id}
+                onClick={() => onSelectItem(item)}
                 className={`w-full text-left px-4 py-4 border-b cursor-pointer transition-colors hover:bg-accent/50 ${
                   isSelected ? "bg-accent" : ""
                 }`}
               >
                 <div className="flex items-start justify-between gap-2">
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-medium truncate">{job.title}</h3>
-                    <p className="text-sm text-muted-foreground truncate">
-                      {job.company}
-                    </p>
-                    <div className="flex gap-2 mt-1 text-xs text-muted-foreground">
-                      <span>{job.location}</span>
-                      <span>•</span>
-                      <span>{job.salary}</span>
-                    </div>
+                    <h3 className="font-medium truncate">{item.title}</h3>
+                    <MetadataDisplay
+                      metadata={item.metadata}
+                      fields={config.metadataFields}
+                      variant="compact"
+                    />
                   </div>
                   <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground md:hidden" />
                 </div>
@@ -363,17 +462,19 @@ function JobList({
   );
 }
 
-// Job Detail Component
-function JobDetail({
-  job,
+// Item Detail Component
+function ItemDetail({
+  item,
   selectedView,
   onSelectView,
   onBack,
+  config,
 }: {
-  job: RecursiveItem;
+  item: RecursiveItem;
   selectedView: RecursiveView | null;
   onSelectView: (view: RecursiveView) => void;
   onBack: () => void;
+  config: BrowserConfig;
 }) {
   return (
     <div className="h-full flex flex-col overflow-y-auto">
@@ -385,15 +486,14 @@ function JobDetail({
           className="mb-2 md:hidden"
         >
           <ArrowLeft className="h-4 w-4 mr-2" />
-          Back to jobs
+          {config.labels.backToList}
         </Button>
-        <h1 className="text-2xl font-bold">{job.title}</h1>
-        <p className="text-muted-foreground">{job.company}</p>
-        <div className="flex gap-3 mt-2 text-sm text-muted-foreground">
-          <span>{job.location}</span>
-          <span>•</span>
-          <span>{job.salary}</span>
-        </div>
+        <h1 className="text-2xl font-bold">{item.title}</h1>
+        <MetadataDisplay
+          metadata={item.metadata}
+          fields={config.metadataFields}
+          variant="default"
+        />
       </div>
       <ScrollArea className="flex-1">
         <div className="p-4 space-y-6">
@@ -401,37 +501,22 @@ function JobDetail({
             <h3 className="text-sm font-semibold text-muted-foreground mb-2">
               Description
             </h3>
-            <p className="text-base leading-relaxed">{job.description}</p>
+            <p className="text-base leading-relaxed">{item.description}</p>
           </div>
 
           <div>
             <h3 className="text-sm font-semibold text-muted-foreground mb-3">
-              More Information
+              {config.labels.moreInfo}
             </h3>
             <div className="space-y-2">
-              {job.views.map((view) => {
-                const isSelected = selectedView?.id === view.id;
-                return (
-                  <button
-                    type="button"
-                    key={view.id}
-                    onClick={() => onSelectView(view)}
-                    className={`w-full text-left p-3 border rounded-lg cursor-pointer transition-colors hover:bg-accent/50 ${
-                      isSelected ? "bg-accent border-primary" : ""
-                    }`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="flex-1 min-w-0">
-                        <h4 className="font-medium">{view.title}</h4>
-                        <p className="text-sm text-muted-foreground">
-                          {view.description}
-                        </p>
-                      </div>
-                      <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
-                    </div>
-                  </button>
-                );
-              })}
+              {item.views.map((view) => (
+                <ViewSelectionButton
+                  key={view.id}
+                  view={view}
+                  isSelected={selectedView?.id === view.id}
+                  onSelect={onSelectView}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -446,18 +531,20 @@ function ViewDetail({
   selectedSubView,
   onSelectSubView,
   onBack,
+  config,
 }: {
   view: RecursiveView;
   selectedSubView: RecursiveView | null;
   onSelectSubView: (subView: RecursiveView) => void;
   onBack: () => void;
+  config: BrowserConfig;
 }) {
   return (
     <div className="h-full flex flex-col overflow-y-auto">
       <div className="px-4 py-4 border-b shrink-0">
         <Button variant="ghost" size="sm" onClick={onBack} className="mb-2">
           <ArrowLeft className="h-4 w-4 mr-2" />
-          Back
+          {config.labels.backToDetail}
         </Button>
         <h2 className="text-xl font-bold">{view.title}</h2>
         <p className="text-sm text-muted-foreground">{view.description}</p>
@@ -475,32 +562,17 @@ function ViewDetail({
           {view.subViews && view.subViews.length > 0 && (
             <div>
               <h3 className="text-sm font-semibold text-muted-foreground mb-3">
-                More Details
+                {config.labels.moreDetails}
               </h3>
               <div className="space-y-2">
-                {view.subViews.map((subView) => {
-                  const isSelected = selectedSubView?.id === subView.id;
-                  return (
-                    <button
-                      type="button"
-                      key={subView.id}
-                      onClick={() => onSelectSubView(subView)}
-                      className={`w-full text-left p-3 border rounded-lg cursor-pointer transition-colors hover:bg-accent/50 ${
-                        isSelected ? "bg-accent border-primary" : ""
-                      }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <div className="flex-1 min-w-0">
-                          <h4 className="font-medium">{subView.title}</h4>
-                          <p className="text-sm text-muted-foreground">
-                            {subView.description}
-                          </p>
-                        </div>
-                        <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
-                      </div>
-                    </button>
-                  );
-                })}
+                {view.subViews.map((subView) => (
+                  <ViewSelectionButton
+                    key={subView.id}
+                    view={subView}
+                    isSelected={selectedSubView?.id === subView.id}
+                    onSelect={onSelectSubView}
+                  />
+                ))}
               </div>
             </div>
           )}
@@ -510,7 +582,7 @@ function ViewDetail({
   );
 }
 
-// Sub-View Detail Component
+// Sub-View Detail Component (simplified, delegates to ViewDetail)
 function SubViewDetail({
   subView,
   onBack,

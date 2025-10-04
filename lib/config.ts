@@ -10,6 +10,7 @@ import {
   Sheet,
   Users,
 } from "lucide-react";
+import type { BrowserConfig } from "@/components/recursive-browser";
 
 export type NavItem = {
   icon: LucideIcon;
@@ -27,3 +28,22 @@ export const navConfig: NavItem[] = [
   { icon: Search, label: "Search" },
   { icon: Bell, label: "Notifications" },
 ];
+
+export const jobBrowserConfig: BrowserConfig = {
+  labels: {
+    listTitle: "Job Listings",
+    listCount: "positions",
+    backToList: "Back to jobs",
+    backToDetail: "Back",
+    noItemSelected: "No job selected",
+    selectPrompt: "Select a job from the list to view details",
+    moreInfo: "More Information",
+    moreDetails: "More Details",
+  },
+  metadataFields: [
+    { key: "company" },
+    { key: "location", separator: "•" },
+    { key: "salary", separator: "•" },
+  ],
+  storageKey: "job-browser-panels",
+};
