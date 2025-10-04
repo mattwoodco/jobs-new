@@ -1,5 +1,6 @@
-import { RecursiveJobBrowser } from "@/components/recursive-job-browser";
+import { RecursiveBrowser } from "@/components/recursive-browser";
+import { mockJobs } from "@/lib/mock-data";
 
 export default function Home() {
-  return <RecursiveJobBrowser />;
+  return <RecursiveBrowser items={mockJobs} />;
 }

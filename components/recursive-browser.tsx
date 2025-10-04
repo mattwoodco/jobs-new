@@ -19,9 +19,26 @@ import {
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import type { Job, JobView } from "@/lib/mock-data";
-import { mockJobs } from "@/lib/mock-data";
 import { Header } from "./header";
+
+// Generic types for recursive data structure
+export type RecursiveView = {
+  id: string;
+  title: string;
+  description: string;
+  content: string;
+  subViews?: RecursiveView[];
+};
+
+export type RecursiveItem = {
+  id: string;
+  title: string;
+  company: string;
+  location: string;
+  salary: string;
+  description: string;
+  views: RecursiveView[];
+};
 
 // Store for panel sizes
 interface PanelStore {
@@ -45,10 +62,16 @@ const usePanelStore = create<PanelStore>()(
   ),
 );
 
-export function RecursiveJobBrowser() {
-  const [selectedJob, setSelectedJob] = useState<Job | null>(null);
-  const [selectedView, setSelectedView] = useState<JobView | null>(null);
-  const [selectedSubView, setSelectedSubView] = useState<JobView | null>(null);
+interface RecursiveBrowserProps {
+  items: RecursiveItem[];
+}
+
+export function RecursiveBrowser({ items }: RecursiveBrowserProps) {
+  const [selectedJob, setSelectedJob] = useState<RecursiveItem | null>(null);
+  const [selectedView, setSelectedView] = useState<RecursiveView | null>(null);
+  const [selectedSubView, setSelectedSubView] = useState<RecursiveView | null>(
+    null,
+  );
   const [isHydrated, setIsHydrated] = useState(false);
 
   const { leftPanelSize, rightPanelSize, setLeftPanelSize, setRightPanelSize } =
@@ -165,7 +188,7 @@ export function RecursiveJobBrowser() {
                   className="overflow-hidden"
                 >
                   <JobList
-                    jobs={mockJobs}
+                    jobs={items}
                     selectedJob={selectedJob}
                     onSelectJob={setSelectedJob}
                   />
@@ -233,13 +256,25 @@ export function RecursiveJobBrowser() {
             ref={jobDetailRef}
             className="w-full h-full shrink-0 snap-start md:hidden"
           >
-            {selectedJob && (
+            {selectedJob ? (
               <JobDetail
                 job={selectedJob}
                 selectedView={selectedView}
                 onSelectView={setSelectedView}
                 onBack={handleBackToJobList}
               />
+            ) : (
+              <Empty>
+                <EmptyHeader>
+                  <EmptyMedia variant="icon">
+                    <Briefcase />
+                  </EmptyMedia>
+                  <EmptyTitle>No job selected</EmptyTitle>
+                  <EmptyDescription>
+                    Select a job from the list to view details
+                  </EmptyDescription>
+                </EmptyHeader>
+              </Empty>
             )}
           </div>
 
@@ -282,9 +317,9 @@ function JobList({
   selectedJob,
   onSelectJob,
 }: {
-  jobs: Job[];
-  selectedJob: Job | null;
-  onSelectJob: (job: Job) => void;
+  jobs: RecursiveItem[];
+  selectedJob: RecursiveItem | null;
+  onSelectJob: (job: RecursiveItem) => void;
 }) {
   return (
     <div className="h-full flex flex-col overflow-hidden">
@@ -335,9 +370,9 @@ function JobDetail({
   onSelectView,
   onBack,
 }: {
-  job: Job;
-  selectedView: JobView | null;
-  onSelectView: (view: JobView) => void;
+  job: RecursiveItem;
+  selectedView: RecursiveView | null;
+  onSelectView: (view: RecursiveView) => void;
   onBack: () => void;
 }) {
   return (
@@ -412,9 +447,9 @@ function ViewDetail({
   onSelectSubView,
   onBack,
 }: {
-  view: JobView;
-  selectedSubView: JobView | null;
-  onSelectSubView: (subView: JobView) => void;
+  view: RecursiveView;
+  selectedSubView: RecursiveView | null;
+  onSelectSubView: (subView: RecursiveView) => void;
   onBack: () => void;
 }) {
   return (
@@ -480,7 +515,7 @@ function SubViewDetail({
   subView,
   onBack,
 }: {
-  subView: JobView;
+  subView: RecursiveView;
   onBack: () => void;
 }) {
   return (
