@@ -46,7 +46,6 @@ export type BrowserConfig = {
   storageKey: string;
 };
 
-
 // Store for panel sizes
 interface PanelStore {
   leftPanelSize: number;
@@ -134,4 +133,3 @@ export function RecursiveBrowser({ items, config }: RecursiveBrowserProps) {
     </div>
   );
 }
-

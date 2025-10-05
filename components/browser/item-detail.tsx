@@ -2,7 +2,11 @@ import { ArrowLeft } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import type { BrowserConfig, RecursiveItem, RecursiveView } from "../recursive-browser";
+import type {
+  BrowserConfig,
+  RecursiveItem,
+  RecursiveView,
+} from "../recursive-browser";
 import { MetadataDisplay } from "./metadata-display";
 import { ViewSelectionButton } from "./view-selection-button";
 

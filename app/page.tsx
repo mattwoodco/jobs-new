@@ -12,7 +12,7 @@ export default function Home() {
 
   // Get the selected job search
   const selectedJobSearch = jobSearches.find(
-    (search) => search.id === selectedJobSearchId
+    (search) => search.id === selectedJobSearchId,
   );
 
   // Transform job data to RecursiveItem type

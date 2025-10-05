@@ -63,7 +63,7 @@ const step3 = createStep({
     }),
   }),
   execute: async ({ inputData }) => {
-    const { step2Result, step1Result, input } = inputData;
+    const { step2Result, step1Result } = inputData;
     const step3Result = `Step 3 finalized: ${step2Result}`;
 
     return {

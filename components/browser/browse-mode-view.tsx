@@ -15,7 +15,11 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
-import type { BrowserConfig, RecursiveItem, RecursiveView } from "../recursive-browser";
+import type {
+  BrowserConfig,
+  RecursiveItem,
+  RecursiveView,
+} from "../recursive-browser";
 import { ItemDetail } from "./item-detail";
 import { ItemList } from "./item-list";
 import { SubViewDetail } from "./subview-detail";
@@ -239,9 +243,7 @@ export function BrowseModeView({
                 <Briefcase />
               </EmptyMedia>
               <EmptyTitle>{config.labels.noItemSelected}</EmptyTitle>
-              <EmptyDescription>
-                {config.labels.selectPrompt}
-              </EmptyDescription>
+              <EmptyDescription>{config.labels.selectPrompt}</EmptyDescription>
             </EmptyHeader>
           </Empty>
         )}

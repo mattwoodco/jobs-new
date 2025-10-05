@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { Job, mockJobSearches } from "./mock-data";
+import { type Job, mockJobSearches } from "./mock-data";
 
 export type ViewMode = "jobs" | "threads";
 
@@ -63,7 +63,7 @@ export const useJobSearchStore = create<JobSearchStore>()((set, get) => ({
       jobSearches: state.jobSearches.map((search) =>
         search.id === jobSearchId
           ? { ...search, jobs: [...search.jobs, job] }
-          : search
+          : search,
       ),
     })),
   setSelectedJobSearchId: (id) => set({ selectedJobSearchId: id }),
