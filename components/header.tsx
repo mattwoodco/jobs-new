@@ -78,7 +78,7 @@ export function Header() {
           </Button>
 
           <Select
-            value={selectedJobSearchId || undefined}
+            value={selectedJobSearchId || ""}
             onValueChange={setSelectedJobSearchId}
           >
             <SelectTrigger className="w-[220px] cursor-pointer">

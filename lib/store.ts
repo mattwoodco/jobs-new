@@ -18,6 +18,16 @@ export const useViewStore = create<ViewStore>()((set) => ({
     })),
 }));
 
+interface ConversationStore {
+  selectedConversationId: string | null;
+  setSelectedConversationId: (id: string | null) => void;
+}
+
+export const useConversationStore = create<ConversationStore>()((set) => ({
+  selectedConversationId: null,
+  setSelectedConversationId: (id) => set({ selectedConversationId: id }),
+}));
+
 export type JobSearch = {
   id: string;
   title: string;
@@ -28,20 +38,33 @@ export type JobSearch = {
 interface JobSearchStore {
   jobSearches: JobSearch[];
   selectedJobSearchId: string | null;
+  selectedJobId: string | null;
   isCreatingNewJobSearch: boolean;
+  isCreatingNewJob: boolean;
   initialized: boolean;
+  refreshJobSearches: () => void;
   initialize: () => void;
+  setJobSearches: (jobSearches: JobSearch[]) => void;
   addJobSearch: (jobSearch: JobSearch) => void;
   addJobToSearch: (jobSearchId: string, job: Job) => void;
   setSelectedJobSearchId: (id: string | null) => void;
+  setSelectedJobId: (id: string | null) => void;
   setIsCreatingNewJobSearch: (isCreating: boolean) => void;
+  setIsCreatingNewJob: (isCreating: boolean) => void;
 }
 
 export const useJobSearchStore = create<JobSearchStore>()((set, get) => ({
   jobSearches: [],
   selectedJobSearchId: null,
+  selectedJobId: null,
   isCreatingNewJobSearch: false,
+  isCreatingNewJob: false,
   initialized: false,
+  refreshJobSearches: () => {
+    // This is a signal to trigger a re-fetch
+    // The actual fetch happens in the component
+    set({ initialized: false });
+  },
   initialize: () => {
     const state = get();
     if (!state.initialized) {
@@ -52,6 +75,11 @@ export const useJobSearchStore = create<JobSearchStore>()((set, get) => ({
       });
     }
   },
+  setJobSearches: (jobSearches) =>
+    set({
+      jobSearches,
+      initialized: true,
+    }),
   addJobSearch: (jobSearch) =>
     set((state) => ({
       jobSearches: [...state.jobSearches, jobSearch],
@@ -65,8 +93,11 @@ export const useJobSearchStore = create<JobSearchStore>()((set, get) => ({
           ? { ...search, jobs: [...search.jobs, job] }
           : search,
       ),
+      isCreatingNewJob: false,
     })),
   setSelectedJobSearchId: (id) => set({ selectedJobSearchId: id }),
+  setSelectedJobId: (id) => set({ selectedJobId: id }),
   setIsCreatingNewJobSearch: (isCreating) =>
     set({ isCreatingNewJobSearch: isCreating }),
+  setIsCreatingNewJob: (isCreating) => set({ isCreatingNewJob: isCreating }),
 }));

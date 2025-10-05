@@ -61,8 +61,8 @@ export const threadBrowserConfig: BrowserConfig = {
   },
   metadataFields: [
     { key: "company" },
-    { key: "location", separator: "•" },
-    { key: "salary", separator: "•" },
+    { key: "messageCount", separator: "•" },
+    { key: "status", separator: "•" },
   ],
   storageKey: "thread-browser-panels",
 };

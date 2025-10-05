@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useJobSearchStore, type JobSearch } from "@/lib/store";
+import { useJobSearchStore } from "@/lib/store";
 import { useForm } from "react-hook-form";
 
 type NewJobSearchFormData = {
@@ -19,12 +19,13 @@ type NewJobSearchFormData = {
 };
 
 export function NewJobSearchForm() {
-  const { addJobSearch } = useJobSearchStore();
+  const { addJobSearch, refreshJobSearches, setIsCreatingNewJobSearch } =
+    useJobSearchStore();
 
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     reset,
   } = useForm<NewJobSearchFormData>({
     defaultValues: {
@@ -33,16 +34,42 @@ export function NewJobSearchForm() {
     },
   });
 
-  const onSubmit = (data: NewJobSearchFormData) => {
-    const newJobSearch: JobSearch = {
-      id: `search-${Date.now()}`,
-      title: data.title,
-      description: data.description,
-      jobs: [],
-    };
+  const onSubmit = async (data: NewJobSearchFormData) => {
+    try {
+      // Create job search via API
+      const response = await fetch("/api/job-searches", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title: data.title,
+          description: data.description,
+        }),
+      });
 
-    addJobSearch(newJobSearch);
-    reset();
+      if (response.ok) {
+        const newJobSearch = await response.json();
+
+        // Add to local store
+        addJobSearch({
+          id: newJobSearch.id,
+          title: newJobSearch.title,
+          description: newJobSearch.description,
+          jobs: [],
+        });
+
+        // Trigger refresh to update dropdown
+        refreshJobSearches();
+
+        reset();
+        setIsCreatingNewJobSearch(false);
+      } else {
+        console.error("Failed to create job search");
+      }
+    } catch (error) {
+      console.error("Error creating job search:", error);
+    }
   };
 
   return (
@@ -93,7 +120,9 @@ export function NewJobSearchForm() {
       </Field>
 
       <div className="flex justify-end gap-2">
-        <Button type="submit">Create Job Search</Button>
+        <Button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "Creating..." : "Create Job Search"}
+        </Button>
       </div>
     </form>
   );

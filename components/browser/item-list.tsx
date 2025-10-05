@@ -1,5 +1,6 @@
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Plus } from "lucide-react";
 
+import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import type { BrowserConfig, RecursiveItem } from "../recursive-browser";
 import { MetadataDisplay } from "./metadata-display";
@@ -9,6 +10,7 @@ interface ItemListProps {
   selectedItem: RecursiveItem | null;
   onSelectItem: (item: RecursiveItem) => void;
   config: BrowserConfig;
+  onAddNewItem?: () => void;
 }
 
 export function ItemList({
@@ -16,14 +18,29 @@ export function ItemList({
   selectedItem,
   onSelectItem,
   config,
+  onAddNewItem,
 }: ItemListProps) {
   return (
     <div className="h-full flex flex-col overflow-y-auto">
       <div className="px-4 py-4 border-b shrink-0">
-        <h2 className="text-lg font-semibold">{config.labels.listTitle}</h2>
-        <p className="text-sm text-muted-foreground">
-          {items.length} {config.labels.listCount}
-        </p>
+        <div className="flex items-center justify-between">
+          <div className="flex items-baseline gap-2">
+            <h2 className="text-lg font-semibold">{config.labels.listTitle}</h2>
+            <span className="text-xs text-muted-foreground">
+              {items.length}
+            </span>
+          </div>
+          {onAddNewItem && (
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={onAddNewItem}
+              className="cursor-pointer"
+            >
+              <Plus className="w-4 h-4" />
+            </Button>
+          )}
+        </div>
       </div>
       <ScrollArea className="flex-1">
         <div className="space-y-0">

@@ -72,9 +72,18 @@ const createPanelStore = (storageKey: string) =>
 interface RecursiveBrowserProps {
   items: RecursiveItem[];
   config: BrowserConfig;
+  selectedItemId?: string | null;
+  onSelectItemId?: (id: string | null) => void;
+  onAddNewItem?: () => void;
 }
 
-export function RecursiveBrowser({ items, config }: RecursiveBrowserProps) {
+export function RecursiveBrowser({
+  items,
+  config,
+  selectedItemId,
+  onSelectItemId,
+  onAddNewItem,
+}: RecursiveBrowserProps) {
   const [selectedItem, setSelectedItem] = useState<RecursiveItem | null>(null);
   const [selectedView, setSelectedView] = useState<RecursiveView | null>(null);
   const [selectedSubView, setSelectedSubView] = useState<RecursiveView | null>(
@@ -90,6 +99,32 @@ export function RecursiveBrowser({ items, config }: RecursiveBrowserProps) {
   const isCreatingNewJobSearch = useJobSearchStore(
     (state) => state.isCreatingNewJobSearch,
   );
+
+  // Deselect all jobs when job search changes
+  const _selectedJobSearchId = useJobSearchStore(
+    (state) => state.selectedJobSearchId,
+  );
+  useEffect(() => {
+    setSelectedItem(null);
+    setSelectedView(null);
+    setSelectedSubView(null);
+  }, []);
+
+  // Sync selectedItemId prop with internal state
+  useEffect(() => {
+    if (selectedItemId !== undefined) {
+      const item = items.find((i) => i.id === selectedItemId);
+      setSelectedItem(item || null);
+    }
+  }, [selectedItemId, items]);
+
+  // Handle internal selection changes and notify parent
+  const handleSelectItem = (item: RecursiveItem | null) => {
+    setSelectedItem(item);
+    if (onSelectItemId) {
+      onSelectItemId(item?.id || null);
+    }
+  };
 
   // Hydration
   useEffect(() => {
@@ -116,7 +151,9 @@ export function RecursiveBrowser({ items, config }: RecursiveBrowserProps) {
               items={items}
               config={config}
               selectedItem={selectedItem}
-              setSelectedItem={setSelectedItem}
+              setSelectedItem={
+                onSelectItemId ? handleSelectItem : setSelectedItem
+              }
               selectedView={selectedView}
               setSelectedView={setSelectedView}
               selectedSubView={selectedSubView}
@@ -126,6 +163,7 @@ export function RecursiveBrowser({ items, config }: RecursiveBrowserProps) {
               setLeftPanelSize={setLeftPanelSize}
               setRightPanelSize={setRightPanelSize}
               isHydrated={isHydrated}
+              onAddNewItem={onAddNewItem}
             />
           )}
         </div>

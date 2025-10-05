@@ -39,6 +39,7 @@ interface BrowseModeViewProps {
   setLeftPanelSize: (size: number) => void;
   setRightPanelSize: (size: number) => void;
   isHydrated: boolean;
+  onAddNewItem?: () => void;
 }
 
 export function BrowseModeView({
@@ -55,6 +56,7 @@ export function BrowseModeView({
   setLeftPanelSize,
   setRightPanelSize,
   isHydrated,
+  onAddNewItem,
 }: BrowseModeViewProps) {
   const itemListRef = useRef<HTMLDivElement>(null);
   const itemDetailRef = useRef<HTMLDivElement>(null);
@@ -161,6 +163,7 @@ export function BrowseModeView({
                 selectedItem={selectedItem}
                 onSelectItem={setSelectedItem}
                 config={config}
+                onAddNewItem={onAddNewItem}
               />
             </ResizablePanel>
 
