@@ -16,16 +16,15 @@ export type Job = {
   views: JobView[];
 };
 
-export const mockJobs: Job[] = [
-  {
-    id: "1",
-    title: "Senior Frontend Developer",
-    company: "TechCorp Inc.",
-    location: "San Francisco, CA",
-    salary: "$120k - $160k",
-    description:
-      "Join our team building next-generation web applications using React and TypeScript. We're looking for an experienced developer passionate about creating exceptional user experiences.",
-    views: [
+const job1: Job = {
+  id: "1",
+  title: "Senior Frontend Developer",
+  company: "TechCorp Inc.",
+  location: "San Francisco, CA",
+  salary: "$120k - $160k",
+  description:
+    "Join our team building next-generation web applications using React and TypeScript. We're looking for an experienced developer passionate about creating exceptional user experiences.",
+  views: [
       {
         id: "1-1",
         title: "Research",
@@ -92,16 +91,17 @@ export const mockJobs: Job[] = [
           "• Hiring Manager: Sarah Chen (VP Engineering)\n• Recruiter: Mike Johnson\n• Team Size: 12 engineers\n• You'd work with: Frontend Architecture team\n• 3 of your connections work here",
       },
     ],
-  },
-  {
-    id: "2",
-    title: "Full Stack Engineer",
-    company: "StartupXYZ",
-    location: "Remote",
-    salary: "$100k - $140k",
-    description:
-      "Help us build scalable microservices and beautiful user interfaces. We're a fast-growing startup looking for someone who can work across the entire stack.",
-    views: [
+};
+
+const job2: Job = {
+  id: "2",
+  title: "Full Stack Engineer",
+  company: "StartupXYZ",
+  location: "Remote",
+  salary: "$100k - $140k",
+  description:
+    "Help us build scalable microservices and beautiful user interfaces. We're a fast-growing startup looking for someone who can work across the entire stack.",
+  views: [
       {
         id: "2-1",
         title: "Research",
@@ -145,16 +145,17 @@ export const mockJobs: Job[] = [
           "• Hiring Manager: Alex Rivera (CTO)\n• Recruiter: Jessica Lee\n• Team Size: 15 engineers\n• You'd work with: Full product engineering team\n• 1 of your connections works here",
       },
     ],
-  },
-  {
-    id: "3",
-    title: "Product Designer",
-    company: "Design Studio",
-    location: "New York, NY",
-    salary: "$90k - $130k",
-    description:
-      "Create beautiful, intuitive designs for mobile and web applications. We're seeking a designer who combines creativity with user-centered thinking.",
-    views: [
+};
+
+const job3: Job = {
+  id: "3",
+  title: "Product Designer",
+  company: "Design Studio",
+  location: "New York, NY",
+  salary: "$90k - $130k",
+  description:
+    "Create beautiful, intuitive designs for mobile and web applications. We're seeking a designer who combines creativity with user-centered thinking.",
+  views: [
       {
         id: "3-1",
         title: "Research",
@@ -198,5 +199,27 @@ export const mockJobs: Job[] = [
           "• Hiring Manager: Rachel Martinez (Design Director)\n• Recruiter: Tom Anderson\n• Team Size: 8 product designers\n• You'd work with: Consumer products team\n• 2 of your connections work here",
       },
     ],
+};
+
+export const mockJobs: Job[] = [job1, job2, job3];
+
+export const mockJobSearches = [
+  {
+    id: "search-1",
+    title: "Tech Companies - Bay Area",
+    description: "Searching for senior engineering roles at tech companies in San Francisco and surrounding areas",
+    jobs: [job1],
+  },
+  {
+    id: "search-2",
+    title: "Remote Opportunities",
+    description: "Remote-first companies offering full-stack and backend positions",
+    jobs: [job2],
+  },
+  {
+    id: "search-3",
+    title: "Design & Creative Roles",
+    description: "Product design and UX positions in New York and East Coast",
+    jobs: [job3],
   },
 ];

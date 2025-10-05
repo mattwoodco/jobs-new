@@ -1,7 +1,8 @@
 "use client";
 
-import { MessageSquare } from "lucide-react";
+import { MessageSquare, Plus } from "lucide-react";
 import Link from "next/link";
+import { useEffect } from "react";
 
 import { Button } from "@/components/ui/button";
 // import {
@@ -18,12 +19,22 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { navConfig } from "@/lib/config";
-import { mockJobs } from "@/lib/mock-data";
-import { useViewStore } from "@/lib/store";
+import { useViewStore, useJobSearchStore } from "@/lib/store";
 import { MastraLink } from "./mastra-link";
 
 export function Header() {
   const { toggleViewMode } = useViewStore();
+  const {
+    jobSearches,
+    selectedJobSearchId,
+    setSelectedJobSearchId,
+    setIsCreatingNewJobSearch,
+    initialize,
+  } = useJobSearchStore();
+
+  useEffect(() => {
+    initialize();
+  }, [initialize]);
 
   return (
     <header className="w-full bg-background border-b">
@@ -66,18 +77,30 @@ export function Header() {
             </Link>
           </Button>
 
-          <Select defaultValue={mockJobs[0].title}>
+          <Select
+            value={selectedJobSearchId || undefined}
+            onValueChange={setSelectedJobSearchId}
+          >
             <SelectTrigger className="w-[220px] cursor-pointer">
-              <SelectValue />
+              <SelectValue placeholder="Select job search" />
             </SelectTrigger>
             <SelectContent>
-              {mockJobs.map((job) => (
-                <SelectItem key={job.id} value={job.title}>
-                  {job.title}
+              {jobSearches.map((search) => (
+                <SelectItem key={search.id} value={search.id}>
+                  {search.title}
                 </SelectItem>
               ))}
             </SelectContent>
           </Select>
+
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsCreatingNewJobSearch(true)}
+            className="cursor-pointer"
+          >
+            <Plus className="w-4 h-4" />
+          </Button>
 
           {/* Desktop: Individual icon buttons */}
           {/* <div className="hidden md:flex items-center gap-2">
