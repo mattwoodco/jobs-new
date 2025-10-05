@@ -20,6 +20,7 @@ import {
 import { navConfig } from "@/lib/config";
 import { mockJobs } from "@/lib/mock-data";
 import { useViewStore } from "@/lib/store";
+import { MastraLink } from "./mastra-link";
 
 export function Header() {
   const { toggleViewMode } = useViewStore();
@@ -95,6 +96,7 @@ export function Header() {
 
         {/* Right side: Dropdown icon buttons */}
         <div className="flex items-center gap-2">
+          <MastraLink />
           <Button
             variant="ghost"
             size="icon"

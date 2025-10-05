@@ -12,5 +12,7 @@ export const useViewStore = create<ViewStore>()((set) => ({
   viewMode: "jobs",
   setViewMode: (mode) => set({ viewMode: mode }),
   toggleViewMode: () =>
-    set((state) => ({ viewMode: state.viewMode === "jobs" ? "threads" : "jobs" })),
+    set((state) => ({
+      viewMode: state.viewMode === "jobs" ? "threads" : "jobs",
+    })),
 }));
