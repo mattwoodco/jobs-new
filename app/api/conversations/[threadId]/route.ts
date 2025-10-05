@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
-import { memory } from "@/lib/mastra/memory";
+
+const MASTRA_API_URL = "http://localhost:3020";
+const AGENT_ID = "workflowAgent";
 
 export async function GET(
   _request: Request,
@@ -8,25 +10,36 @@ export async function GET(
   try {
     const { threadId } = await params;
 
-    // Get thread details
-    const thread = await memory.getThreadById({ threadId });
+    // Get thread details from Mastra API
+    const threadUrl = `${MASTRA_API_URL}/api/memory/threads/${threadId}?agentId=${AGENT_ID}`;
+    const threadResponse = await fetch(threadUrl);
 
-    if (!thread) {
-      return NextResponse.json(
-        { error: "Conversation not found" },
-        { status: 404 },
-      );
+    if (!threadResponse.ok) {
+      if (threadResponse.status === 404) {
+        return NextResponse.json(
+          { error: "Conversation not found" },
+          { status: 404 },
+        );
+      }
+      throw new Error(`Mastra API returned ${threadResponse.status}`);
     }
 
-    // Get messages for the thread
-    const { messages, uiMessages } = await memory.query({
-      threadId,
-    });
+    const thread = await threadResponse.json();
+
+    // Get messages for the thread from Mastra API
+    const messagesUrl = `${MASTRA_API_URL}/api/memory/threads/${threadId}/messages?agentId=${AGENT_ID}`;
+    const messagesResponse = await fetch(messagesUrl);
+
+    if (!messagesResponse.ok) {
+      throw new Error(`Mastra API returned ${messagesResponse.status}`);
+    }
+
+    const messagesData = await messagesResponse.json();
 
     return NextResponse.json({
       thread,
-      messages,
-      uiMessages,
+      messages: messagesData.messages || [],
+      uiMessages: messagesData.uiMessages || [],
     });
   } catch (error) {
     console.error("Error fetching conversation details:", error);

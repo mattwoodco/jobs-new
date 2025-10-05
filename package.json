@@ -11,8 +11,7 @@
     "format": "biome format --write",
     "dev:mastra": "npx mastra dev --dir lib/mastra",
     "db:push": "drizzle-kit push",
-    "db:studio": "drizzle-kit studio",
-    "db:seed": "tsx lib/db/seed.ts"
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.42",

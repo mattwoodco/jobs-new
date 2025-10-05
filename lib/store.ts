@@ -1,5 +1,22 @@
 import { create } from "zustand";
-import { type Job, mockJobSearches } from "./mock-data";
+
+export type JobView = {
+  id: string;
+  title: string;
+  description: string;
+  content: string;
+  subViews?: JobView[];
+};
+
+export type Job = {
+  id: string;
+  title: string;
+  company: string;
+  location: string;
+  salary: string;
+  description: string;
+  views: JobView[];
+};
 
 export type ViewMode = "jobs" | "threads";
 
@@ -53,7 +70,7 @@ interface JobSearchStore {
   setIsCreatingNewJob: (isCreating: boolean) => void;
 }
 
-export const useJobSearchStore = create<JobSearchStore>()((set, get) => ({
+export const useJobSearchStore = create<JobSearchStore>()((set, _get) => ({
   jobSearches: [],
   selectedJobSearchId: null,
   selectedJobId: null,
@@ -66,14 +83,8 @@ export const useJobSearchStore = create<JobSearchStore>()((set, get) => ({
     set({ initialized: false });
   },
   initialize: () => {
-    const state = get();
-    if (!state.initialized) {
-      set({
-        jobSearches: mockJobSearches,
-        selectedJobSearchId: mockJobSearches[0]?.id || null,
-        initialized: true,
-      });
-    }
+    // No longer using mock data - all data comes from the database
+    set({ initialized: true });
   },
   setJobSearches: (jobSearches) =>
     set({

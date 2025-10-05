@@ -1,10 +1,11 @@
 "use client";
 
-import { MessageSquare, Plus } from "lucide-react";
+import { Briefcase, MessageSquare, Plus } from "lucide-react";
 import Link from "next/link";
 import { useEffect } from "react";
 
 import { Button } from "@/components/ui/button";
+import { ButtonGroup } from "@/components/ui/button-group";
 // import {
 //   DropdownMenu,
 //   DropdownMenuContent,
@@ -23,7 +24,7 @@ import { useViewStore, useJobSearchStore } from "@/lib/store";
 import { MastraLink } from "./mastra-link";
 
 export function Header() {
-  const { toggleViewMode } = useViewStore();
+  const { viewMode, setViewMode } = useViewStore();
   const {
     jobSearches,
     selectedJobSearchId,
@@ -117,16 +118,26 @@ export function Header() {
           </div> */}
         </div>
 
-        {/* Right side: Dropdown icon buttons */}
+        {/* Right side: Button group and other actions */}
         <div className="flex items-center gap-2">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleViewMode}
-            className="cursor-pointer"
-          >
-            <MessageSquare className="w-4 h-4" />
-          </Button>
+          <ButtonGroup>
+            <Button
+              variant={viewMode === "jobs" ? "secondary" : "outline"}
+              size="icon"
+              onClick={() => setViewMode("jobs")}
+              className="cursor-pointer"
+            >
+              <Briefcase className="w-4 h-4" />
+            </Button>
+            <Button
+              variant={viewMode === "threads" ? "secondary" : "outline"}
+              size="icon"
+              onClick={() => setViewMode("threads")}
+              className="cursor-pointer"
+            >
+              <MessageSquare className="w-4 h-4" />
+            </Button>
+          </ButtonGroup>
           {/* <Button
             variant="ghost"
             size="icon"

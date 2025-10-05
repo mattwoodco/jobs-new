@@ -32,24 +32,23 @@ export default function Home() {
   const [_isLoadingJobs, setIsLoadingJobs] = useState(false);
 
   // Helper function to transform database views to recursive structure
-  const transformViewsToRecursive = useCallback(
-    (views: JobViewWithSubViews[]): RecursiveItem["views"] => {
-      return views.map((view) => ({
-        id: view.id,
-        title: view.title,
-        description: view.description,
-        content: view.content,
-        subViews: view.subViews
-          ? transformViewsToRecursive(view.subViews)
-          : undefined,
-      }));
-    },
-    [],
-  );
+  const transformViewsToRecursive = useCallback(function transformViews(
+    views: JobViewWithSubViews[],
+  ): RecursiveItem["views"] {
+    return views.map((view) => ({
+      id: view.id,
+      title: view.title,
+      description: view.description,
+      content: view.content,
+      subViews: view.subViews ? transformViews(view.subViews) : undefined,
+    }));
+  }, []);
 
-  // Fetch all job searches (for dropdown)
+  // Fetch all job searches (for dropdown) - only run once on mount or when switching to jobs view
   useEffect(() => {
     async function fetchAllJobSearches() {
+      if (initialized) return; // Only fetch once
+
       try {
         const response = await fetch("/api/jobs");
         const data = await response.json();
@@ -71,20 +70,21 @@ export default function Home() {
           if (!selectedJobSearchId && transformedSearches.length > 0) {
             setSelectedJobSearchId(transformedSearches[0].id);
           }
-        } else if (!initialized) {
-          // Fallback to mock data if no database data exists
-          initialize();
+        } else {
+          // No job searches found in database
+          setJobSearches([]);
+          setSelectedJobSearchId(null);
         }
       } catch (error) {
         console.error("Error fetching job searches:", error);
-        // Fallback to mock data on error
-        if (!initialized) {
-          initialize();
-        }
+        setJobSearches([]);
+        setSelectedJobSearchId(null);
+      } finally {
+        initialize();
       }
     }
 
-    if (viewMode === "jobs") {
+    if (viewMode === "jobs" && !initialized) {
       fetchAllJobSearches();
     }
   }, [
@@ -99,13 +99,13 @@ export default function Home() {
   // Fetch jobs for the selected job search
   useEffect(() => {
     async function fetchJobsForSearch() {
-      if (!selectedJobSearchId) return;
+      if (!selectedJobSearchId || !initialized) return;
 
-      // Only fetch if the selected job search exists in our list
-      const jobSearchExists = jobSearches.some(
+      // Check if we already have jobs for this search
+      const selectedSearch = jobSearches.find(
         (search) => search.id === selectedJobSearchId,
       );
-      if (!jobSearchExists) return;
+      if (!selectedSearch || selectedSearch.jobs.length > 0) return;
 
       try {
         setIsLoadingJobs(true);
@@ -114,7 +114,7 @@ export default function Home() {
         );
         const data = await response.json();
 
-        if (data && data.jobs) {
+        if (data?.jobs) {
           // Update the specific job search with its jobs
           const jobSearch: JobSearchWithJobs = data;
           const transformedJobs = jobSearch.jobs.map((job) => ({
@@ -143,12 +143,15 @@ export default function Home() {
       }
     }
 
-    if (viewMode === "jobs" && selectedJobSearchId) {
+    if (viewMode === "jobs" && selectedJobSearchId && initialized) {
       fetchJobsForSearch();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     viewMode,
     selectedJobSearchId,
+    initialized,
+    jobSearches.find,
     jobSearches.map, // Update only the jobs for this specific search
     setJobSearches,
     transformViewsToRecursive,
@@ -160,10 +163,8 @@ export default function Home() {
       try {
         setIsLoadingConversations(true);
 
-        // Determine resourceId based on selected job search
-        // Map selectedJobSearchId to resourceId
-        // Default to job-search-1 for demo purposes
-        const resourceId = selectedJobSearchId || "job-search-1";
+        // Use consistent resourceId "test-user" to match the same data from Swagger UI
+        const resourceId = "test-user";
 
         // Fetch all conversations with messages for each thread
         const response = await fetch(
@@ -231,12 +232,7 @@ export default function Home() {
     if (viewMode === "threads") {
       fetchConversations();
     }
-  }, [
-    viewMode,
-    selectedJobSearchId,
-    selectedConversationId,
-    setSelectedConversationId,
-  ]);
+  }, [viewMode, selectedConversationId, setSelectedConversationId]);
 
   // Get the selected job search
   const selectedJobSearch = jobSearches.find(
@@ -287,7 +283,7 @@ export default function Home() {
         );
         const data = await jobsResponse.json();
 
-        if (data && data.jobs) {
+        if (data?.jobs) {
           const jobSearch: JobSearchWithJobs = data;
           const transformedJobs = jobSearch.jobs.map((job) => ({
             id: job.id,
