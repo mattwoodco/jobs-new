@@ -53,7 +53,10 @@ export async function GET(
       uiMessages: messagesData.uiMessages || [],
     });
   } catch (error) {
-    console.error("❌ [CONVERSATION DETAIL API] Error fetching conversation details:", error);
+    console.error(
+      "❌ [CONVERSATION DETAIL API] Error fetching conversation details:",
+      error,
+    );
     return NextResponse.json(
       { error: "Failed to fetch conversation details" },
       { status: 500 },

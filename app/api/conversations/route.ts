@@ -31,7 +31,10 @@ export async function GET(request: Request) {
 
     return NextResponse.json({ conversations: threads });
   } catch (error) {
-    console.error("❌ [CONVERSATIONS API] Error fetching conversations:", error);
+    console.error(
+      "❌ [CONVERSATIONS API] Error fetching conversations:",
+      error,
+    );
     return NextResponse.json(
       { error: "Failed to fetch conversations" },
       { status: 500 },

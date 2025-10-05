@@ -1,5 +1,5 @@
 import { mastra } from "@/lib/mastra";
-import { UIMessage } from "ai";
+import type { UIMessage } from "ai";
 
 export const maxDuration = 30;
 
@@ -49,7 +49,10 @@ export async function POST(req: Request) {
     return result.toUIMessageStreamResponse();
   } catch (error) {
     console.error("❌ [CHAT API] Error in chat API route:", error);
-    console.error("❌ [CHAT API] Error stack:", error instanceof Error ? error.stack : "No stack trace");
+    console.error(
+      "❌ [CHAT API] Error stack:",
+      error instanceof Error ? error.stack : "No stack trace",
+    );
     return new Response(
       JSON.stringify({
         error: "Failed to process chat request",
