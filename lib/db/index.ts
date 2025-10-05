@@ -4,6 +4,7 @@ import * as schema from "./schema";
 
 // Database connection
 const connectionString =
+  process.env.JOBS_APP_DATABASE_URL ||
   process.env.DATABASE_URL ||
   "postgresql://postgres:postgres@localhost:5433/jobs";
 
