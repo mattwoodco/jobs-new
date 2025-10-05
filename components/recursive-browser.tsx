@@ -112,14 +112,25 @@ export function RecursiveBrowser({
     setSelectedItem(null);
     setSelectedView(null);
     setSelectedSubView(null);
-    setResetScrollTrigger(prev => prev + 1);
-  }, [selectedJobSearchId, viewMode]);
+    setResetScrollTrigger((prev) => prev + 1);
+
+    // Also clear the parent's selectedItemId to prevent re-selection
+    if (onSelectItemId) {
+      onSelectItemId(null);
+    }
+  }, [selectedJobSearchId, viewMode, onSelectItemId]);
 
   // Sync selectedItemId prop with internal state
   useEffect(() => {
     if (selectedItemId !== undefined) {
       const item = items.find((i) => i.id === selectedItemId);
-      setSelectedItem(item || null);
+      // Only update if the item actually changed (avoid re-triggering when items array updates)
+      setSelectedItem(prev => {
+        if (prev?.id === item?.id) {
+          return prev;
+        }
+        return item || null;
+      });
     }
   }, [selectedItemId, items]);
 

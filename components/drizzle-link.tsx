@@ -1,10 +1,10 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Bot } from "lucide-react";
+import { Database } from "lucide-react";
 import Link from "next/link";
 
-export function MastraLink() {
+export function DrizzleLink() {
   if (process.env.NODE_ENV !== "development") {
     return null;
   }
@@ -12,11 +12,11 @@ export function MastraLink() {
   return (
     <Button variant="outline" asChild className="cursor-pointer">
       <Link
-        href="http://localhost:3020/"
+        href="https://local.drizzle.studio/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Bot />
+        <Database />
       </Link>
     </Button>
   );

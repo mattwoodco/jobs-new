@@ -65,6 +65,7 @@ export function BrowseModeView({
   const viewDetailRef = useRef<HTMLDivElement>(null);
   const subViewDetailRef = useRef<HTMLDivElement>(null);
   const isInitialMount = useRef(true);
+  const isNavigatingBack = useRef(false);
 
   // Reset isInitialMount when resetScrollTrigger changes (view mode or job search changes)
   useEffect(() => {
@@ -77,6 +78,11 @@ export function BrowseModeView({
   useEffect(() => {
     if (isInitialMount.current) {
       isInitialMount.current = false;
+      return;
+    }
+
+    // Don't auto-scroll if we're navigating back to the list
+    if (isNavigatingBack.current) {
       return;
     }
 
@@ -132,28 +138,51 @@ export function BrowseModeView({
   };
 
   const handleBackToItemDetail = () => {
-    itemDetailRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "start",
-    });
+    // Clear all selections to go back to list
+    setSelectedItem(null);
+    setSelectedView(null);
+    setSelectedSubView(null);
+
+    // Scroll back to item list
     setTimeout(() => {
-      setSelectedView(null);
-      setSelectedSubView(null);
-    }, 300);
+      itemListRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "start",
+      });
+    }, 10);
   };
 
   const handleBackToItemList = () => {
-    itemListRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "start",
-    });
+    // Set flag to prevent auto-scroll
+    isNavigatingBack.current = true;
+
+    // Find the scroll container
+    const scrollContainer = itemListRef.current?.closest('.overflow-x-auto');
+
+    if (scrollContainer) {
+      // Temporarily disable scroll snap by removing Tailwind classes
+      scrollContainer.classList.remove('snap-x', 'snap-mandatory');
+
+      // Scroll to the start
+      scrollContainer.scrollTo({
+        left: 0,
+        behavior: 'smooth'
+      });
+
+      // Re-enable scroll snap after scroll completes and reset flag
+      setTimeout(() => {
+        scrollContainer.classList.add('snap-x', 'snap-mandatory');
+        isNavigatingBack.current = false;
+      }, 600);
+    }
+
+    // Clear selection after starting scroll
     setTimeout(() => {
       setSelectedItem(null);
       setSelectedView(null);
       setSelectedSubView(null);
-    }, 300);
+    }, 100);
   };
 
   return (

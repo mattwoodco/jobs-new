@@ -20,8 +20,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { navConfig } from "@/lib/config";
-import { useViewStore, useJobSearchStore } from "@/lib/store";
-import { MastraLink } from "./mastra-link";
+import { useJobSearchStore, useViewStore } from "@/lib/store";
 
 export function Header() {
   const { viewMode, setViewMode } = useViewStore();
@@ -122,6 +121,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <ButtonGroup>
             <Button
+              id="job-view-button"
               variant={viewMode === "jobs" ? "secondary" : "outline"}
               size="icon"
               onClick={() => setViewMode("jobs")}
@@ -130,6 +130,7 @@ export function Header() {
               <Briefcase className="w-4 h-4" />
             </Button>
             <Button
+              id="conversation-view-button"
               variant={viewMode === "threads" ? "secondary" : "outline"}
               size="icon"
               onClick={() => setViewMode("threads")}
@@ -152,7 +153,8 @@ export function Header() {
           >
             <Bell className="w-4 h-4" />
           </Button> */}
-          <MastraLink />
+          {/* <MastraLink />
+          <DrizzleLink /> */}
         </div>
       </div>
     </header>

@@ -231,6 +231,9 @@ export default function Home() {
 
     if (viewMode === "threads") {
       fetchConversations();
+    } else {
+      // Clear conversation selection when switching away from threads view
+      setSelectedConversationId(null);
     }
   }, [viewMode, setSelectedConversationId]);
 
