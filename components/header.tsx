@@ -79,12 +79,24 @@ export function Header() {
 
           <Select
             value={selectedJobSearchId || ""}
-            onValueChange={setSelectedJobSearchId}
+            onValueChange={(value) => {
+              if (value === "new") {
+                setIsCreatingNewJobSearch(true);
+              } else {
+                setSelectedJobSearchId(value);
+              }
+            }}
           >
             <SelectTrigger className="w-[220px] cursor-pointer">
               <SelectValue placeholder="Select job search" />
             </SelectTrigger>
             <SelectContent>
+              <SelectItem value="new" className="font-medium">
+                <div className="flex items-center gap-2">
+                  <Plus className="w-4 h-4" />
+                  Add new Search
+                </div>
+              </SelectItem>
               {jobSearches.map((search) => (
                 <SelectItem key={search.id} value={search.id}>
                   {search.title}
@@ -92,15 +104,6 @@ export function Header() {
               ))}
             </SelectContent>
           </Select>
-
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsCreatingNewJobSearch(true)}
-            className="cursor-pointer"
-          >
-            <Plus className="w-4 h-4" />
-          </Button>
 
           {/* Desktop: Individual icon buttons */}
           {/* <div className="hidden md:flex items-center gap-2">
@@ -124,7 +127,11 @@ export function Header() {
               id="job-view-button"
               variant={viewMode === "jobs" ? "secondary" : "outline"}
               size="icon"
-              onClick={() => setViewMode("jobs")}
+              onClick={() => {
+                setViewMode("jobs");
+                // Remove focus to prevent hover state on first item
+                (document.activeElement as HTMLElement)?.blur();
+              }}
               className="cursor-pointer"
             >
               <Briefcase className="w-4 h-4" />
@@ -133,7 +140,11 @@ export function Header() {
               id="conversation-view-button"
               variant={viewMode === "threads" ? "secondary" : "outline"}
               size="icon"
-              onClick={() => setViewMode("threads")}
+              onClick={() => {
+                setViewMode("threads");
+                // Remove focus to prevent hover state on first item
+                (document.activeElement as HTMLElement)?.blur();
+              }}
               className="cursor-pointer"
             >
               <MessageSquare className="w-4 h-4" />

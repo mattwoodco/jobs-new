@@ -120,7 +120,7 @@
     @apply bg-background text-foreground overflow-hidden overscroll-none;
   }
   html {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   /* Minimal, thin scrollbar */

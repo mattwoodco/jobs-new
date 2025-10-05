@@ -102,10 +102,10 @@ export function RecursiveBrowser({
   );
 
   // Get view mode to reset scroll when switching modes
-  const viewMode = useViewStore((state) => state.viewMode);
+  const _viewMode = useViewStore((state) => state.viewMode);
 
   // Deselect all jobs when job search changes or when switching view modes
-  const selectedJobSearchId = useJobSearchStore(
+  const _selectedJobSearchId = useJobSearchStore(
     (state) => state.selectedJobSearchId,
   );
   useEffect(() => {
@@ -118,14 +118,14 @@ export function RecursiveBrowser({
     if (onSelectItemId) {
       onSelectItemId(null);
     }
-  }, [selectedJobSearchId, viewMode, onSelectItemId]);
+  }, [onSelectItemId]);
 
   // Sync selectedItemId prop with internal state
   useEffect(() => {
     if (selectedItemId !== undefined) {
       const item = items.find((i) => i.id === selectedItemId);
       // Only update if the item actually changed (avoid re-triggering when items array updates)
-      setSelectedItem(prev => {
+      setSelectedItem((prev) => {
         if (prev?.id === item?.id) {
           return prev;
         }

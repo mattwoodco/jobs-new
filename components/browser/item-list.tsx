@@ -52,7 +52,7 @@ export function ItemList({
                 key={item.id}
                 onClick={() => onSelectItem(item)}
                 className={`w-full text-left px-4 py-4 border-b cursor-pointer transition-colors hover:bg-accent/50 ${
-                  isSelected ? "bg-accent" : ""
+                  isSelected ? "md:bg-accent" : ""
                 }`}
               >
                 <div className="flex items-start justify-between gap-2">

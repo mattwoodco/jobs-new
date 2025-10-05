@@ -235,7 +235,7 @@ export default function Home() {
       // Clear conversation selection when switching away from threads view
       setSelectedConversationId(null);
     }
-  }, [viewMode, setSelectedConversationId]);
+  }, [viewMode, setSelectedConversationId, selectedConversationId]);
 
   // Get the selected job search
   const selectedJobSearch = jobSearches.find(

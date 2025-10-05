@@ -158,21 +158,21 @@ export function BrowseModeView({
     isNavigatingBack.current = true;
 
     // Find the scroll container
-    const scrollContainer = itemListRef.current?.closest('.overflow-x-auto');
+    const scrollContainer = itemListRef.current?.closest(".overflow-x-auto");
 
     if (scrollContainer) {
       // Temporarily disable scroll snap by removing Tailwind classes
-      scrollContainer.classList.remove('snap-x', 'snap-mandatory');
+      scrollContainer.classList.remove("snap-x", "snap-mandatory");
 
       // Scroll to the start
       scrollContainer.scrollTo({
         left: 0,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
 
       // Re-enable scroll snap after scroll completes and reset flag
       setTimeout(() => {
-        scrollContainer.classList.add('snap-x', 'snap-mandatory');
+        scrollContainer.classList.add("snap-x", "snap-mandatory");
         isNavigatingBack.current = false;
       }, 600);
     }
