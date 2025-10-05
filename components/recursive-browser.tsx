@@ -113,7 +113,7 @@ export function RecursiveBrowser({
     setSelectedView(null);
     setSelectedSubView(null);
     setResetScrollTrigger((prev) => prev + 1);
-  }, [_viewMode, _selectedJobSearchId]);
+  }, []);
 
   // Sync selectedItemId prop with internal state
   useEffect(() => {
