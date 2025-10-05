@@ -163,8 +163,8 @@ export default function Home() {
       try {
         setIsLoadingConversations(true);
 
-        // Use consistent resourceId "test-user" to match the same data from Swagger UI
-        const resourceId = "test-user";
+        // Use consistent resourceId "workflowAgent" to match threads from Mastra playground
+        const resourceId = "workflowAgent";
 
         // Fetch all conversations with messages for each thread
         const response = await fetch(
@@ -232,7 +232,7 @@ export default function Home() {
     if (viewMode === "threads") {
       fetchConversations();
     }
-  }, [viewMode, selectedConversationId, setSelectedConversationId]);
+  }, [viewMode, setSelectedConversationId]);
 
   // Get the selected job search
   const selectedJobSearch = jobSearches.find(

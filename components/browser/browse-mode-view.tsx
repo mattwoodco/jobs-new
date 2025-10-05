@@ -40,6 +40,7 @@ interface BrowseModeViewProps {
   setRightPanelSize: (size: number) => void;
   isHydrated: boolean;
   onAddNewItem?: () => void;
+  resetScrollTrigger?: number;
 }
 
 export function BrowseModeView({
@@ -57,12 +58,20 @@ export function BrowseModeView({
   setRightPanelSize,
   isHydrated,
   onAddNewItem,
+  resetScrollTrigger,
 }: BrowseModeViewProps) {
   const itemListRef = useRef<HTMLDivElement>(null);
   const itemDetailRef = useRef<HTMLDivElement>(null);
   const viewDetailRef = useRef<HTMLDivElement>(null);
   const subViewDetailRef = useRef<HTMLDivElement>(null);
   const isInitialMount = useRef(true);
+
+  // Reset isInitialMount when resetScrollTrigger changes (view mode or job search changes)
+  useEffect(() => {
+    if (resetScrollTrigger && resetScrollTrigger > 0) {
+      isInitialMount.current = true;
+    }
+  }, [resetScrollTrigger]);
 
   // Auto-scroll on mobile when item is selected (skip initial mount)
   useEffect(() => {
@@ -101,6 +110,17 @@ export function BrowseModeView({
       });
     }
   }, [selectedSubView]);
+
+  // Scroll back to item list when job search changes (mobile only)
+  useEffect(() => {
+    if (resetScrollTrigger && resetScrollTrigger > 0) {
+      itemListRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "start",
+      });
+    }
+  }, [resetScrollTrigger]);
 
   const handleBackToViewDetail = () => {
     viewDetailRef.current?.scrollIntoView({

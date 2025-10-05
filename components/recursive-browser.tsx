@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-import { useJobSearchStore } from "@/lib/store";
+import { useJobSearchStore, useViewStore } from "@/lib/store";
 import { BrowseModeView } from "./browser/browse-mode-view";
 import { CreateModeView } from "./browser/create-mode-view";
 import { Header } from "./header";
@@ -91,6 +91,7 @@ export function RecursiveBrowser({
   );
   const [isHydrated, setIsHydrated] = useState(false);
   const [panelStore] = useState(() => createPanelStore(config.storageKey));
+  const [resetScrollTrigger, setResetScrollTrigger] = useState(0);
 
   const { leftPanelSize, rightPanelSize, setLeftPanelSize, setRightPanelSize } =
     panelStore();
@@ -100,15 +101,19 @@ export function RecursiveBrowser({
     (state) => state.isCreatingNewJobSearch,
   );
 
-  // Deselect all jobs when job search changes
-  const _selectedJobSearchId = useJobSearchStore(
+  // Get view mode to reset scroll when switching modes
+  const viewMode = useViewStore((state) => state.viewMode);
+
+  // Deselect all jobs when job search changes or when switching view modes
+  const selectedJobSearchId = useJobSearchStore(
     (state) => state.selectedJobSearchId,
   );
   useEffect(() => {
     setSelectedItem(null);
     setSelectedView(null);
     setSelectedSubView(null);
-  }, []);
+    setResetScrollTrigger(prev => prev + 1);
+  }, [selectedJobSearchId, viewMode]);
 
   // Sync selectedItemId prop with internal state
   useEffect(() => {
@@ -164,6 +169,7 @@ export function RecursiveBrowser({
               setRightPanelSize={setRightPanelSize}
               isHydrated={isHydrated}
               onAddNewItem={onAddNewItem}
+              resetScrollTrigger={resetScrollTrigger}
             />
           )}
         </div>
