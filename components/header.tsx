@@ -1,15 +1,15 @@
 "use client";
 
-import { Bell, MessageSquare, MoreVertical, Search } from "lucide-react";
+import { MessageSquare } from "lucide-react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+// import {
+//   DropdownMenu,
+//   DropdownMenuContent,
+//   DropdownMenuItem,
+//   DropdownMenuTrigger,
+// } from "@/components/ui/dropdown-menu";
 import {
   Select,
   SelectContent,
@@ -31,7 +31,7 @@ export function Header() {
         {/* Left side: Location dropdown + icon buttons */}
         <div className="flex items-center gap-2">
           {/* Mobile: Three-dot menu (before location) */}
-          <DropdownMenu>
+          {/* <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button
                 variant="ghost"
@@ -49,7 +49,7 @@ export function Header() {
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
 
           {/* Desktop: Home button */}
           <Button
@@ -80,7 +80,7 @@ export function Header() {
           </Select>
 
           {/* Desktop: Individual icon buttons */}
-          <div className="hidden md:flex items-center gap-2">
+          {/* <div className="hidden md:flex items-center gap-2">
             {navConfig.slice(1, 6).map((item) => (
               <Button
                 key={item.label}
@@ -91,12 +91,11 @@ export function Header() {
                 <item.icon className="w-4 h-4" />
               </Button>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* Right side: Dropdown icon buttons */}
         <div className="flex items-center gap-2">
-          <MastraLink />
           <Button
             variant="ghost"
             size="icon"
@@ -105,7 +104,7 @@ export function Header() {
           >
             <MessageSquare className="w-4 h-4" />
           </Button>
-          <Button
+          {/* <Button
             variant="ghost"
             size="icon"
             className="hidden md:flex cursor-pointer"
@@ -118,7 +117,8 @@ export function Header() {
             className="hidden md:flex cursor-pointer"
           >
             <Bell className="w-4 h-4" />
-          </Button>
+          </Button> */}
+          <MastraLink />
         </div>
       </div>
     </header>
