@@ -124,14 +124,70 @@ export function RecursiveBrowser({
         if (prev?.id === item?.id) {
           return prev;
         }
+        // When switching to a different item, try to maintain the same view type
+        if (prev?.id !== item?.id && item) {
+          // Get the current view title (if any)
+          const currentViewTitle = selectedView?.title;
+          const currentSubViewTitle = selectedSubView?.title;
+
+          if (currentViewTitle) {
+            // Find the matching view in the new item
+            const matchingView = item.views.find(
+              (v) => v.title === currentViewTitle,
+            );
+            setSelectedView(matchingView || null);
+
+            // If we had a subview selected, try to find it in the new view
+            if (currentSubViewTitle && matchingView?.subViews) {
+              const matchingSubView = matchingView.subViews.find(
+                (sv) => sv.title === currentSubViewTitle,
+              );
+              setSelectedSubView(matchingSubView || null);
+            } else {
+              setSelectedSubView(null);
+            }
+          } else {
+            setSelectedView(null);
+            setSelectedSubView(null);
+          }
+        }
         return item || null;
       });
     }
-  }, [selectedItemId, items]);
+  }, [selectedItemId, items, selectedView?.title, selectedSubView?.title]);
 
   // Handle internal selection changes and notify parent
   const handleSelectItem = (item: RecursiveItem | null) => {
-    setSelectedItem(item);
+    setSelectedItem((prev) => {
+      // When switching to a different item, try to maintain the same view type
+      if (prev?.id !== item?.id && item) {
+        // Get the current view title (if any)
+        const currentViewTitle = selectedView?.title;
+        const currentSubViewTitle = selectedSubView?.title;
+
+        if (currentViewTitle) {
+          // Find the matching view in the new item
+          const matchingView = item.views.find(
+            (v) => v.title === currentViewTitle,
+          );
+          setSelectedView(matchingView || null);
+
+          // If we had a subview selected, try to find it in the new view
+          if (currentSubViewTitle && matchingView?.subViews) {
+            const matchingSubView = matchingView.subViews.find(
+              (sv) => sv.title === currentSubViewTitle,
+            );
+            setSelectedSubView(matchingSubView || null);
+          } else {
+            setSelectedSubView(null);
+          }
+        } else {
+          setSelectedView(null);
+          setSelectedSubView(null);
+        }
+      }
+      return item;
+    });
     if (onSelectItemId) {
       onSelectItemId(item?.id || null);
     }

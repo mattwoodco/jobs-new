@@ -28,8 +28,6 @@ export default function Home() {
   const { selectedConversationId, setSelectedConversationId } =
     useConversationStore();
   const [conversations, setConversations] = useState<RecursiveItem[]>([]);
-  const [_isLoadingConversations, setIsLoadingConversations] = useState(true);
-  const [_isLoadingJobs, setIsLoadingJobs] = useState(false);
 
   // Clear selections when switching view modes
   useEffect(() => {
@@ -84,8 +82,7 @@ export default function Home() {
           setJobSearches([]);
           setSelectedJobSearchId(null);
         }
-      } catch (error) {
-        console.error("Error fetching job searches:", error);
+      } catch (_error) {
         setJobSearches([]);
         setSelectedJobSearchId(null);
       } finally {
@@ -117,7 +114,6 @@ export default function Home() {
       if (!selectedSearch || selectedSearch.jobs.length > 0) return;
 
       try {
-        setIsLoadingJobs(true);
         const response = await fetch(
           `/api/jobs?jobSearchId=${selectedJobSearchId}`,
         );
@@ -145,10 +141,8 @@ export default function Home() {
             ),
           );
         }
-      } catch (error) {
-        console.error("Error fetching jobs for search:", error);
-      } finally {
-        setIsLoadingJobs(false);
+      } catch (_error) {
+        // Error handling
       }
     }
 
@@ -170,8 +164,6 @@ export default function Home() {
   useEffect(() => {
     async function fetchConversations() {
       try {
-        setIsLoadingConversations(true);
-
         // Use consistent resourceId "workflowAgent" to match threads from Mastra playground
         const resourceId = "workflowAgent";
 
@@ -196,11 +188,7 @@ export default function Home() {
                   detailData.thread,
                   detailData.messages,
                 );
-              } catch (error) {
-                console.error(
-                  `Error fetching messages for thread ${thread.id}:`,
-                  error,
-                );
+              } catch (_error) {
                 // Transform without messages on error
                 return transformConversationToRecursiveItem(thread);
               }
@@ -224,12 +212,9 @@ export default function Home() {
             setSelectedConversationId(null);
           }
         }
-      } catch (error) {
-        console.error("Error fetching conversations:", error);
+      } catch (_error) {
         setConversations([]);
         setSelectedConversationId(null);
-      } finally {
-        setIsLoadingConversations(false);
       }
     }
 
@@ -312,8 +297,8 @@ export default function Home() {
           setSelectedJobId(newJob.id);
         }
       }
-    } catch (error) {
-      console.error("Error creating new job:", error);
+    } catch (_error) {
+      // Error handling
     }
   };
 

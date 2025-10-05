@@ -45,12 +45,16 @@ export const useViewStore = create<ViewStore>()(
 
 interface ConversationStore {
   selectedConversationId: string | null;
+  newConversationFlag: boolean;
   setSelectedConversationId: (id: string | null) => void;
+  setNewConversationFlag: (flag: boolean) => void;
 }
 
 export const useConversationStore = create<ConversationStore>()((set) => ({
   selectedConversationId: null,
+  newConversationFlag: false,
   setSelectedConversationId: (id) => set({ selectedConversationId: id }),
+  setNewConversationFlag: (flag) => set({ newConversationFlag: flag }),
 }));
 
 export type JobSearch = {

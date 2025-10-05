@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
+import { memory } from "@/lib/mastra/memory";
 
-const MASTRA_API_URL = "http://localhost:3020";
-const AGENT_ID = "workflowAgent";
+const _AGENT_ID = "workflowAgent";
 const RESOURCE_ID = "test-user";
 
 type Thread = {
@@ -14,32 +14,14 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const resourceId = searchParams.get("resourceId") || RESOURCE_ID;
 
-    console.log("🔍 [CONVERSATIONS API] Fetching threads:", {
+    // Fetch threads directly from Memory instance
+    const threads = await memory.getThreadsByResourceId({
       resourceId,
-      agentId: AGENT_ID,
-    });
-
-    // Fetch threads from Mastra API for persistent database storage
-    const url = `${MASTRA_API_URL}/api/memory/threads?resourceid=${resourceId}&agentId=${AGENT_ID}`;
-    const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error(`Mastra API returned ${response.status}`);
-    }
-
-    const threads = await response.json();
-
-    console.log("✅ [CONVERSATIONS API] Fetched threads:", {
-      count: threads?.length || 0,
-      threadIds: threads?.map((t: Thread) => t.id).slice(0, 3) || [],
     });
 
     return NextResponse.json({ conversations: threads });
   } catch (error) {
-    console.error(
-      "❌ [CONVERSATIONS API] Error fetching conversations:",
-      error,
-    );
+    console.error("Error fetching conversations:", error);
     return NextResponse.json(
       { error: "Failed to fetch conversations" },
       { status: 500 },
@@ -59,24 +41,12 @@ export async function POST(request: Request) {
       );
     }
 
-    // Create thread via Mastra API for persistent database storage
-    const url = `${MASTRA_API_URL}/api/memory/threads?agentId=${AGENT_ID}`;
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        title,
-        resourceId,
-      }),
+    // Create thread directly using Memory instance
+    const thread = await memory.createThread({
+      title,
+      resourceId,
     });
 
-    if (!response.ok) {
-      throw new Error(`Mastra API returned ${response.status}`);
-    }
-
-    const thread = await response.json();
     return NextResponse.json({ thread });
   } catch (error) {
     console.error("Error creating conversation:", error);

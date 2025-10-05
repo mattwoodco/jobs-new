@@ -35,7 +35,8 @@ export function Header() {
     setIsCreatingNewJobSearch,
     initialize,
   } = useJobSearchStore();
-  const { setSelectedConversationId } = useConversationStore();
+  const { setSelectedConversationId, setNewConversationFlag } =
+    useConversationStore();
 
   useEffect(() => {
     initialize();
@@ -59,16 +60,17 @@ export function Header() {
         const result = await response.json();
         const newThread = result.thread;
 
+        // Set flag to auto-open messages view
+        setNewConversationFlag(true);
+
         // Select the new thread to open it
         setSelectedConversationId(newThread.id);
 
         // Force a page refresh to load the new thread
         window.location.reload();
-      } else {
-        console.error("Failed to create thread");
       }
-    } catch (error) {
-      console.error("Error creating thread:", error);
+    } catch (_error) {
+      // Error handling
     }
   };
 
@@ -113,33 +115,35 @@ export function Header() {
             </Link>
           </Button>
 
-          <Select
-            value={selectedJobSearchId || ""}
-            onValueChange={(value) => {
-              if (value === "new") {
-                setIsCreatingNewJobSearch(true);
-              } else {
-                setSelectedJobSearchId(value);
-              }
-            }}
-          >
-            <SelectTrigger className="w-[220px] cursor-pointer">
-              <SelectValue placeholder="Select job search" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="new" className="font-medium">
-                <div className="flex items-center gap-2">
-                  <Plus className="w-4 h-4" />
-                  Add new Search
-                </div>
-              </SelectItem>
-              {jobSearches.map((search) => (
-                <SelectItem key={search.id} value={search.id}>
-                  {search.title}
+          {viewMode === "jobs" && (
+            <Select
+              value={selectedJobSearchId || ""}
+              onValueChange={(value) => {
+                if (value === "new") {
+                  setIsCreatingNewJobSearch(true);
+                } else {
+                  setSelectedJobSearchId(value);
+                }
+              }}
+            >
+              <SelectTrigger className="w-[220px] cursor-pointer">
+                <SelectValue placeholder="Select job search" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="new" className="font-medium">
+                  <div className="flex items-center gap-2">
+                    <Plus className="w-4 h-4" />
+                    Add new Search
+                  </div>
                 </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+                {jobSearches.map((search) => (
+                  <SelectItem key={search.id} value={search.id}>
+                    {search.title}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          )}
 
           {/* Desktop: Individual icon buttons */}
           {/* <div className="hidden md:flex items-center gap-2">

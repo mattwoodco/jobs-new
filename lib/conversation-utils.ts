@@ -7,6 +7,7 @@ import type {
   ConversationMessage,
   ConversationAttachment,
 } from "./types/conversation";
+import { timeAgo } from "./utils/time-ago";
 
 export function transformConversationToRecursiveItem(
   thread: ConversationThread,
@@ -18,13 +19,17 @@ export function transformConversationToRecursiveItem(
   const messageCount =
     metadata.messageCount || messages?.length.toString() || "0";
 
+  // Calculate time ago from updatedAt or createdAt
+  const timestamp = thread.updatedAt || thread.createdAt;
+  const timeAgoText = timestamp ? timeAgo(timestamp) : "";
+
   // Parse attachments if they exist
   let attachments: ConversationAttachment[] = [];
   if (metadata.attachments) {
     try {
       attachments = JSON.parse(metadata.attachments);
-    } catch (e) {
-      console.error("Error parsing attachments:", e);
+    } catch (_e) {
+      // Error parsing attachments
     }
   }
 
@@ -117,6 +122,7 @@ export function transformConversationToRecursiveItem(
       company,
       messageCount: `${messageCount} messages`,
       status,
+      timestamp: timeAgoText,
     },
     views,
   };

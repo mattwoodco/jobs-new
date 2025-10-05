@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
+import { memory } from "@/lib/mastra/memory";
 
-const MASTRA_API_URL = "http://localhost:3020";
-const AGENT_ID = "workflowAgent";
+const _AGENT_ID = "workflowAgent";
 
 export async function GET(
   _request: Request,
@@ -10,53 +10,26 @@ export async function GET(
   try {
     const { threadId } = await params;
 
-    console.log("🔍 [CONVERSATION DETAIL API] Fetching thread:", {
-      threadId,
-      agentId: AGENT_ID,
-    });
+    // Get thread details directly from Memory instance
+    const thread = await memory.getThreadById({ threadId });
 
-    // Get thread details from Mastra API
-    const threadUrl = `${MASTRA_API_URL}/api/memory/threads/${threadId}?agentId=${AGENT_ID}`;
-    const threadResponse = await fetch(threadUrl);
-
-    if (!threadResponse.ok) {
-      if (threadResponse.status === 404) {
-        return NextResponse.json(
-          { error: "Conversation not found" },
-          { status: 404 },
-        );
-      }
-      throw new Error(`Mastra API returned ${threadResponse.status}`);
+    if (!thread) {
+      return NextResponse.json(
+        { error: "Conversation not found" },
+        { status: 404 },
+      );
     }
 
-    const thread = await threadResponse.json();
-
-    // Get messages for the thread from Mastra API
-    const messagesUrl = `${MASTRA_API_URL}/api/memory/threads/${threadId}/messages?agentId=${AGENT_ID}`;
-    const messagesResponse = await fetch(messagesUrl);
-
-    if (!messagesResponse.ok) {
-      throw new Error(`Mastra API returned ${messagesResponse.status}`);
-    }
-
-    const messagesData = await messagesResponse.json();
-
-    console.log("✅ [CONVERSATION DETAIL API] Thread details fetched:", {
-      threadId: thread.id,
-      resourceId: thread.resourceId,
-      messageCount: messagesData.messages?.length || 0,
-    });
+    // Get messages for the thread directly from Memory instance
+    const messagesData = await memory.query({ threadId });
 
     return NextResponse.json({
       thread,
-      messages: messagesData.messages || [],
-      uiMessages: messagesData.uiMessages || [],
+      messages: messagesData?.messages || [],
+      uiMessages: messagesData?.uiMessages || [],
     });
   } catch (error) {
-    console.error(
-      "❌ [CONVERSATION DETAIL API] Error fetching conversation details:",
-      error,
-    );
+    console.error("Error fetching conversation details:", error);
     return NextResponse.json(
       { error: "Failed to fetch conversation details" },
       { status: 500 },

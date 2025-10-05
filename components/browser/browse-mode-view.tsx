@@ -24,6 +24,7 @@ import { ItemDetail } from "./item-detail";
 import { ItemList } from "./item-list";
 import { SubViewDetail } from "./subview-detail";
 import { ViewDetail } from "./view-detail";
+import { useConversationStore, useViewStore } from "@/lib/store";
 
 interface BrowseModeViewProps {
   items: RecursiveItem[];
@@ -66,6 +67,10 @@ export function BrowseModeView({
   const subViewDetailRef = useRef<HTMLDivElement>(null);
   const isInitialMount = useRef(true);
   const isNavigatingBack = useRef(false);
+
+  const { viewMode } = useViewStore();
+  const { newConversationFlag, setNewConversationFlag } =
+    useConversationStore();
 
   // Reset isInitialMount when resetScrollTrigger changes (view mode or job search changes)
   useEffect(() => {
@@ -127,6 +132,27 @@ export function BrowseModeView({
       });
     }
   }, [resetScrollTrigger]);
+
+  // Auto-select Messages view when new conversation is created
+  useEffect(() => {
+    if (newConversationFlag && selectedItem && viewMode === "threads") {
+      // Find the Messages view
+      const messagesView = selectedItem.views.find((v) =>
+        v.id.endsWith("-messages"),
+      );
+      if (messagesView) {
+        setSelectedView(messagesView);
+      }
+      // Clear the flag
+      setNewConversationFlag(false);
+    }
+  }, [
+    newConversationFlag,
+    selectedItem,
+    setSelectedView,
+    setNewConversationFlag,
+    viewMode,
+  ]);
 
   const handleBackToViewDetail = () => {
     viewDetailRef.current?.scrollIntoView({

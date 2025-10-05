@@ -64,11 +64,9 @@ export function NewJobSearchForm() {
 
         reset();
         setIsCreatingNewJobSearch(false);
-      } else {
-        console.error("Failed to create job search");
       }
-    } catch (error) {
-      console.error("Error creating job search:", error);
+    } catch (_error) {
+      // Error handling
     }
   };
 

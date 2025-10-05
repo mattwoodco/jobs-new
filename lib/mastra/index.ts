@@ -7,10 +7,6 @@ export const mastra = new Mastra({
   agents: { workflowAgent },
   workflows: { dummyWorkflow },
   storage,
-  server: {
-    port: 3020,
-    host: "localhost",
-  },
   // logger: new PinoLogger({
   //   name: "Mastra",
   //   level: "info",
