@@ -31,6 +31,15 @@ export default function Home() {
   const [_isLoadingConversations, setIsLoadingConversations] = useState(true);
   const [_isLoadingJobs, setIsLoadingJobs] = useState(false);
 
+  // Clear selections when switching view modes
+  useEffect(() => {
+    if (viewMode === "jobs") {
+      setSelectedConversationId(null);
+    } else if (viewMode === "threads") {
+      setSelectedJobId(null);
+    }
+  }, [viewMode, setSelectedConversationId, setSelectedJobId]);
+
   // Helper function to transform database views to recursive structure
   const transformViewsToRecursive = useCallback(function transformViews(
     views: JobViewWithSubViews[],
@@ -200,22 +209,17 @@ export default function Home() {
 
           setConversations(conversationsWithMessages);
 
-          // Auto-select the most recently selected conversation, or the first one if none selected
-          if (conversationsWithMessages.length > 0) {
-            if (selectedConversationId) {
-              // Check if the previously selected conversation still exists
-              const stillExists = conversationsWithMessages.find(
-                (c) => c.id === selectedConversationId,
-              );
-              if (!stillExists) {
-                // If it doesn't exist, select the first conversation
-                setSelectedConversationId(conversationsWithMessages[0].id);
-              }
-            } else {
-              // No conversation selected, select the first one
-              setSelectedConversationId(conversationsWithMessages[0].id);
+          // Validate that the currently selected conversation still exists
+          if (conversationsWithMessages.length > 0 && selectedConversationId) {
+            // Check if the previously selected conversation still exists
+            const stillExists = conversationsWithMessages.find(
+              (c) => c.id === selectedConversationId,
+            );
+            if (!stillExists) {
+              // If it doesn't exist anymore, clear the selection
+              setSelectedConversationId(null);
             }
-          } else {
+          } else if (conversationsWithMessages.length === 0) {
             // No conversations available
             setSelectedConversationId(null);
           }
@@ -231,9 +235,6 @@ export default function Home() {
 
     if (viewMode === "threads") {
       fetchConversations();
-    } else {
-      // Clear conversation selection when switching away from threads view
-      setSelectedConversationId(null);
     }
   }, [viewMode, setSelectedConversationId, selectedConversationId]);
 

@@ -113,12 +113,7 @@ export function RecursiveBrowser({
     setSelectedView(null);
     setSelectedSubView(null);
     setResetScrollTrigger((prev) => prev + 1);
-
-    // Also clear the parent's selectedItemId to prevent re-selection
-    if (onSelectItemId) {
-      onSelectItemId(null);
-    }
-  }, [onSelectItemId]);
+  }, [_viewMode, _selectedJobSearchId]);
 
   // Sync selectedItemId prop with internal state
   useEffect(() => {
