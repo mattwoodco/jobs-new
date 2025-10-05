@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
 import { memory } from "@/lib/mastra/memory";
 
-const _AGENT_ID = "workflowAgent";
-
 export async function GET(
   _request: Request,
   { params }: { params: Promise<{ threadId: string }> },

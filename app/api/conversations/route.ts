@@ -1,13 +1,7 @@
 import { NextResponse } from "next/server";
 import { memory } from "@/lib/mastra/memory";
 
-const _AGENT_ID = "workflowAgent";
 const RESOURCE_ID = "test-user";
-
-type Thread = {
-  id: string;
-  [key: string]: unknown;
-};
 
 export async function GET(request: Request) {
   try {
