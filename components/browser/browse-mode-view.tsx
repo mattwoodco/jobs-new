@@ -251,7 +251,7 @@ export function BrowseModeView({
             </ResizablePanel>
 
             {/* View Detail Panel (Desktop only, conditional) */}
-            {selectedView && (
+            {selectedView && !selectedSubView && (
               <>
                 <ResizableHandle withHandle className="hidden md:flex" />
                 <ResizablePanel
@@ -267,6 +267,25 @@ export function BrowseModeView({
                     onSelectSubView={setSelectedSubView}
                     onBack={handleBackToItemDetail}
                     config={config}
+                  />
+                </ResizablePanel>
+              </>
+            )}
+
+            {/* Sub-View Detail Panel (Desktop only, conditional) */}
+            {selectedSubView && (
+              <>
+                <ResizableHandle withHandle className="hidden md:flex" />
+                <ResizablePanel
+                  defaultSize={rightPanelSize}
+                  minSize={20}
+                  maxSize={40}
+                  className="overflow-y-auto hidden md:block"
+                  onResize={(size) => setRightPanelSize(size)}
+                >
+                  <SubViewDetail
+                    subView={selectedSubView}
+                    onBack={handleBackToViewDetail}
                   />
                 </ResizablePanel>
               </>

@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 export type JobView = {
   id: string;
@@ -26,14 +27,21 @@ interface ViewStore {
   toggleViewMode: () => void;
 }
 
-export const useViewStore = create<ViewStore>()((set) => ({
-  viewMode: "jobs",
-  setViewMode: (mode) => set({ viewMode: mode }),
-  toggleViewMode: () =>
-    set((state) => ({
-      viewMode: state.viewMode === "jobs" ? "threads" : "jobs",
-    })),
-}));
+export const useViewStore = create<ViewStore>()(
+  persist(
+    (set) => ({
+      viewMode: "jobs",
+      setViewMode: (mode) => set({ viewMode: mode }),
+      toggleViewMode: () =>
+        set((state) => ({
+          viewMode: state.viewMode === "jobs" ? "threads" : "jobs",
+        })),
+    }),
+    {
+      name: "view-mode-storage",
+    },
+  ),
+);
 
 interface ConversationStore {
   selectedConversationId: string | null;

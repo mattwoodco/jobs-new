@@ -10,6 +10,11 @@ export async function GET(
   try {
     const { threadId } = await params;
 
+    console.log("🔍 [CONVERSATION DETAIL API] Fetching thread:", {
+      threadId,
+      agentId: AGENT_ID,
+    });
+
     // Get thread details from Mastra API
     const threadUrl = `${MASTRA_API_URL}/api/memory/threads/${threadId}?agentId=${AGENT_ID}`;
     const threadResponse = await fetch(threadUrl);
@@ -36,13 +41,19 @@ export async function GET(
 
     const messagesData = await messagesResponse.json();
 
+    console.log("✅ [CONVERSATION DETAIL API] Thread details fetched:", {
+      threadId: thread.id,
+      resourceId: thread.resourceId,
+      messageCount: messagesData.messages?.length || 0,
+    });
+
     return NextResponse.json({
       thread,
       messages: messagesData.messages || [],
       uiMessages: messagesData.uiMessages || [],
     });
   } catch (error) {
-    console.error("Error fetching conversation details:", error);
+    console.error("❌ [CONVERSATION DETAIL API] Error fetching conversation details:", error);
     return NextResponse.json(
       { error: "Failed to fetch conversation details" },
       { status: 500 },

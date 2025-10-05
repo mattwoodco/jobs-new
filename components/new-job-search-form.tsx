@@ -120,6 +120,14 @@ export function NewJobSearchForm() {
       </Field>
 
       <div className="flex justify-end gap-2">
+        <Button
+          type="button"
+          variant="outline"
+          onClick={() => setIsCreatingNewJobSearch(false)}
+          disabled={isSubmitting}
+        >
+          Cancel
+        </Button>
         <Button type="submit" disabled={isSubmitting}>
           {isSubmitting ? "Creating..." : "Create Job Search"}
         </Button>

@@ -3,6 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import type { RecursiveView } from "../recursive-browser";
+import { MessagesChatView } from "./messages-chat-view";
 
 interface SubViewDetailProps {
   subView: RecursiveView;
@@ -10,6 +11,19 @@ interface SubViewDetailProps {
 }
 
 export function SubViewDetail({ subView, onBack }: SubViewDetailProps) {
+  // If this is a Messages subview, render the chat interface
+  if (subView.title === "Messages") {
+    return (
+      <MessagesChatView
+        subViewId={subView.id}
+        title={subView.title}
+        description={subView.description}
+        onBack={onBack}
+      />
+    );
+  }
+
+  // For all other subviews, render the default content view
   return (
     <div className="h-full flex flex-col overflow-y-auto">
       <div className="px-4 py-4 border-b shrink-0">

@@ -1,8 +1,7 @@
 import { gateway } from "@ai-sdk/gateway";
 
 import { Agent } from "@mastra/core/agent";
-import { Memory } from "@mastra/memory";
-import { LibSQLStore } from "@mastra/libsql";
+import { memory } from "../memory";
 import { dummyWorkflow } from "../workflows/dummy-workflow";
 
 export const workflowAgent = new Agent({
@@ -22,9 +21,5 @@ export const workflowAgent = new Agent({
   workflows: {
     dummy_workflow: dummyWorkflow,
   },
-  memory: new Memory({
-    storage: new LibSQLStore({
-      url: "file:../mastra.db", // path is relative to the .mastra/output directory
-    }),
-  }),
+  memory,
 });

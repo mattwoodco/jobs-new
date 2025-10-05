@@ -31,23 +31,23 @@ export function transformConversationToRecursiveItem(
   // Build views
   const views: RecursiveView[] = [];
 
-  // Messages view
-  if (messages && messages.length > 0) {
-    const messageContent = messages
-      .map((msg) => {
-        const sender = msg.role === "user" ? "You" : company;
-        const time = new Date(msg.createdAt).toLocaleString();
-        return `[${time}] ${sender}: ${msg.content}`;
-      })
-      .join("\n\n");
+  // Messages view - Always show chat UI, even for new conversations
+  const messageContent = messages
+    ? messages
+        .map((msg) => {
+          const sender = msg.role === "user" ? "You" : company;
+          const time = new Date(msg.createdAt).toLocaleString();
+          return `[${time}] ${sender}: ${msg.content}`;
+        })
+        .join("\n\n")
+    : "No messages yet";
 
-    views.push({
-      id: `${thread.id}-messages`,
-      title: "Messages",
-      description: "View conversation history",
-      content: messageContent || "No messages yet",
-    });
-  }
+  views.push({
+    id: `${thread.id}-messages`,
+    title: "Messages",
+    description: "Chat with this contact",
+    content: messageContent,
+  });
 
   // Thread info view
   const threadInfo = [

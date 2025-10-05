@@ -20,7 +20,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { navConfig } from "@/lib/config";
-import { useJobSearchStore, useViewStore } from "@/lib/store";
+import {
+  useJobSearchStore,
+  useViewStore,
+  useConversationStore,
+} from "@/lib/store";
 
 export function Header() {
   const { viewMode, setViewMode } = useViewStore();
@@ -31,10 +35,42 @@ export function Header() {
     setIsCreatingNewJobSearch,
     initialize,
   } = useJobSearchStore();
+  const { setSelectedConversationId } = useConversationStore();
 
   useEffect(() => {
     initialize();
   }, [initialize]);
+
+  const handleNewChat = async () => {
+    try {
+      // Create thread via Mastra API with a default title
+      const response = await fetch("/api/conversations", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title: `Conversation ${new Date().toLocaleDateString()}`,
+          resourceId: "workflowAgent",
+        }),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        const newThread = result.thread;
+
+        // Select the new thread to open it
+        setSelectedConversationId(newThread.id);
+
+        // Force a page refresh to load the new thread
+        window.location.reload();
+      } else {
+        console.error("Failed to create thread");
+      }
+    } catch (error) {
+      console.error("Error creating thread:", error);
+    }
+  };
 
   return (
     <header className="w-full bg-background border-b">
@@ -122,6 +158,17 @@ export function Header() {
 
         {/* Right side: Button group and other actions */}
         <div className="flex items-center gap-2">
+          {viewMode === "threads" && (
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleNewChat}
+              className="cursor-pointer"
+            >
+              <Plus className="w-4 h-4 mr-2" />
+              New Chat
+            </Button>
+          )}
           <ButtonGroup>
             <Button
               id="job-view-button"

@@ -1,9 +1,12 @@
+"use client";
+
 import { ArrowLeft } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import type { BrowserConfig, RecursiveView } from "../recursive-browser";
 import { ViewSelectionButton } from "./view-selection-button";
+import { MessagesChatView } from "./messages-chat-view";
 
 interface ViewDetailProps {
   view: RecursiveView;
@@ -20,6 +23,19 @@ export function ViewDetail({
   onBack,
   config,
 }: ViewDetailProps) {
+  // If this is a Messages view, render the chat interface
+  if (view.title === "Messages") {
+    return (
+      <MessagesChatView
+        subViewId={view.id}
+        title={view.title}
+        description={view.description}
+        onBack={onBack}
+      />
+    );
+  }
+
+  // For all other views, render the default content view
   return (
     <div className="h-full flex flex-col overflow-y-auto">
       <div className="px-4 py-4 border-b shrink-0">

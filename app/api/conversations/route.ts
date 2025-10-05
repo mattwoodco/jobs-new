@@ -9,6 +9,11 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const resourceId = searchParams.get("resourceId") || RESOURCE_ID;
 
+    console.log("🔍 [CONVERSATIONS API] Fetching threads:", {
+      resourceId,
+      agentId: AGENT_ID,
+    });
+
     // Fetch threads from Mastra API for persistent database storage
     const url = `${MASTRA_API_URL}/api/memory/threads?resourceid=${resourceId}&agentId=${AGENT_ID}`;
     const response = await fetch(url);
@@ -18,9 +23,15 @@ export async function GET(request: Request) {
     }
 
     const threads = await response.json();
+
+    console.log("✅ [CONVERSATIONS API] Fetched threads:", {
+      count: threads?.length || 0,
+      threadIds: threads?.map((t: any) => t.id).slice(0, 3) || [],
+    });
+
     return NextResponse.json({ conversations: threads });
   } catch (error) {
-    console.error("Error fetching conversations:", error);
+    console.error("❌ [CONVERSATIONS API] Error fetching conversations:", error);
     return NextResponse.json(
       { error: "Failed to fetch conversations" },
       { status: 500 },
