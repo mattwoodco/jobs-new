@@ -1,11 +1,11 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useExternalStoreRuntime } from "@assistant-ui/react";
 import { Thread } from "@assistant-ui/react-ui";
 import { ArrowLeft } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
-import type { UIMessage } from "ai";
+import { useChat } from "@ai-sdk/react";
+import { useAISDKRuntime } from "@assistant-ui/react-ai-sdk";
 
 interface MessagesChatViewProps {
   subViewId: string;
@@ -25,134 +25,91 @@ export function MessagesChatView({
     return subViewId.replace(/-messages$/, "");
   }, [subViewId]);
 
-  const [messages, setMessages] = useState<UIMessage[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  // Use AI SDK's useChat hook with threadId and resourceId in the body
+  const chat = useChat({
+    api: "/api/chat",
+    body: {
+      threadId,
+      resourceId: "workflowAgent",
+    },
+    initialMessages: [],
+    onResponse: (response) => {
+      console.log("📥 [CHAT UI] Response received:", {
+        status: response.status,
+        ok: response.ok,
+        headers: Object.fromEntries(response.headers.entries()),
+        bodyUsed: response.bodyUsed,
+      });
+    },
+    onFinish: (message) => {
+      const content = message.content;
+      const contentStr =
+        typeof content === "string" ? content : JSON.stringify(content);
+      console.log("✅ [CHAT UI] Message finished:", {
+        role: message.role,
+        contentType: typeof content,
+        contentLength: contentStr?.length ?? 0,
+        contentPreview: contentStr?.substring(0, 100) ?? "N/A",
+      });
+    },
+    onError: (error) => {
+      console.error("❌ [CHAT UI] Error:", error);
+    },
+  });
 
   // Fetch existing messages from the thread
   useEffect(() => {
     async function fetchMessages() {
       try {
         setIsLoading(true);
-        console.log(
-          "🔍 [MESSAGES VIEW] Fetching messages for thread:",
-          threadId,
-        );
         const response = await fetch(`/api/conversations/${threadId}`);
         if (response.ok) {
           const data = await response.json();
-          console.log("🔍 [MESSAGES VIEW] Received data:", {
-            hasThread: !!data.thread,
-            messageCount: data.messages?.length || 0,
-            uiMessageCount: data.uiMessages?.length || 0,
-          });
 
-          // Filter messages to only include text parts
-          const filteredMessages = (data.uiMessages || []).map(
-            (msg: UIMessage) => ({
-              ...msg,
-              parts: msg.parts?.filter((part) => part.type === "text") || [],
-            }),
-          );
-
-          setMessages(filteredMessages);
-        } else {
-          console.error("🔍 [MESSAGES VIEW] Response not ok:", response.status);
-          setMessages([]);
+          // Set initial messages from the thread
+          if (data.uiMessages && data.uiMessages.length > 0) {
+            chat.setMessages(data.uiMessages);
+          }
         }
       } catch (error) {
         console.error("Failed to fetch messages:", error);
-        setMessages([]);
       } finally {
         setIsLoading(false);
       }
     }
 
     fetchMessages();
-  }, [threadId]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [threadId, chat.setMessages]);
 
-  // Create runtime using ExternalStoreRuntime for full control over messages
-  const runtime = useExternalStoreRuntime({
-    messages,
-    convertMessage: (message) => {
-      const textParts = (message.parts || []).filter(
-        (part) => part.type === "text",
-      );
-      const content = textParts.map((part) => part.text).join("");
-      return {
-        id: message.id,
-        role: message.role,
-        content: [{ type: "text", text: content }],
+  // Log message updates
+  useEffect(() => {
+    const lastMsg = chat.messages[chat.messages.length - 1];
+    let lastMessageInfo = null;
+
+    if (lastMsg) {
+      const content = lastMsg.content;
+      const contentStr =
+        typeof content === "string" ? content : JSON.stringify(content);
+      lastMessageInfo = {
+        role: lastMsg.role,
+        contentType: typeof content,
+        contentLength: contentStr?.length ?? 0,
+        contentPreview: contentStr?.substring(0, 50) ?? "N/A",
       };
-    },
-    onNew: async (message) => {
-      console.log("🔍 [MESSAGES VIEW] Sending new message:", message);
+    }
 
-      // Extract text content from message parts
-      const textContent = message.content
-        .filter((part) => part.type === "text")
-        .map((part) => part.text)
-        .join("");
+    console.log("💬 [CHAT UI] Messages updated:", {
+      count: chat.messages.length,
+      isLoading: chat.isLoading,
+      lastMessage: lastMessageInfo,
+    });
+  }, [chat.messages, chat.isLoading]);
 
-      // Add user message optimistically
-      const userMessage: UIMessage = {
-        id: crypto.randomUUID(),
-        role: "user",
-        parts: [{ type: "text", text: textContent }],
-      };
-      setMessages((prev) => [...prev, userMessage]);
-
-      // Call API
-      try {
-        const response = await fetch("/api/chat", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            messages: [...messages, userMessage],
-            threadId,
-            resourceId: "workflowAgent",
-          }),
-        });
-
-        if (!response.ok) throw new Error("Failed to send message");
-
-        // Stream the response
-        const reader = response.body?.getReader();
-        if (!reader) throw new Error("No response body");
-
-        const decoder = new TextDecoder();
-        let assistantText = "";
-        let assistantMessage: UIMessage = {
-          id: crypto.randomUUID(),
-          role: "assistant",
-          parts: [{ type: "text", text: "" }],
-        };
-
-        setMessages((prev) => [...prev, assistantMessage]);
-
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-
-          const chunk = decoder.decode(value);
-          const lines = chunk.split("\n").filter((line) => line.trim());
-
-          for (const line of lines) {
-            if (line.startsWith("0:")) {
-              const content = line.substring(2).trim().replace(/^"|"$/g, "");
-              assistantText += content;
-              assistantMessage = {
-                ...assistantMessage,
-                parts: [{ type: "text", text: assistantText }],
-              };
-              setMessages((prev) => [...prev.slice(0, -1), assistantMessage]);
-            }
-          }
-        }
-      } catch (error) {
-        console.error("Error sending message:", error);
-      }
-    },
-  });
+  // Use assistant-ui runtime adapter for AI SDK
+  const runtime = useAISDKRuntime(chat);
 
   return (
     <div className="h-full flex flex-col">

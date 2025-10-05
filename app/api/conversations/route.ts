@@ -8,10 +8,19 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const resourceId = searchParams.get("resourceId") || RESOURCE_ID;
 
+    console.log("📋 [GET] Fetching conversations for resourceId:", resourceId);
+
     // Fetch threads directly from Memory instance
     const threads = await memory.getThreadsByResourceId({
       resourceId,
     });
+
+    console.log(
+      "📋 [GET] Found",
+      threads.length,
+      "conversations:",
+      threads.map((t) => ({ id: t.id, title: t.title })),
+    );
 
     return NextResponse.json({ conversations: threads });
   } catch (error) {

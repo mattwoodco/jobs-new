@@ -34,3 +34,27 @@ export async function GET(
     );
   }
 }
+
+export async function DELETE(
+  _request: Request,
+  { params }: { params: Promise<{ threadId: string }> },
+) {
+  try {
+    const { threadId } = await params;
+
+    console.log("🗑️  [DELETE] Attempting to delete thread:", threadId);
+
+    // Delete thread from Memory instance
+    await memory.deleteThread(threadId);
+
+    console.log("✅ [DELETE] Thread deleted successfully:", threadId);
+
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error("❌ [DELETE] Error deleting conversation:", error);
+    return NextResponse.json(
+      { error: "Failed to delete conversation" },
+      { status: 500 },
+    );
+  }
+}

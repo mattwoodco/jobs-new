@@ -41,6 +41,7 @@ interface BrowseModeViewProps {
   setRightPanelSize: (size: number) => void;
   isHydrated: boolean;
   onAddNewItem?: () => void;
+  onDeleteItem?: (itemId: string) => void;
   resetScrollTrigger?: number;
 }
 
@@ -59,6 +60,7 @@ export function BrowseModeView({
   setRightPanelSize,
   isHydrated,
   onAddNewItem,
+  onDeleteItem,
   resetScrollTrigger,
 }: BrowseModeViewProps) {
   const itemListRef = useRef<HTMLDivElement>(null);
@@ -239,6 +241,7 @@ export function BrowseModeView({
                 onSelectItem={setSelectedItem}
                 config={config}
                 onAddNewItem={onAddNewItem}
+                onDeleteItem={onDeleteItem}
               />
             </ResizablePanel>
 

@@ -302,6 +302,27 @@ export default function Home() {
     }
   };
 
+  // Handler for deleting a conversation
+  const handleDeleteConversation = async (conversationId: string) => {
+    try {
+      const response = await fetch(`/api/conversations/${conversationId}`, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        // Remove the conversation from the list
+        setConversations((prev) => prev.filter((c) => c.id !== conversationId));
+
+        // If the deleted conversation was selected, clear selection
+        if (selectedConversationId === conversationId) {
+          setSelectedConversationId(null);
+        }
+      }
+    } catch (_error) {
+      // Error handling
+    }
+  };
+
   return (
     <RecursiveBrowser
       items={viewMode === "jobs" ? jobItems : conversations}
@@ -313,6 +334,9 @@ export default function Home() {
         viewMode === "jobs" ? setSelectedJobId : setSelectedConversationId
       }
       onAddNewItem={viewMode === "jobs" ? handleAddNewJob : undefined}
+      onDeleteItem={
+        viewMode === "threads" ? handleDeleteConversation : undefined
+      }
     />
   );
 }

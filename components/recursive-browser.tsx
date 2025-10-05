@@ -75,6 +75,7 @@ interface RecursiveBrowserProps {
   selectedItemId?: string | null;
   onSelectItemId?: (id: string | null) => void;
   onAddNewItem?: () => void;
+  onDeleteItem?: (itemId: string) => void;
 }
 
 export function RecursiveBrowser({
@@ -83,6 +84,7 @@ export function RecursiveBrowser({
   selectedItemId,
   onSelectItemId,
   onAddNewItem,
+  onDeleteItem,
 }: RecursiveBrowserProps) {
   const [selectedItem, setSelectedItem] = useState<RecursiveItem | null>(null);
   const [selectedView, setSelectedView] = useState<RecursiveView | null>(null);
@@ -231,6 +233,7 @@ export function RecursiveBrowser({
               setRightPanelSize={setRightPanelSize}
               isHydrated={isHydrated}
               onAddNewItem={onAddNewItem}
+              onDeleteItem={onDeleteItem}
               resetScrollTrigger={resetScrollTrigger}
             />
           )}
