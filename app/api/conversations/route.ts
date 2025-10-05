@@ -4,6 +4,11 @@ const MASTRA_API_URL = "http://localhost:3020";
 const AGENT_ID = "workflowAgent";
 const RESOURCE_ID = "test-user";
 
+type Thread = {
+  id: string;
+  [key: string]: unknown;
+};
+
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
@@ -26,7 +31,7 @@ export async function GET(request: Request) {
 
     console.log("✅ [CONVERSATIONS API] Fetched threads:", {
       count: threads?.length || 0,
-      threadIds: threads?.map((t: any) => t.id).slice(0, 3) || [],
+      threadIds: threads?.map((t: Thread) => t.id).slice(0, 3) || [],
     });
 
     return NextResponse.json({ conversations: threads });
