@@ -23,13 +23,13 @@ export function CollectionSidebar({
             key={collection.id}
             variant="ghost"
             className={cn(
-              "w-full justify-start",
+              "w-full justify-start min-w-0 truncate",
               selectedId === collection.id &&
                 "bg-accent text-accent-foreground",
             )}
             onClick={() => onSelect(collection)}
           >
-            {collection.name}
+            <span className="truncate">{collection.name}</span>
           </Button>
         ))}
       </div>

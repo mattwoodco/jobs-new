@@ -36,9 +36,10 @@ export function EntityDropdown({
       onChange={handleChange}
       value={selectedIndex >= 0 ? selectedIndex : ""}
       className={cn(
-        "flex h-9 w-auto bg-transparent px-3 py-1 text-sm transition-colors hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
+        "flex h-9 w-auto max-w-full bg-transparent px-3 py-1 text-sm transition-colors hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
         "disabled:cursor-not-allowed disabled:opacity-50",
+        "truncate",
         className,
       )}
     >

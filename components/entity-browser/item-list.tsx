@@ -20,12 +20,12 @@ export function ItemList({ items, selectedId, onSelect }: ItemListProps) {
               key={item.id}
               onClick={() => onSelect(item)}
               className={cn(
-                "flex flex-col items-start gap-2 rounded-lg border p-4 text-left transition-all hover:bg-accent w-full",
+                "flex flex-col items-start gap-2 rounded-lg border p-4 text-left transition-all hover:bg-accent w-full min-w-0",
                 selectedId === item.id && "bg-accent ring-2 ring-ring",
               )}
             >
-              <div className="font-medium">{item.name}</div>
-              <div className="text-sm text-muted-foreground">{item.type}</div>
+              <div className="font-medium truncate w-full">{item.name}</div>
+              <div className="text-sm text-muted-foreground truncate w-full">{item.type}</div>
             </button>
           ))}
         </div>
