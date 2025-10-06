@@ -9,9 +9,9 @@ export interface Item {
   name: string;
   description: string;
   type: string;
-  value: any;
+  value: unknown;
   metadata: Metadata;
-  properties: Record<string, any>;
+  properties: Record<string, unknown>;
 }
 
 export interface Collection {

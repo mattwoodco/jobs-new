@@ -46,7 +46,7 @@ export function EntityDropdown({
         Select {formattedEntityType.toLowerCase()}...
       </option>
       {entities.map((entity, index) => (
-        <option key={index} value={index}>
+        <option key={entity.id} value={index}>
           {entity.name}
         </option>
       ))}
