@@ -1,0 +1,1328 @@
+{
+  "entities": [
+    {
+      "id": "analytics_001",
+      "name": "Q4 2025 Job Search Analytics Dashboard",
+      "description": "Comprehensive performance analytics for job search activities from September-October 2025",
+      "metadata": {
+        "createdAt": "2025-09-01T00:00:00Z",
+        "updatedAt": "2025-10-05T16:30:00Z",
+        "tags": ["analytics", "active", "q4-2025"]
+      },
+      "collections": [
+        {
+          "id": "funnel_metrics_001",
+          "name": "Funnel Metrics",
+          "description": "Application funnel conversion rates and stage performance",
+          "metadata": {
+            "createdAt": "2025-09-01T00:00:00Z",
+            "updatedAt": "2025-10-05T16:30:00Z",
+            "tags": ["funnel", "conversion", "metrics"]
+          },
+          "items": [
+            {
+              "id": "metric_funnel_001",
+              "name": "Overall Funnel Performance",
+              "description": "End-to-end application funnel metrics",
+              "type": "funnel_metric",
+              "value": {
+                "total_applications": 47,
+                "resume_reviews_passed": 28,
+                "phone_screens_scheduled": 15,
+                "technical_interviews": 8,
+                "onsite_interviews": 4,
+                "offers_received": 2
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["funnel", "overall", "complete"]
+              },
+              "properties": {
+                "application_to_screen_rate": 0.596,
+                "screen_to_technical_rate": 0.533,
+                "technical_to_onsite_rate": 0.5,
+                "onsite_to_offer_rate": 0.5,
+                "overall_conversion_rate": 0.043,
+                "period": "2025-09-01 to 2025-10-05"
+              }
+            },
+            {
+              "id": "metric_funnel_002",
+              "name": "Company Size Funnel Analysis",
+              "description": "Funnel performance segmented by company size",
+              "type": "funnel_metric",
+              "value": {
+                "startup_0_50": {
+                  "applications": 18,
+                  "screen_rate": 0.722,
+                  "offer_rate": 0.056
+                },
+                "mid_size_51_500": {
+                  "applications": 15,
+                  "screen_rate": 0.533,
+                  "offer_rate": 0.067
+                },
+                "enterprise_500_plus": {
+                  "applications": 14,
+                  "screen_rate": 0.429,
+                  "offer_rate": 0.0
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["funnel", "company_size", "segmented"]
+              },
+              "properties": {
+                "best_performing_segment": "startup_0_50",
+                "highest_screen_rate": 0.722,
+                "highest_offer_rate": 0.067,
+                "insight": "Mid-size companies show best offer conversion despite lower screen rates"
+              }
+            },
+            {
+              "id": "metric_funnel_003",
+              "name": "Role Type Funnel Analysis",
+              "description": "Conversion rates by role specialization",
+              "type": "funnel_metric",
+              "value": {
+                "frontend_specialist": {
+                  "applications": 22,
+                  "screen_rate": 0.636,
+                  "offer_rate": 0.091
+                },
+                "fullstack_generalist": {
+                  "applications": 17,
+                  "screen_rate": 0.588,
+                  "offer_rate": 0.0
+                },
+                "backend_specialist": {
+                  "applications": 8,
+                  "screen_rate": 0.375,
+                  "offer_rate": 0.0
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["funnel", "role_type", "specialization"]
+              },
+              "properties": {
+                "best_performing_role": "frontend_specialist",
+                "frontend_advantage": "2x better offer rate than other roles",
+                "recommendation": "Focus 70% of applications on frontend specialist roles"
+              }
+            },
+            {
+              "id": "metric_funnel_004",
+              "name": "Application Method Funnel",
+              "description": "Success rates by application channel",
+              "type": "funnel_metric",
+              "value": {
+                "referral": {
+                  "applications": 8,
+                  "screen_rate": 0.875,
+                  "offer_rate": 0.25
+                },
+                "direct_apply": {
+                  "applications": 25,
+                  "screen_rate": 0.52,
+                  "offer_rate": 0.0
+                },
+                "recruiter_contact": {
+                  "applications": 10,
+                  "screen_rate": 0.7,
+                  "offer_rate": 0.0
+                },
+                "linkedin_easy_apply": {
+                  "applications": 4,
+                  "screen_rate": 0.25,
+                  "offer_rate": 0.0
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["funnel", "channel", "method"]
+              },
+              "properties": {
+                "best_channel": "referral",
+                "referral_screen_advantage": "68% higher than direct apply",
+                "referral_offer_advantage": "Only channel with offers to date",
+                "linkedin_easy_apply_warning": "Lowest performance, consider avoiding"
+              }
+            },
+            {
+              "id": "metric_funnel_005",
+              "name": "Remote vs Onsite Funnel",
+              "description": "Performance comparison for work location types",
+              "type": "funnel_metric",
+              "value": {
+                "fully_remote": {
+                  "applications": 28,
+                  "screen_rate": 0.571,
+                  "technical_rate": 0.25,
+                  "offer_rate": 0.036
+                },
+                "hybrid": {
+                  "applications": 13,
+                  "screen_rate": 0.692,
+                  "technical_rate": 0.444,
+                  "offer_rate": 0.077
+                },
+                "onsite": {
+                  "applications": 6,
+                  "screen_rate": 0.5,
+                  "technical_rate": 0.167,
+                  "offer_rate": 0.0
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["funnel", "location", "remote"]
+              },
+              "properties": {
+                "hybrid_advantage": "Best overall conversion to offers",
+                "remote_volume": "60% of all applications",
+                "recommendation": "Target 50% hybrid, 40% remote, 10% onsite"
+              }
+            }
+          ]
+        },
+        {
+          "id": "application_performance_001",
+          "name": "Application Performance Metrics",
+          "description": "Success rates and performance benchmarks for applications",
+          "metadata": {
+            "createdAt": "2025-09-01T00:00:00Z",
+            "updatedAt": "2025-10-05T16:30:00Z",
+            "tags": ["performance", "success_rates", "benchmarks"]
+          },
+          "items": [
+            {
+              "id": "metric_perf_001",
+              "name": "Resume Success Rate by Version",
+              "description": "Performance tracking for different resume iterations",
+              "type": "performance_metric",
+              "value": {
+                "version_3_2": {
+                  "applications": 12,
+                  "screen_rate": 0.75,
+                  "offer_rate": 0.083
+                },
+                "version_4_0": {
+                  "applications": 18,
+                  "screen_rate": 0.611,
+                  "offer_rate": 0.056
+                },
+                "version_4_1": {
+                  "applications": 17,
+                  "screen_rate": 0.471,
+                  "offer_rate": 0.0
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["resume", "version", "ab_test"]
+              },
+              "properties": {
+                "best_version": "3.2",
+                "version_3_2_features": [
+                  "Achievement-focused bullets",
+                  "Quantified impact",
+                  "Skills keyword optimization"
+                ],
+                "recommendation": "Return to v3.2 format, incorporate data engineering keywords from v4.1",
+                "statistical_significance": "Yes, p < 0.05"
+              }
+            },
+            {
+              "id": "metric_perf_002",
+              "name": "Cover Letter Impact Analysis",
+              "description": "Correlation between cover letter personalization and success",
+              "type": "performance_metric",
+              "value": {
+                "highly_personalized": {
+                  "count": 15,
+                  "screen_rate": 0.733,
+                  "offer_rate": 0.067,
+                  "avg_word_count": 340
+                },
+                "moderately_personalized": {
+                  "count": 20,
+                  "screen_rate": 0.55,
+                  "offer_rate": 0.05,
+                  "avg_word_count": 285
+                },
+                "generic_template": {
+                  "count": 12,
+                  "screen_rate": 0.417,
+                  "offer_rate": 0.0,
+                  "avg_word_count": 245
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["cover_letter", "personalization", "correlation"]
+              },
+              "properties": {
+                "personalization_value": "76% higher screen rate for highly personalized",
+                "optimal_word_count": "320-360 words",
+                "key_elements": [
+                  "Company mission alignment",
+                  "Specific project mention",
+                  "Team culture fit"
+                ],
+                "time_investment_roi": "15 min extra = 76% better results"
+              }
+            },
+            {
+              "id": "metric_perf_003",
+              "name": "Technical Skills Keyword Optimization",
+              "description": "Success rate correlation with skill keywords",
+              "type": "performance_metric",
+              "value": {
+                "react_typescript_combo": {
+                  "applications": 28,
+                  "screen_rate": 0.679,
+                  "interviews": 12
+                },
+                "fullstack_javascript": {
+                  "applications": 15,
+                  "screen_rate": 0.467,
+                  "interviews": 4
+                },
+                "frontend_generalist": {
+                  "applications": 4,
+                  "screen_rate": 0.25,
+                  "interviews": 0
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["skills", "keywords", "optimization"]
+              },
+              "properties": {
+                "top_performing_stack": "React + TypeScript",
+                "keyword_density_sweet_spot": "8-12 technical keywords per page",
+                "emerging_high_value_keywords": [
+                  "Next.js",
+                  "Tailwind CSS",
+                  "tRPC",
+                  "Prisma"
+                ],
+                "avoid_keywords": ["jQuery", "AngularJS", "Backbone.js"]
+              }
+            },
+            {
+              "id": "metric_perf_004",
+              "name": "Salary Expectation Impact",
+              "description": "How stated salary expectations affect screening rates",
+              "type": "performance_metric",
+              "value": {
+                "no_salary_stated": {
+                  "applications": 18,
+                  "screen_rate": 0.611
+                },
+                "market_rate_150_170k": {
+                  "applications": 15,
+                  "screen_rate": 0.667
+                },
+                "above_market_170_200k": {
+                  "applications": 10,
+                  "screen_rate": 0.5
+                },
+                "premium_200k_plus": {
+                  "applications": 4,
+                  "screen_rate": 0.25
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["salary", "compensation", "screening"]
+              },
+              "properties": {
+                "optimal_strategy": "State market rate (150-170k) for best screen rate",
+                "no_salary_paradox": "Slightly lower than market rate disclosure",
+                "premium_penalty": "75% drop in screening for 200k+ expectations",
+                "negotiation_recommendation": "State market rate, negotiate 15-20% higher at offer stage"
+              }
+            },
+            {
+              "id": "metric_perf_005",
+              "name": "Portfolio Presentation Impact",
+              "description": "Correlation between portfolio quality and interview rates",
+              "type": "performance_metric",
+              "value": {
+                "live_demo_plus_code": {
+                  "applications": 12,
+                  "interview_rate": 0.75,
+                  "offer_rate": 0.167
+                },
+                "github_only": {
+                  "applications": 20,
+                  "interview_rate": 0.45,
+                  "offer_rate": 0.0
+                },
+                "portfolio_site_only": {
+                  "applications": 10,
+                  "interview_rate": 0.5,
+                  "offer_rate": 0.0
+                },
+                "no_portfolio": {
+                  "applications": 5,
+                  "interview_rate": 0.2,
+                  "offer_rate": 0.0
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["portfolio", "demos", "presentation"]
+              },
+              "properties": {
+                "best_approach": "Live demo + GitHub code access",
+                "demo_advantage": "3.75x better interview rate vs no portfolio",
+                "key_success_factors": [
+                  "Deployed live projects",
+                  "Clean README docs",
+                  "Test coverage visible"
+                ],
+                "portfolio_project_count": "3-5 projects optimal, 2 minimum"
+              }
+            },
+            {
+              "id": "metric_perf_006",
+              "name": "Response Time Correlation",
+              "description": "Impact of application response speed on outcomes",
+              "type": "performance_metric",
+              "value": {
+                "within_24_hours": {
+                  "applications": 22,
+                  "screen_rate": 0.682,
+                  "avg_time_to_screen_days": 3.2
+                },
+                "24_to_72_hours": {
+                  "applications": 15,
+                  "screen_rate": 0.533,
+                  "avg_time_to_screen_days": 5.8
+                },
+                "3_to_7_days": {
+                  "applications": 7,
+                  "screen_rate": 0.429,
+                  "avg_time_to_screen_days": 8.1
+                },
+                "over_7_days": {
+                  "applications": 3,
+                  "screen_rate": 0.333,
+                  "avg_time_to_screen_days": 11.7
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["response_time", "speed", "urgency"]
+              },
+              "properties": {
+                "speed_advantage": "2x better screen rate for <24hr applications",
+                "optimal_window": "Within 48 hours of job posting",
+                "diminishing_returns": "After 3 days, significantly reduced success",
+                "automation_opportunity": "Set up job posting alerts for instant notification"
+              }
+            }
+          ]
+        },
+        {
+          "id": "time_analysis_001",
+          "name": "Time Analysis Metrics",
+          "description": "Timeline and duration analytics for application processes",
+          "metadata": {
+            "createdAt": "2025-09-01T00:00:00Z",
+            "updatedAt": "2025-10-05T16:30:00Z",
+            "tags": ["time", "duration", "timeline"]
+          },
+          "items": [
+            {
+              "id": "metric_time_001",
+              "name": "Average Response Times by Company Type",
+              "description": "Time to first response segmented by company characteristics",
+              "type": "time_metric",
+              "value": {
+                "startup_funded": {
+                  "avg_response_days": 2.8,
+                  "median_response_days": 2,
+                  "fastest_response_hours": 4,
+                  "slowest_response_days": 8
+                },
+                "established_tech": {
+                  "avg_response_days": 6.5,
+                  "median_response_days": 5,
+                  "fastest_response_hours": 24,
+                  "slowest_response_days": 18
+                },
+                "enterprise": {
+                  "avg_response_days": 11.2,
+                  "median_response_days": 10,
+                  "fastest_response_days": 5,
+                  "slowest_response_days": 21
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["response_time", "company_type", "speed"]
+              },
+              "properties": {
+                "fastest_responders": "Funded startups with active hiring",
+                "expectation_setting": "Enterprise: plan for 2+ week initial response",
+                "follow_up_recommendation": "Startups: 3 days, Tech: 7 days, Enterprise: 14 days",
+                "no_response_rate": "37% never respond (14 days cutoff)"
+              }
+            },
+            {
+              "id": "metric_time_002",
+              "name": "Interview Stage Duration Analysis",
+              "description": "Time spent in each interview stage",
+              "type": "time_metric",
+              "value": {
+                "resume_review_to_phone": {
+                  "avg_days": 5.2,
+                  "min_days": 1,
+                  "max_days": 14
+                },
+                "phone_to_technical": {
+                  "avg_days": 7.8,
+                  "min_days": 2,
+                  "max_days": 18
+                },
+                "technical_to_onsite": {
+                  "avg_days": 9.5,
+                  "min_days": 3,
+                  "max_days": 21
+                },
+                "onsite_to_offer": {
+                  "avg_days": 6.0,
+                  "min_days": 1,
+                  "max_days": 12
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["interview", "stages", "duration"]
+              },
+              "properties": {
+                "total_avg_process_days": 28.5,
+                "fastest_complete_process_days": 12,
+                "slowest_complete_process_days": 51,
+                "longest_stage": "technical_to_onsite",
+                "typical_timeline": "4-6 weeks from application to offer"
+              }
+            },
+            {
+              "id": "metric_time_003",
+              "name": "Time Investment per Application",
+              "description": "Hours spent on application materials and preparation",
+              "type": "time_metric",
+              "value": {
+                "resume_customization": {
+                  "avg_minutes": 35,
+                  "range_minutes": [15, 90]
+                },
+                "cover_letter_writing": {
+                  "avg_minutes": 42,
+                  "range_minutes": [20, 120]
+                },
+                "company_research": {
+                  "avg_minutes": 28,
+                  "range_minutes": [10, 60]
+                },
+                "portfolio_tailoring": {
+                  "avg_minutes": 55,
+                  "range_minutes": [0, 180]
+                },
+                "total_per_application": {
+                  "avg_hours": 2.67,
+                  "range_hours": [1, 6]
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["time_investment", "effort", "preparation"]
+              },
+              "properties": {
+                "high_effort_correlation": "3+ hours per app = 0.72 screen rate",
+                "low_effort_correlation": "<1.5 hours per app = 0.38 screen rate",
+                "roi_calculation": "Each extra hour invested = 18% higher screen rate",
+                "optimal_time_allocation": "40% research, 30% resume, 25% cover letter, 5% portfolio"
+              }
+            },
+            {
+              "id": "metric_time_004",
+              "name": "Interview Preparation Time Analysis",
+              "description": "Preparation hours vs interview performance",
+              "type": "time_metric",
+              "value": {
+                "phone_screen_prep": {
+                  "avg_hours": 2.5,
+                  "success_rate": 0.867,
+                  "key_activities": [
+                    "Company research",
+                    "Role alignment",
+                    "Questions prep"
+                  ]
+                },
+                "technical_interview_prep": {
+                  "avg_hours": 12.0,
+                  "success_rate": 0.625,
+                  "key_activities": [
+                    "Coding practice",
+                    "System design",
+                    "Tech stack review"
+                  ]
+                },
+                "onsite_interview_prep": {
+                  "avg_hours": 8.5,
+                  "success_rate": 0.5,
+                  "key_activities": [
+                    "Behavioral stories",
+                    "Culture research",
+                    "Mock interviews"
+                  ]
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["preparation", "interview", "study_time"]
+              },
+              "properties": {
+                "total_avg_prep_per_opportunity": 23.0,
+                "technical_prep_roi": "Highest time investment, critical for success",
+                "over_prep_warning": "Diminishing returns after 15 hours for technical",
+                "prep_efficiency_tip": "Reuse 70% of prep materials across similar roles"
+              }
+            },
+            {
+              "id": "metric_time_005",
+              "name": "Weekly Activity Summary",
+              "description": "Week-by-week application and interview activity",
+              "type": "time_metric",
+              "value": {
+                "week_2025_09_01": {
+                  "applications_sent": 8,
+                  "interviews_conducted": 1,
+                  "offers_received": 0,
+                  "hours_invested": 24.5
+                },
+                "week_2025_09_08": {
+                  "applications_sent": 12,
+                  "interviews_conducted": 2,
+                  "offers_received": 0,
+                  "hours_invested": 38.0
+                },
+                "week_2025_09_15": {
+                  "applications_sent": 9,
+                  "interviews_conducted": 3,
+                  "offers_received": 0,
+                  "hours_invested": 42.5
+                },
+                "week_2025_09_22": {
+                  "applications_sent": 7,
+                  "interviews_conducted": 4,
+                  "offers_received": 1,
+                  "hours_invested": 35.0
+                },
+                "week_2025_09_29": {
+                  "applications_sent": 6,
+                  "interviews_conducted": 3,
+                  "offers_received": 1,
+                  "hours_invested": 28.5
+                },
+                "week_2025_10_06": {
+                  "applications_sent": 5,
+                  "interviews_conducted": 2,
+                  "offers_received": 0,
+                  "hours_invested": 22.0
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["weekly", "activity", "summary"]
+              },
+              "properties": {
+                "peak_productivity_week": "week_2025_09_15",
+                "optimal_weekly_applications": "8-12 for quality maintenance",
+                "interview_volume_trend": "Increasing from week 2 onward",
+                "burnout_indicator": "Hours >40/week correlate with quality drop",
+                "recommended_pace": "10 applications + 3 interviews per week"
+              }
+            },
+            {
+              "id": "metric_time_006",
+              "name": "Day of Week Performance",
+              "description": "Success rates by application submission day",
+              "type": "time_metric",
+              "value": {
+                "monday": {
+                  "applications": 4,
+                  "screen_rate": 0.5
+                },
+                "tuesday": {
+                  "applications": 12,
+                  "screen_rate": 0.75
+                },
+                "wednesday": {
+                  "applications": 15,
+                  "screen_rate": 0.667
+                },
+                "thursday": {
+                  "applications": 9,
+                  "screen_rate": 0.556
+                },
+                "friday": {
+                  "applications": 5,
+                  "screen_rate": 0.4
+                },
+                "weekend": {
+                  "applications": 2,
+                  "screen_rate": 0.0
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["day_of_week", "timing", "optimization"]
+              },
+              "properties": {
+                "best_day": "Tuesday - 50% higher than average",
+                "worst_day": "Weekend - avoid entirely",
+                "tue_wed_advantage": "Combined 71% of successful screens",
+                "optimal_time": "Tuesday or Wednesday, 9-11am local time",
+                "friday_effect": "20% lower response rate, applications get buried"
+              }
+            }
+          ]
+        },
+        {
+          "id": "success_benchmarks_001",
+          "name": "Success Benchmarks & Comparative Metrics",
+          "description": "Performance benchmarks and competitive analysis",
+          "metadata": {
+            "createdAt": "2025-09-01T00:00:00Z",
+            "updatedAt": "2025-10-05T16:30:00Z",
+            "tags": ["benchmarks", "comparison", "goals"]
+          },
+          "items": [
+            {
+              "id": "metric_bench_001",
+              "name": "Industry Benchmark Comparison",
+              "description": "Personal performance vs industry averages",
+              "type": "benchmark_metric",
+              "value": {
+                "my_performance": {
+                  "application_to_screen": 0.596,
+                  "screen_to_offer": 0.133,
+                  "overall_success": 0.043
+                },
+                "industry_average": {
+                  "application_to_screen": 0.25,
+                  "screen_to_offer": 0.08,
+                  "overall_success": 0.02
+                },
+                "top_10_percent": {
+                  "application_to_screen": 0.65,
+                  "screen_to_offer": 0.15,
+                  "overall_success": 0.098
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["industry", "benchmark", "comparison"]
+              },
+              "properties": {
+                "vs_industry_performance": "+138% better screen rate, +66% better screen-to-offer",
+                "vs_top_10_percent": "-8% screen rate, -11% screen-to-offer",
+                "percentile_ranking": "Top 15% of job seekers",
+                "gap_to_elite": "Need 4% higher overall conversion to reach top 10%",
+                "strength_area": "Resume quality and initial screening",
+                "improvement_area": "Late-stage interview conversion"
+              }
+            },
+            {
+              "id": "metric_bench_002",
+              "name": "A/B Test Results - Approach Comparison",
+              "description": "Controlled tests of different job search strategies",
+              "type": "benchmark_metric",
+              "value": {
+                "test_volume_vs_quality": {
+                  "approach_a_high_volume": {
+                    "applications": 25,
+                    "avg_quality_score": 6.2,
+                    "screen_rate": 0.44,
+                    "hours_per_app": 1.2
+                  },
+                  "approach_b_high_quality": {
+                    "applications": 22,
+                    "avg_quality_score": 8.7,
+                    "screen_rate": 0.727,
+                    "hours_per_app": 3.8
+                  }
+                },
+                "test_networking_impact": {
+                  "with_referral_outreach": {
+                    "applications": 12,
+                    "screen_rate": 0.833,
+                    "offer_rate": 0.167
+                  },
+                  "without_referral": {
+                    "applications": 35,
+                    "screen_rate": 0.514,
+                    "offer_rate": 0.0
+                  }
+                },
+                "test_salary_timing": {
+                  "disclosed_early": {
+                    "applications": 24,
+                    "screen_rate": 0.625,
+                    "negotiation_success": 0.15
+                  },
+                  "disclosed_late": {
+                    "applications": 23,
+                    "screen_rate": 0.565,
+                    "negotiation_success": 0.25
+                  }
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["ab_test", "strategy", "optimization"]
+              },
+              "properties": {
+                "volume_vs_quality_winner": "Quality approach - 65% better screen rate",
+                "networking_impact": "Referrals provide 62% boost to screening",
+                "salary_timing_insight": "Wait until late stage for 67% better negotiation",
+                "recommended_strategy": "15 high-quality apps + 5 referral-based per month",
+                "test_confidence": "95% statistical significance on all tests"
+              }
+            },
+            {
+              "id": "metric_bench_003",
+              "name": "Geographic Market Performance",
+              "description": "Success rates by location and market",
+              "type": "benchmark_metric",
+              "value": {
+                "san_francisco_bay": {
+                  "applications": 15,
+                  "screen_rate": 0.733,
+                  "avg_salary_offered": 185000,
+                  "competition_level": "very_high"
+                },
+                "new_york_city": {
+                  "applications": 12,
+                  "screen_rate": 0.667,
+                  "avg_salary_offered": 175000,
+                  "competition_level": "very_high"
+                },
+                "seattle": {
+                  "applications": 8,
+                  "screen_rate": 0.625,
+                  "avg_salary_offered": 172000,
+                  "competition_level": "high"
+                },
+                "austin_denver": {
+                  "applications": 7,
+                  "screen_rate": 0.571,
+                  "avg_salary_offered": 152000,
+                  "competition_level": "medium"
+                },
+                "remote_first": {
+                  "applications": 5,
+                  "screen_rate": 0.4,
+                  "avg_salary_offered": 145000,
+                  "competition_level": "extreme"
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["geographic", "market", "location"]
+              },
+              "properties": {
+                "best_roi_market": "San Francisco Bay - highest salary and screen rate",
+                "remote_challenge": "2x more competitive than location-based roles",
+                "salary_vs_col_adjusted": "Austin/Denver best cost-of-living adjusted value",
+                "emerging_markets": "Nashville, Miami showing promise",
+                "recommendation": "Target SF/NYC for maximum compensation"
+              }
+            },
+            {
+              "id": "metric_bench_004",
+              "name": "Interview Performance Benchmarks",
+              "description": "Interview success metrics and improvement tracking",
+              "type": "benchmark_metric",
+              "value": {
+                "phone_screen": {
+                  "total_conducted": 15,
+                  "passed_to_next": 13,
+                  "success_rate": 0.867,
+                  "avg_score": 8.2,
+                  "improvement_trend": "+12% vs first month"
+                },
+                "technical_interview": {
+                  "total_conducted": 8,
+                  "passed_to_next": 5,
+                  "success_rate": 0.625,
+                  "avg_score": 7.1,
+                  "improvement_trend": "+8% vs first month"
+                },
+                "onsite_behavioral": {
+                  "total_conducted": 4,
+                  "passed_to_offer": 2,
+                  "success_rate": 0.5,
+                  "avg_score": 7.8,
+                  "improvement_trend": "Baseline, insufficient data"
+                },
+                "system_design": {
+                  "total_conducted": 4,
+                  "passed_assessment": 3,
+                  "success_rate": 0.75,
+                  "avg_score": 8.5,
+                  "improvement_trend": "+25% vs first attempt"
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["interview", "performance", "improvement"]
+              },
+              "properties": {
+                "strongest_stage": "Phone screen - 87% success rate",
+                "improvement_area": "Onsite behavioral - need more STAR examples",
+                "notable_progress": "System design improved 25% with practice",
+                "feedback_themes": "Strong technical skills, improve executive presence",
+                "next_focus": "Behavioral storytelling and leadership examples"
+              }
+            },
+            {
+              "id": "metric_bench_005",
+              "name": "Offer Negotiation Benchmarks",
+              "description": "Negotiation outcomes and leverage analysis",
+              "type": "benchmark_metric",
+              "value": {
+                "offer_001_techcorp": {
+                  "initial_offer": 165000,
+                  "final_offer": 180000,
+                  "increase_percentage": 9.1,
+                  "negotiation_rounds": 2,
+                  "leverage_used": ["Competing offer", "Market data"],
+                  "outcome": "accepted"
+                },
+                "offer_002_startup": {
+                  "initial_offer": 145000,
+                  "equity_initial": 0.15,
+                  "final_offer": 155000,
+                  "equity_final": 0.22,
+                  "increase_percentage": 6.9,
+                  "negotiation_rounds": 1,
+                  "leverage_used": ["Skill scarcity"],
+                  "outcome": "pending_decision"
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-22T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["negotiation", "offers", "compensation"]
+              },
+              "properties": {
+                "avg_increase_achieved": 8.0,
+                "best_leverage": "Competing offers - average 12% increase",
+                "equity_negotiation": "Achieved 47% equity increase at startup",
+                "negotiation_success_rate": 1.0,
+                "industry_avg_increase": 5.5,
+                "vs_industry": "+45% better negotiation outcomes",
+                "key_tactics": [
+                  "Market research",
+                  "Competing offers",
+                  "Value justification",
+                  "Patience"
+                ]
+              }
+            },
+            {
+              "id": "metric_bench_006",
+              "name": "Skills Gap Analysis",
+              "description": "Most requested skills vs current capabilities",
+              "type": "benchmark_metric",
+              "value": {
+                "have_and_requested": {
+                  "react": { "frequency": 38, "skill_level": 9 },
+                  "typescript": { "frequency": 35, "skill_level": 8 },
+                  "nodejs": { "frequency": 28, "skill_level": 7 },
+                  "graphql": { "frequency": 22, "skill_level": 6 }
+                },
+                "requested_but_lacking": {
+                  "kubernetes": { "frequency": 18, "skill_level": 3 },
+                  "aws_advanced": { "frequency": 25, "skill_level": 4 },
+                  "golang": { "frequency": 12, "skill_level": 2 },
+                  "microservices_arch": { "frequency": 20, "skill_level": 5 }
+                },
+                "have_but_not_requested": {
+                  "vue": { "frequency": 2, "skill_level": 7 },
+                  "python_django": { "frequency": 3, "skill_level": 6 }
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["skills", "gap_analysis", "training"]
+              },
+              "properties": {
+                "top_skill_gaps": [
+                  "Kubernetes",
+                  "Advanced AWS",
+                  "Microservices Architecture"
+                ],
+                "learning_roi": "Kubernetes skill closes 38% more opportunities",
+                "quick_wins": [
+                  "GraphQL advanced",
+                  "Docker/K8s basics",
+                  "AWS Solutions Architect"
+                ],
+                "recommended_training": "2 weeks K8s bootcamp could open 18 additional opportunities",
+                "skill_saturation": "React/TypeScript well covered, focus on infrastructure"
+              }
+            },
+            {
+              "id": "metric_bench_007",
+              "name": "Rejection Analysis & Learning",
+              "description": "Common rejection reasons and improvement opportunities",
+              "type": "benchmark_metric",
+              "value": {
+                "rejection_reasons": {
+                  "position_filled": { "count": 8, "percentage": 32 },
+                  "experience_mismatch": { "count": 7, "percentage": 28 },
+                  "technical_assessment": { "count": 5, "percentage": 20 },
+                  "culture_fit": { "count": 3, "percentage": 12 },
+                  "compensation_mismatch": { "count": 2, "percentage": 8 }
+                },
+                "feedback_themes": {
+                  "strengths": [
+                    "Strong technical foundation",
+                    "Good communication",
+                    "Portfolio quality"
+                  ],
+                  "improvements": [
+                    "Leadership examples",
+                    "Scale experience",
+                    "System design depth"
+                  ]
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["rejections", "feedback", "learning"]
+              },
+              "properties": {
+                "controllable_rejections": 40,
+                "uncontrollable_rejections": 60,
+                "key_improvement": "Add 2-3 leadership/mentoring examples to address 28% of rejections",
+                "technical_gaps": "System design depth mentioned in 5 rejections",
+                "action_items": [
+                  "Lead a project publicly",
+                  "System design course",
+                  "Senior+ role stories"
+                ],
+                "positive_trend": "Technical assessment pass rate improving monthly"
+              }
+            }
+          ]
+        },
+        {
+          "id": "experimental_metrics_001",
+          "name": "Experimental & Tracking Metrics",
+          "description": "In-progress experiments and tracking data",
+          "metadata": {
+            "createdAt": "2025-09-20T00:00:00Z",
+            "updatedAt": "2025-10-05T16:30:00Z",
+            "tags": ["experimental", "in_progress", "tracking"]
+          },
+          "items": [
+            {
+              "id": "metric_exp_001",
+              "name": "LinkedIn Optimization Experiment",
+              "description": "Testing different LinkedIn profile optimizations",
+              "type": "experimental_metric",
+              "value": {
+                "baseline_week": {
+                  "profile_views": 23,
+                  "recruiter_messages": 2,
+                  "connection_requests": 5
+                },
+                "headline_test_week": {
+                  "profile_views": 41,
+                  "recruiter_messages": 5,
+                  "connection_requests": 8,
+                  "change": "Added specific tech stack to headline"
+                },
+                "about_section_week": {
+                  "profile_views": 38,
+                  "recruiter_messages": 6,
+                  "connection_requests": 12,
+                  "change": "Rewrote About with achievement focus"
+                },
+                "current_week": {
+                  "profile_views": 52,
+                  "recruiter_messages": 9,
+                  "connection_requests": 15,
+                  "change": "Combined best elements + added portfolio"
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-20T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["linkedin", "profile", "optimization"]
+              },
+              "properties": {
+                "status": "in_progress",
+                "best_performer": "Current combined approach",
+                "views_increase": "+126% vs baseline",
+                "recruiter_increase": "+350% vs baseline",
+                "next_test": "Add video introduction to profile",
+                "hypothesis": "Video intro will increase recruiter messages by 30%"
+              }
+            },
+            {
+              "id": "metric_exp_002",
+              "name": "Cold Outreach Effectiveness Test",
+              "description": "Testing different outreach strategies to hiring managers",
+              "type": "experimental_metric",
+              "value": {
+                "email_only": {
+                  "sent": 15,
+                  "responses": 2,
+                  "response_rate": 0.133,
+                  "meetings_scheduled": 0
+                },
+                "linkedin_message": {
+                  "sent": 12,
+                  "responses": 5,
+                  "response_rate": 0.417,
+                  "meetings_scheduled": 2
+                },
+                "multi_touch": {
+                  "sent": 8,
+                  "responses": 6,
+                  "response_rate": 0.75,
+                  "meetings_scheduled": 4,
+                  "approach": "LinkedIn + email + comment on content"
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["outreach", "cold_email", "networking"]
+              },
+              "properties": {
+                "status": "in_progress",
+                "best_approach": "Multi-touch - 5.6x better than email only",
+                "key_insight": "Engaging with content first increases response 3x",
+                "sample_size_target": 50,
+                "current_sample": 35,
+                "recommended_template": "Value-first, short, specific ask",
+                "next_iteration": "Add Twitter engagement to multi-touch"
+              }
+            },
+            {
+              "id": "metric_exp_003",
+              "name": "Application Timing Optimization",
+              "description": "Finding optimal times for application submission",
+              "type": "experimental_metric",
+              "value": {
+                "early_morning_6_9am": {
+                  "applications": 8,
+                  "screen_rate": 0.75,
+                  "avg_response_hours": 18
+                },
+                "business_hours_9_5pm": {
+                  "applications": 25,
+                  "screen_rate": 0.6,
+                  "avg_response_hours": 28
+                },
+                "evening_5_10pm": {
+                  "applications": 10,
+                  "screen_rate": 0.5,
+                  "avg_response_hours": 38
+                },
+                "night_10pm_6am": {
+                  "applications": 4,
+                  "screen_rate": 0.25,
+                  "avg_response_hours": 48
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-28T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["timing", "optimization", "scheduling"]
+              },
+              "properties": {
+                "status": "in_progress",
+                "best_window": "6-9am local time - catch recruiters starting their day",
+                "early_bird_advantage": "25% better screen rate, 57% faster response",
+                "avoid_window": "After 10pm - significantly worse outcomes",
+                "hypothesis_validation": "Confirmed - early submissions get priority review",
+                "automation_opportunity": "Schedule submissions for 7am local time"
+              }
+            },
+            {
+              "id": "metric_exp_004",
+              "name": "Technical Blog Impact Tracking",
+              "description": "Measuring impact of technical content creation",
+              "type": "experimental_metric",
+              "value": {
+                "pre_blog_baseline": {
+                  "inbound_recruiter_contacts": 2,
+                  "interview_requests": 0,
+                  "period": "August 2025"
+                },
+                "month_1_blogging": {
+                  "articles_published": 3,
+                  "total_views": 1250,
+                  "inbound_recruiter_contacts": 4,
+                  "interview_requests": 1,
+                  "period": "September 2025"
+                },
+                "month_2_blogging": {
+                  "articles_published": 4,
+                  "total_views": 3800,
+                  "inbound_recruiter_contacts": 8,
+                  "interview_requests": 3,
+                  "period": "October 2025 (partial)"
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["content", "blogging", "personal_brand"]
+              },
+              "properties": {
+                "status": "in_progress",
+                "trend": "Strong positive correlation",
+                "recruiter_increase": "+300% from baseline",
+                "best_performing_topics": [
+                  "System design",
+                  "Performance optimization",
+                  "Architecture decisions"
+                ],
+                "avg_time_per_article": "6 hours",
+                "roi_assessment": "1 article = 2 recruiter contacts = 0.5 interviews",
+                "recommendation": "Continue 3-4 articles per month"
+              }
+            },
+            {
+              "id": "metric_exp_005",
+              "name": "Salary Transparency Experiment",
+              "description": "Impact of disclosing salary expectations at different stages",
+              "type": "experimental_metric",
+              "value": {
+                "control_no_disclosure": {
+                  "applications": 15,
+                  "screen_rate": 0.6,
+                  "offer_rate": 0.067,
+                  "avg_offer_vs_expectation": 0.92
+                },
+                "application_disclosure": {
+                  "applications": 12,
+                  "screen_rate": 0.5,
+                  "offer_rate": 0.083,
+                  "avg_offer_vs_expectation": 0.98
+                },
+                "phone_screen_disclosure": {
+                  "applications": 10,
+                  "screen_rate": 0.7,
+                  "offer_rate": 0.1,
+                  "avg_offer_vs_expectation": 1.05
+                },
+                "final_stage_disclosure": {
+                  "applications": 10,
+                  "screen_rate": 0.6,
+                  "offer_rate": 0.1,
+                  "avg_offer_vs_expectation": 1.12
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["salary", "transparency", "negotiation"]
+              },
+              "properties": {
+                "status": "in_progress",
+                "key_finding": "Later disclosure = better offers (12% above expectation)",
+                "trade_off": "Early disclosure filters mismatches but caps upside",
+                "optimal_strategy": "General range in phone screen, specific in final stage",
+                "counter_intuitive": "Phone screen disclosure has highest offer rate",
+                "sample_size_note": "Need 20 more data points for statistical significance"
+              }
+            },
+            {
+              "id": "metric_exp_006",
+              "name": "Follow-up Cadence Experiment",
+              "description": "Testing different follow-up timing strategies",
+              "type": "experimental_metric",
+              "value": {
+                "no_followup": {
+                  "applications": 12,
+                  "eventual_response_rate": 0.417,
+                  "avg_days_to_response": 8.2
+                },
+                "single_followup_7days": {
+                  "applications": 15,
+                  "eventual_response_rate": 0.6,
+                  "avg_days_to_response": 6.5,
+                  "followup_response_rate": 0.267
+                },
+                "double_followup_7_14days": {
+                  "applications": 10,
+                  "eventual_response_rate": 0.7,
+                  "avg_days_to_response": 5.8,
+                  "followup_response_rate": 0.4
+                },
+                "aggressive_3_7_14days": {
+                  "applications": 10,
+                  "eventual_response_rate": 0.6,
+                  "avg_days_to_response": 5.2,
+                  "followup_response_rate": 0.3,
+                  "perceived_negative": 2
+                }
+              },
+              "metadata": {
+                "createdAt": "2025-09-18T00:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["followup", "persistence", "timing"]
+              },
+              "properties": {
+                "status": "in_progress",
+                "optimal_cadence": "Two follow-ups at 7 and 14 days",
+                "response_lift": "+68% vs no follow-up",
+                "diminishing_returns": "Third follow-up adds minimal value, risks annoyance",
+                "best_practice": "Value-add follow-ups (share article, update skills) vs generic",
+                "recommendation": "2 follow-ups maximum, with new information each time"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

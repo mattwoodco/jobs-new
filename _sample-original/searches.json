@@ -1,0 +1,346 @@
+{
+  "entities": [
+    {
+      "id": "search_001",
+      "name": "Frontend Developer Search",
+      "description": "Active search for senior frontend developer positions",
+      "metadata": {
+        "createdAt": "2025-10-01T08:00:00Z",
+        "updatedAt": "2025-10-05T10:30:00Z",
+        "tags": ["frontend", "senior", "active"]
+      },
+      "collections": [
+        {
+          "id": "listing_001",
+          "name": "TechCorp - Senior Frontend Engineer",
+          "description": "Senior Frontend Engineer position at TechCorp",
+          "metadata": {
+            "createdAt": "2025-10-03T08:15:00Z",
+            "updatedAt": "2025-10-05T10:30:00Z",
+            "tags": ["applied", "interview_scheduled"]
+          },
+          "items": [
+            {
+              "id": "resume_001",
+              "name": "TechCorp Tailored Resume",
+              "description": "Resume customized for TechCorp frontend role",
+              "type": "resume",
+              "value": {
+                "format": "pdf",
+                "version": "3.2",
+                "highlights": ["React", "TypeScript", "Performance"]
+              },
+              "metadata": {
+                "createdAt": "2025-10-03T09:00:00Z",
+                "updatedAt": "2025-10-05T10:30:00Z",
+                "tags": ["resume", "tailored"]
+              },
+              "properties": {
+                "word_count": 450,
+                "submitted": true,
+                "submission_date": "2025-10-03T14:00:00Z"
+              }
+            },
+            {
+              "id": "cover_letter_001",
+              "name": "TechCorp Cover Letter",
+              "description": "Personalized cover letter for TechCorp position",
+              "type": "cover letter",
+              "value": {
+                "format": "pdf",
+                "personalization": [
+                  "company_mission",
+                  "team_fit",
+                  "technical_alignment"
+                ]
+              },
+              "metadata": {
+                "createdAt": "2025-10-03T10:00:00Z",
+                "updatedAt": "2025-10-03T11:00:00Z",
+                "tags": ["cover_letter", "personalized"]
+              },
+              "properties": {
+                "word_count": 320,
+                "submitted": true,
+                "submission_date": "2025-10-03T14:00:00Z"
+              }
+            },
+            {
+              "id": "hiring_manager_001",
+              "name": "Sarah Chen",
+              "description": "Engineering Manager at TechCorp",
+              "type": "hiring manager",
+              "value": {
+                "name": "Sarah Chen",
+                "title": "Engineering Manager",
+                "company": "TechCorp",
+                "email": "sarah.chen@techcorp.com",
+                "linkedin": "linkedin.com/in/sarahchen"
+              },
+              "metadata": {
+                "createdAt": "2025-10-03T11:00:00Z",
+                "updatedAt": "2025-10-05T09:15:00Z",
+                "tags": ["hiring_manager", "contacted"]
+              },
+              "properties": {
+                "last_contacted": "2025-10-05T09:15:00Z",
+                "connection_type": "linkedin",
+                "response_received": true,
+                "interview_scheduled": true
+              }
+            },
+            {
+              "id": "one_sheet_001",
+              "name": "Frontend Portfolio Summary",
+              "description": "One-page portfolio for TechCorp interview",
+              "type": "one sheet",
+              "value": {
+                "format": "pdf",
+                "projects_featured": 5,
+                "highlights": [
+                  "React Dashboard",
+                  "E-commerce Platform",
+                  "Design System"
+                ]
+              },
+              "metadata": {
+                "createdAt": "2025-10-04T10:00:00Z",
+                "updatedAt": "2025-10-04T16:00:00Z",
+                "tags": ["one_sheet", "portfolio"]
+              },
+              "properties": {
+                "page_count": 1,
+                "design_version": "v3",
+                "submitted": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "listing_002",
+          "name": "StartupXYZ - React Engineer",
+          "description": "React Engineer role at fast-growing startup",
+          "metadata": {
+            "createdAt": "2025-10-04T14:00:00Z",
+            "updatedAt": "2025-10-04T18:00:00Z",
+            "tags": ["reviewing", "remote"]
+          },
+          "items": [
+            {
+              "id": "resume_002",
+              "name": "StartupXYZ Resume",
+              "description": "Resume emphasizing startup experience",
+              "type": "resume",
+              "value": {
+                "format": "pdf",
+                "version": "2.1",
+                "highlights": ["React", "Fast-paced", "0-1 products"]
+              },
+              "metadata": {
+                "createdAt": "2025-10-04T15:00:00Z",
+                "updatedAt": "2025-10-04T16:00:00Z",
+                "tags": ["resume", "startup_focused"]
+              },
+              "properties": {
+                "word_count": 420,
+                "submitted": false,
+                "status": "draft"
+              }
+            },
+            {
+              "id": "cover_letter_002",
+              "name": "StartupXYZ Cover Letter",
+              "description": "Enthusiastic cover letter for startup role",
+              "type": "cover letter",
+              "value": {
+                "format": "pdf",
+                "personalization": [
+                  "product_excitement",
+                  "growth_mindset",
+                  "impact_focus"
+                ]
+              },
+              "metadata": {
+                "createdAt": "2025-10-04T15:30:00Z",
+                "updatedAt": "2025-10-04T17:00:00Z",
+                "tags": ["cover_letter", "startup"]
+              },
+              "properties": {
+                "word_count": 280,
+                "submitted": false,
+                "status": "draft"
+              }
+            },
+            {
+              "id": "hiring_manager_002",
+              "name": "Alex Rodriguez",
+              "description": "CTO at StartupXYZ",
+              "type": "hiring manager",
+              "value": {
+                "name": "Alex Rodriguez",
+                "title": "CTO & Co-Founder",
+                "company": "StartupXYZ",
+                "email": "alex@startupxyz.io",
+                "twitter": "@alexrodtech"
+              },
+              "metadata": {
+                "createdAt": "2025-10-04T14:30:00Z",
+                "updatedAt": "2025-10-04T14:30:00Z",
+                "tags": ["hiring_manager", "founder"]
+              },
+              "properties": {
+                "last_contacted": null,
+                "connection_type": null,
+                "response_received": false,
+                "notes": "Found via company website and Twitter"
+              }
+            },
+            {
+              "id": "one_sheet_003",
+              "name": "Impact One Sheet",
+              "description": "One-pager highlighting startup impact",
+              "type": "one sheet",
+              "value": {
+                "format": "pdf",
+                "projects_featured": 3,
+                "highlights": [
+                  "Revenue growth",
+                  "User acquisition",
+                  "Technical leadership"
+                ]
+              },
+              "metadata": {
+                "createdAt": "2025-10-04T16:00:00Z",
+                "updatedAt": "2025-10-04T18:00:00Z",
+                "tags": ["one_sheet", "impact"]
+              },
+              "properties": {
+                "page_count": 1,
+                "design_version": "v2",
+                "submitted": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "search_002",
+      "name": "Full Stack TypeScript Search",
+      "description": "Search for full stack TypeScript positions",
+      "metadata": {
+        "createdAt": "2025-10-02T10:00:00Z",
+        "updatedAt": "2025-10-03T16:00:00Z",
+        "tags": ["fullstack", "typescript", "remote"]
+      },
+      "collections": [
+        {
+          "id": "listing_003",
+          "name": "RemoteCo - Full Stack Developer",
+          "description": "Remote full stack position focusing on TypeScript",
+          "metadata": {
+            "createdAt": "2025-10-02T11:00:00Z",
+            "updatedAt": "2025-10-03T16:00:00Z",
+            "tags": ["remote", "applied"]
+          },
+          "items": [
+            {
+              "id": "resume_003",
+              "name": "Full Stack Resume",
+              "description": "Resume highlighting full stack TypeScript experience",
+              "type": "resume",
+              "value": {
+                "format": "pdf",
+                "version": "4.0",
+                "highlights": ["TypeScript", "Node.js", "React", "PostgreSQL"]
+              },
+              "metadata": {
+                "createdAt": "2025-10-02T12:00:00Z",
+                "updatedAt": "2025-10-02T14:00:00Z",
+                "tags": ["resume", "fullstack"]
+              },
+              "properties": {
+                "word_count": 480,
+                "submitted": true,
+                "submission_date": "2025-10-02T16:00:00Z"
+              }
+            },
+            {
+              "id": "cover_letter_003",
+              "name": "RemoteCo Cover Letter",
+              "description": "Cover letter emphasizing remote work experience",
+              "type": "cover letter",
+              "value": {
+                "format": "pdf",
+                "personalization": [
+                  "remote_culture",
+                  "async_communication",
+                  "technical_depth"
+                ]
+              },
+              "metadata": {
+                "createdAt": "2025-10-02T13:00:00Z",
+                "updatedAt": "2025-10-02T15:00:00Z",
+                "tags": ["cover_letter", "remote"]
+              },
+              "properties": {
+                "word_count": 340,
+                "submitted": true,
+                "submission_date": "2025-10-02T16:00:00Z"
+              }
+            },
+            {
+              "id": "hiring_manager_003",
+              "name": "Jamie Park",
+              "description": "VP of Engineering at RemoteCo",
+              "type": "hiring manager",
+              "value": {
+                "name": "Jamie Park",
+                "title": "VP of Engineering",
+                "company": "RemoteCo",
+                "email": "jamie.park@remoteco.com",
+                "linkedin": "linkedin.com/in/jamiepark"
+              },
+              "metadata": {
+                "createdAt": "2025-10-02T14:00:00Z",
+                "updatedAt": "2025-10-03T10:00:00Z",
+                "tags": ["hiring_manager", "contacted"]
+              },
+              "properties": {
+                "last_contacted": "2025-10-03T10:00:00Z",
+                "connection_type": "email",
+                "response_received": true,
+                "notes": "Requested technical assessment"
+              }
+            },
+            {
+              "id": "one_sheet_004",
+              "name": "Full Stack Architecture One Sheet",
+              "description": "Architecture and system design showcase",
+              "type": "one sheet",
+              "value": {
+                "format": "pdf",
+                "projects_featured": 4,
+                "highlights": [
+                  "Microservices",
+                  "API Design",
+                  "Database optimization"
+                ]
+              },
+              "metadata": {
+                "createdAt": "2025-10-02T15:00:00Z",
+                "updatedAt": "2025-10-03T16:00:00Z",
+                "tags": ["one_sheet", "architecture"]
+              },
+              "properties": {
+                "page_count": 1,
+                "design_version": "v4",
+                "submitted": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

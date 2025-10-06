@@ -1,0 +1,460 @@
+{
+  "entities": [
+    {
+      "id": "agent_001",
+      "name": "Sarah Johnson - TechCorp",
+      "description": "Senior Technical Recruiter at TechCorp Inc.",
+      "metadata": {
+        "createdAt": "2025-10-01T09:00:00Z",
+        "updatedAt": "2025-10-05T11:00:00Z",
+        "tags": ["recruiter", "techcorp", "active"]
+      },
+      "collections": [
+        {
+          "id": "thread_001",
+          "name": "TechCorp - Senior Developer Position",
+          "description": "Discussion about senior developer role at TechCorp",
+          "metadata": {
+            "createdAt": "2025-10-01T09:00:00Z",
+            "updatedAt": "2025-10-05T11:00:00Z",
+            "tags": ["active", "interview-scheduled", "high-priority"]
+          },
+          "items": [
+            {
+              "id": "msg_001_001",
+              "name": "Initial Outreach",
+              "description": "Recruiter's initial contact about the position",
+              "type": "inbound_message",
+              "value": {
+                "from": "Sarah Johnson",
+                "email": "sarah.j@techcorp.com",
+                "subject": "Exciting Senior Frontend Developer Opportunity",
+                "body": "Hi! I came across your profile and think you'd be a great fit for our Senior Frontend Developer role at TechCorp.",
+                "timestamp": "2025-10-01T09:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-10-01T09:00:00Z",
+                "updatedAt": "2025-10-01T09:00:00Z",
+                "tags": ["inbound", "initial_contact"]
+              },
+              "properties": {
+                "read": true,
+                "starred": false,
+                "has_attachments": false
+              }
+            },
+            {
+              "id": "msg_001_002",
+              "name": "Response to Initial Outreach",
+              "description": "My reply expressing interest",
+              "type": "outbound_message",
+              "value": {
+                "to": "Sarah Johnson",
+                "email": "sarah.j@techcorp.com",
+                "subject": "Re: Exciting Senior Frontend Developer Opportunity",
+                "body": "Thanks for reaching out! I'm very interested in learning more about this opportunity. Could you share more details about the role and team?",
+                "timestamp": "2025-10-01T14:30:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-10-01T14:30:00Z",
+                "updatedAt": "2025-10-01T14:30:00Z",
+                "tags": ["outbound", "response"]
+              },
+              "properties": {
+                "sent": true,
+                "draft": false,
+                "response_time_hours": 5.5
+              }
+            },
+            {
+              "id": "msg_001_003",
+              "name": "Role Details",
+              "description": "Detailed information about the position",
+              "type": "inbound_message",
+              "value": {
+                "from": "Sarah Johnson",
+                "email": "sarah.j@techcorp.com",
+                "subject": "Re: Exciting Senior Frontend Developer Opportunity",
+                "body": "Great! Here are the details: We're looking for someone with strong React and TypeScript experience to lead our frontend team...",
+                "timestamp": "2025-10-02T09:15:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-10-02T09:15:00Z",
+                "updatedAt": "2025-10-02T09:15:00Z",
+                "tags": ["inbound", "job_details"]
+              },
+              "properties": {
+                "read": true,
+                "starred": true,
+                "has_attachments": true,
+                "attachments": ["job_description.pdf"]
+              }
+            },
+            {
+              "id": "msg_001_004",
+              "name": "Application Submission",
+              "description": "Formal application with resume and cover letter",
+              "type": "outbound_message",
+              "value": {
+                "to": "Sarah Johnson",
+                "email": "sarah.j@techcorp.com",
+                "subject": "Application - Senior Frontend Developer",
+                "body": "Please find attached my resume and cover letter. I'm excited about the opportunity to contribute to TechCorp's mission.",
+                "timestamp": "2025-10-02T16:45:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-10-02T16:45:00Z",
+                "updatedAt": "2025-10-02T16:45:00Z",
+                "tags": ["outbound", "application"]
+              },
+              "properties": {
+                "sent": true,
+                "draft": false,
+                "has_attachments": true,
+                "attachments": [
+                  "resume_techcorp.pdf",
+                  "cover_letter_techcorp.pdf"
+                ]
+              }
+            },
+            {
+              "id": "msg_001_005",
+              "name": "Screening Call Invitation",
+              "description": "Invitation to initial screening call",
+              "type": "inbound_message",
+              "value": {
+                "from": "Sarah Johnson",
+                "email": "sarah.j@techcorp.com",
+                "subject": "Next Steps - Screening Call",
+                "body": "Thanks for your application! We'd love to schedule a 30-minute screening call. Are you available next week?",
+                "timestamp": "2025-10-03T10:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-10-03T10:00:00Z",
+                "updatedAt": "2025-10-03T10:00:00Z",
+                "tags": ["inbound", "interview_request"]
+              },
+              "properties": {
+                "read": true,
+                "starred": true,
+                "has_attachments": false,
+                "action_required": true
+              }
+            },
+            {
+              "id": "msg_001_006",
+              "name": "Screening Call Confirmation",
+              "description": "Confirming screening call time",
+              "type": "outbound_message",
+              "value": {
+                "to": "Sarah Johnson",
+                "email": "sarah.j@techcorp.com",
+                "subject": "Re: Next Steps - Screening Call",
+                "body": "I'd be happy to chat! I'm available Tuesday at 2pm or Wednesday at 10am. Let me know what works best.",
+                "timestamp": "2025-10-03T11:30:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-10-03T11:30:00Z",
+                "updatedAt": "2025-10-03T11:30:00Z",
+                "tags": ["outbound", "scheduling"]
+              },
+              "properties": {
+                "sent": true,
+                "draft": false,
+                "response_time_hours": 1.5
+              }
+            },
+            {
+              "id": "msg_001_007",
+              "name": "Screening Call Complete",
+              "description": "Follow-up after successful screening call",
+              "type": "inbound_message",
+              "value": {
+                "from": "Sarah Johnson",
+                "email": "sarah.j@techcorp.com",
+                "subject": "Great conversation!",
+                "body": "It was wonderful speaking with you today. The team was impressed, and we'd like to move forward with a technical interview.",
+                "timestamp": "2025-10-04T15:30:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-10-04T15:30:00Z",
+                "updatedAt": "2025-10-04T15:30:00Z",
+                "tags": ["inbound", "positive_feedback"]
+              },
+              "properties": {
+                "read": true,
+                "starred": true,
+                "has_attachments": false,
+                "action_required": true
+              }
+            },
+            {
+              "id": "msg_001_008",
+              "name": "Technical Interview Scheduled",
+              "description": "Latest message scheduling technical interview",
+              "type": "inbound_message",
+              "value": {
+                "from": "Sarah Johnson",
+                "email": "sarah.j@techcorp.com",
+                "subject": "Technical Interview - October 10th",
+                "body": "We'd love to schedule a technical interview next week. How does October 10th at 2pm work for you?",
+                "timestamp": "2025-10-05T11:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-10-05T11:00:00Z",
+                "updatedAt": "2025-10-05T11:00:00Z",
+                "tags": ["inbound", "interview_scheduling", "latest"]
+              },
+              "properties": {
+                "read": false,
+                "starred": true,
+                "has_attachments": true,
+                "attachments": ["interview_guide.pdf"],
+                "action_required": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "agent_002",
+      "name": "Mike Chen - StartupXYZ",
+      "description": "Head of Talent at StartupXYZ",
+      "metadata": {
+        "createdAt": "2025-10-03T15:30:00Z",
+        "updatedAt": "2025-10-04T09:15:00Z",
+        "tags": ["recruiter", "startup", "active"]
+      },
+      "collections": [
+        {
+          "id": "thread_002",
+          "name": "StartupXYZ - Full Stack Role",
+          "description": "Initial outreach for full stack position",
+          "metadata": {
+            "createdAt": "2025-10-03T15:30:00Z",
+            "updatedAt": "2025-10-04T09:15:00Z",
+            "tags": ["active", "startup", "early-stage"]
+          },
+          "items": [
+            {
+              "id": "msg_002_001",
+              "name": "LinkedIn Outreach",
+              "description": "Initial contact via LinkedIn",
+              "type": "inbound_message",
+              "value": {
+                "from": "Mike Chen",
+                "email": "mike@startupxyz.com",
+                "subject": "Full Stack Engineer at StartupXYZ",
+                "body": "Hi! I'm reaching out because we're looking for a talented Full Stack Engineer to join our early-stage startup. Interested in learning more?",
+                "timestamp": "2025-10-03T15:30:00Z",
+                "platform": "linkedin"
+              },
+              "metadata": {
+                "createdAt": "2025-10-03T15:30:00Z",
+                "updatedAt": "2025-10-03T15:30:00Z",
+                "tags": ["inbound", "initial_contact", "linkedin"]
+              },
+              "properties": {
+                "read": true,
+                "starred": false,
+                "has_attachments": false
+              }
+            },
+            {
+              "id": "msg_002_002",
+              "name": "Interest Confirmation",
+              "description": "Expressing interest in learning more",
+              "type": "outbound_message",
+              "value": {
+                "to": "Mike Chen",
+                "email": "mike@startupxyz.com",
+                "subject": "Re: Full Stack Engineer at StartupXYZ",
+                "body": "Hi Mike, thanks for reaching out! Yes, I'd be interested in learning more about the role and your startup. What can you tell me about the team and tech stack?",
+                "timestamp": "2025-10-03T18:00:00Z",
+                "platform": "linkedin"
+              },
+              "metadata": {
+                "createdAt": "2025-10-03T18:00:00Z",
+                "updatedAt": "2025-10-03T18:00:00Z",
+                "tags": ["outbound", "response"]
+              },
+              "properties": {
+                "sent": true,
+                "draft": false,
+                "response_time_hours": 2.5
+              }
+            },
+            {
+              "id": "msg_002_003",
+              "name": "Tech Stack Details",
+              "description": "Information about technology and team",
+              "type": "inbound_message",
+              "value": {
+                "from": "Mike Chen",
+                "email": "mike@startupxyz.com",
+                "subject": "Re: Full Stack Engineer at StartupXYZ",
+                "body": "Thanks for your interest! Here's more info about our tech stack: We use React, Node.js, and PostgreSQL. Our team is small but growing - currently 8 engineers. We're building a platform that helps...",
+                "timestamp": "2025-10-04T09:15:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-10-04T09:15:00Z",
+                "updatedAt": "2025-10-04T09:15:00Z",
+                "tags": ["inbound", "tech_details", "latest"]
+              },
+              "properties": {
+                "read": true,
+                "starred": false,
+                "has_attachments": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "agent_003",
+      "name": "Lisa Wang - GlobalTech",
+      "description": "Technical Recruiter at GlobalTech Solutions",
+      "metadata": {
+        "createdAt": "2025-09-20T10:00:00Z",
+        "updatedAt": "2025-09-30T18:00:00Z",
+        "tags": ["recruiter", "globaltech", "archived"]
+      },
+      "collections": [
+        {
+          "id": "thread_003",
+          "name": "GlobalTech - Position Filled",
+          "description": "Role was filled internally",
+          "metadata": {
+            "createdAt": "2025-09-20T10:00:00Z",
+            "updatedAt": "2025-09-30T18:00:00Z",
+            "tags": ["archived", "rejected", "closed"]
+          },
+          "items": [
+            {
+              "id": "msg_003_001",
+              "name": "Initial Contact",
+              "description": "Recruiter's initial outreach",
+              "type": "inbound_message",
+              "value": {
+                "from": "Lisa Wang",
+                "email": "lisa@globaltech.com",
+                "subject": "React Developer Position at GlobalTech",
+                "body": "Hello! We have an exciting React Developer position open at GlobalTech Solutions. Would you be interested in discussing this opportunity?",
+                "timestamp": "2025-09-20T10:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-09-20T10:00:00Z",
+                "updatedAt": "2025-09-20T10:00:00Z",
+                "tags": ["inbound", "initial_contact"]
+              },
+              "properties": {
+                "read": true,
+                "starred": false,
+                "has_attachments": false
+              }
+            },
+            {
+              "id": "msg_003_002",
+              "name": "Interest Response",
+              "description": "Initial positive response",
+              "type": "outbound_message",
+              "value": {
+                "to": "Lisa Wang",
+                "email": "lisa@globaltech.com",
+                "subject": "Re: React Developer Position at GlobalTech",
+                "body": "Hi Lisa, thanks for thinking of me. I'd be happy to learn more about this opportunity.",
+                "timestamp": "2025-09-20T14:30:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-09-20T14:30:00Z",
+                "updatedAt": "2025-09-20T14:30:00Z",
+                "tags": ["outbound", "response"]
+              },
+              "properties": {
+                "sent": true,
+                "draft": false,
+                "response_time_hours": 4.5
+              }
+            },
+            {
+              "id": "msg_003_003",
+              "name": "Job Details Shared",
+              "description": "Role details and requirements",
+              "type": "inbound_message",
+              "value": {
+                "from": "Lisa Wang",
+                "email": "lisa@globaltech.com",
+                "subject": "React Developer - Role Details",
+                "body": "Great! Attached is the full job description. The role focuses on building internal tools with React and TypeScript.",
+                "timestamp": "2025-09-21T09:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-09-21T09:00:00Z",
+                "updatedAt": "2025-09-21T09:00:00Z",
+                "tags": ["inbound", "job_details"]
+              },
+              "properties": {
+                "read": true,
+                "starred": false,
+                "has_attachments": true,
+                "attachments": ["react_developer_jd.pdf"]
+              }
+            },
+            {
+              "id": "msg_003_004",
+              "name": "Application Submitted",
+              "description": "Formal application materials sent",
+              "type": "outbound_message",
+              "value": {
+                "to": "Lisa Wang",
+                "email": "lisa@globaltech.com",
+                "subject": "Application - React Developer",
+                "body": "Please find my application materials attached. Looking forward to hearing from you!",
+                "timestamp": "2025-09-23T16:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-09-23T16:00:00Z",
+                "updatedAt": "2025-09-23T16:00:00Z",
+                "tags": ["outbound", "application"]
+              },
+              "properties": {
+                "sent": true,
+                "draft": false,
+                "has_attachments": true,
+                "attachments": [
+                  "resume_globaltech.pdf",
+                  "cover_letter_globaltech.pdf"
+                ]
+              }
+            },
+            {
+              "id": "msg_003_005",
+              "name": "Position Filled Notification",
+              "description": "Rejection - internal hire",
+              "type": "inbound_message",
+              "value": {
+                "from": "Lisa Wang",
+                "email": "lisa@globaltech.com",
+                "subject": "Update on React Developer Position",
+                "body": "Unfortunately, we've decided to fill this position internally. We appreciate your interest and will keep your information on file for future opportunities.",
+                "timestamp": "2025-09-30T18:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-09-30T18:00:00Z",
+                "updatedAt": "2025-09-30T18:00:00Z",
+                "tags": ["inbound", "rejection", "latest"]
+              },
+              "properties": {
+                "read": true,
+                "starred": false,
+                "has_attachments": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

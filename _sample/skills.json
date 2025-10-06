@@ -1,0 +1,249 @@
+{
+  "entities": [
+    {
+      "id": "skills_portfolio",
+      "name": "Skills & Professional Development",
+      "description": "Comprehensive skills inventory and learning paths",
+      "metadata": {
+        "createdAt": "2025-09-01T00:00:00Z",
+        "updatedAt": "2025-10-05T16:00:00Z",
+        "tags": ["skills", "development", "learning"]
+      },
+      "collections": [
+        {
+          "id": "technical_skills",
+          "name": "Technical Skills",
+          "description": "Programming languages, frameworks, and tools",
+          "metadata": {
+            "createdAt": "2025-09-01T00:00:00Z",
+            "updatedAt": "2025-10-05T16:00:00Z",
+            "tags": ["technical", "coding", "development"]
+          },
+          "items": [
+            {
+              "id": "skill_001",
+              "name": "React",
+              "description": "JavaScript library for building user interfaces",
+              "type": "framework",
+              "value": {
+                "skill_name": "React",
+                "category": "Frontend Framework",
+                "proficiency_level": "expert",
+                "proficiency_score": 95,
+                "years_experience": 5,
+                "last_used": "2025-10-05",
+                "endorsements": 28
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:00:00Z",
+                "tags": ["react", "frontend", "javascript", "expert"]
+              },
+              "properties": {
+                "in_demand": true,
+                "market_value": "high",
+                "learning_resources": [
+                  "React docs",
+                  "Frontend Masters",
+                  "Epic React"
+                ],
+                "related_skills": ["TypeScript", "Next.js", "Redux"],
+                "projects_using": 12
+              }
+            },
+            {
+              "id": "skill_002",
+              "name": "TypeScript",
+              "description": "Typed superset of JavaScript",
+              "type": "language",
+              "value": {
+                "skill_name": "TypeScript",
+                "category": "Programming Language",
+                "proficiency_level": "advanced",
+                "proficiency_score": 88,
+                "years_experience": 3,
+                "last_used": "2025-10-05",
+                "endorsements": 22
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:00:00Z",
+                "tags": ["typescript", "language", "advanced"]
+              },
+              "properties": {
+                "in_demand": true,
+                "market_value": "high",
+                "learning_resources": [
+                  "TypeScript handbook",
+                  "Type Challenges"
+                ],
+                "related_skills": ["React", "Node.js", "JavaScript"],
+                "projects_using": 10
+              }
+            },
+            {
+              "id": "skill_003",
+              "name": "Node.js",
+              "description": "JavaScript runtime for backend development",
+              "type": "runtime",
+              "value": {
+                "skill_name": "Node.js",
+                "category": "Backend Runtime",
+                "proficiency_level": "intermediate",
+                "proficiency_score": 75,
+                "years_experience": 4,
+                "last_used": "2025-10-01",
+                "endorsements": 15
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-01T10:00:00Z",
+                "tags": ["nodejs", "backend", "javascript"]
+              },
+              "properties": {
+                "in_demand": true,
+                "market_value": "medium",
+                "learning_resources": ["Node.js docs", "NodeSchool"],
+                "related_skills": ["Express", "TypeScript", "PostgreSQL"],
+                "projects_using": 8
+              }
+            }
+          ]
+        },
+        {
+          "id": "soft_skills",
+          "name": "Soft Skills",
+          "description": "Communication, leadership, and collaboration skills",
+          "metadata": {
+            "createdAt": "2025-09-01T00:00:00Z",
+            "updatedAt": "2025-10-05T16:00:00Z",
+            "tags": ["soft_skills", "communication", "leadership"]
+          },
+          "items": [
+            {
+              "id": "skill_004",
+              "name": "Technical Communication",
+              "description": "Ability to explain complex technical concepts",
+              "type": "communication",
+              "value": {
+                "skill_name": "Technical Communication",
+                "category": "Communication",
+                "proficiency_level": "advanced",
+                "proficiency_score": 85,
+                "years_experience": 5,
+                "endorsements": 18
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:00:00Z",
+                "tags": ["communication", "technical", "presentation"]
+              },
+              "properties": {
+                "in_demand": true,
+                "examples": [
+                  "Tech talks at meetups",
+                  "Documentation writing",
+                  "Code reviews"
+                ],
+                "related_skills": ["Leadership", "Mentoring"]
+              }
+            }
+          ]
+        },
+        {
+          "id": "certifications",
+          "name": "Certifications",
+          "description": "Professional certifications and credentials",
+          "metadata": {
+            "createdAt": "2025-09-01T00:00:00Z",
+            "updatedAt": "2025-10-05T16:00:00Z",
+            "tags": ["certifications", "credentials"]
+          },
+          "items": [
+            {
+              "id": "cert_001",
+              "name": "AWS Certified Developer",
+              "description": "Associate level AWS certification",
+              "type": "certification",
+              "value": {
+                "certification_name": "AWS Certified Developer - Associate",
+                "issuing_organization": "Amazon Web Services",
+                "issue_date": "2024-06-15",
+                "expiry_date": "2027-06-15",
+                "credential_id": "AWS-DEV-12345",
+                "verification_url": "https://aws.amazon.com/verification/12345"
+              },
+              "metadata": {
+                "createdAt": "2024-06-15T00:00:00Z",
+                "updatedAt": "2024-06-15T00:00:00Z",
+                "tags": ["aws", "cloud", "developer", "active"]
+              },
+              "properties": {
+                "status": "active",
+                "renewal_required": true,
+                "market_value": "high",
+                "related_skills": ["AWS", "Cloud Architecture", "DevOps"]
+              }
+            }
+          ]
+        },
+        {
+          "id": "learning_paths",
+          "name": "Learning Paths",
+          "description": "Ongoing skill development and learning goals",
+          "metadata": {
+            "createdAt": "2025-09-01T00:00:00Z",
+            "updatedAt": "2025-10-05T16:00:00Z",
+            "tags": ["learning", "development", "goals"]
+          },
+          "items": [
+            {
+              "id": "learn_001",
+              "name": "System Design Mastery",
+              "description": "Advanced system design and architecture",
+              "type": "learning_path",
+              "value": {
+                "path_name": "System Design Mastery",
+                "target_skill": "System Design",
+                "current_progress": 65,
+                "target_completion": "2025-12-31",
+                "resources": [
+                  "System Design Primer",
+                  "Designing Data-Intensive Applications",
+                  "Grokking System Design Interview"
+                ],
+                "milestones": [
+                  {
+                    "name": "Complete DDIA book",
+                    "status": "completed",
+                    "completed_date": "2025-09-15"
+                  },
+                  {
+                    "name": "Design 10 systems",
+                    "status": "in_progress",
+                    "progress": 7
+                  },
+                  {
+                    "name": "Mock interviews",
+                    "status": "pending"
+                  }
+                ]
+              },
+              "metadata": {
+                "createdAt": "2025-08-01T00:00:00Z",
+                "updatedAt": "2025-10-05T16:00:00Z",
+                "tags": ["system_design", "architecture", "in_progress"]
+              },
+              "properties": {
+                "motivation": "Required for senior/staff level interviews",
+                "priority": "high",
+                "time_investment_hours_week": 5,
+                "related_applications": ["TechCorp", "StartupXYZ"]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "entities": [
+    {
+      "id": "job_search_calendar",
+      "name": "Job Search Calendar",
+      "description": "All scheduled events, deadlines, and availability for job search",
+      "metadata": {
+        "createdAt": "2025-10-01T00:00:00Z",
+        "updatedAt": "2025-10-05T14:00:00Z",
+        "tags": ["calendar", "scheduling", "events"]
+      },
+      "collections": [
+        {
+          "id": "interviews",
+          "name": "Interviews",
+          "description": "All scheduled interview events",
+          "metadata": {
+            "createdAt": "2025-10-01T00:00:00Z",
+            "updatedAt": "2025-10-05T14:00:00Z",
+            "tags": ["interviews", "scheduled"]
+          },
+          "items": [
+            {
+              "id": "cal_001",
+              "name": "TechCorp Technical Interview",
+              "description": "Technical interview with TechCorp engineering team",
+              "type": "interview",
+              "value": {
+                "event_type": "technical_interview",
+                "company": "TechCorp Inc.",
+                "position": "Senior Frontend Developer",
+                "start_time": "2025-10-10T14:00:00Z",
+                "end_time": "2025-10-10T15:00:00Z",
+                "duration_minutes": 60,
+                "location": "Zoom",
+                "meeting_link": "https://zoom.us/j/123456789",
+                "interviewers": [
+                  "John Smith - Engineering Manager",
+                  "Jane Doe - Senior Developer"
+                ]
+              },
+              "metadata": {
+                "createdAt": "2025-10-05T11:30:00Z",
+                "updatedAt": "2025-10-05T11:30:00Z",
+                "tags": ["interview", "technical", "techcorp", "upcoming"]
+              },
+              "properties": {
+                "status": "confirmed",
+                "reminder_set": true,
+                "prep_time_needed": 120,
+                "related_thread_id": "thread_001",
+                "calendar_synced": true
+              }
+            },
+            {
+              "id": "cal_002",
+              "name": "StartupXYZ Culture Fit Interview",
+              "description": "Culture fit and team interview",
+              "type": "interview",
+              "value": {
+                "event_type": "culture_fit",
+                "company": "StartupXYZ",
+                "position": "Full Stack Engineer",
+                "start_time": "2025-10-12T10:00:00Z",
+                "end_time": "2025-10-12T11:00:00Z",
+                "duration_minutes": 60,
+                "location": "In-person - SF Office",
+                "address": "123 Market St, San Francisco, CA 94105",
+                "interviewers": [
+                  "Mike Chen - Head of Talent",
+                  "Sarah Lee - CTO"
+                ]
+              },
+              "metadata": {
+                "createdAt": "2025-10-04T09:30:00Z",
+                "updatedAt": "2025-10-04T09:30:00Z",
+                "tags": ["interview", "culture_fit", "startup", "in_person"]
+              },
+              "properties": {
+                "status": "confirmed",
+                "reminder_set": true,
+                "prep_time_needed": 90,
+                "related_thread_id": "thread_002",
+                "calendar_synced": true,
+                "travel_time_minutes": 45
+              }
+            }
+          ]
+        },
+        {
+          "id": "deadlines",
+          "name": "Application Deadlines",
+          "description": "Application submission and response deadlines",
+          "metadata": {
+            "createdAt": "2025-10-01T00:00:00Z",
+            "updatedAt": "2025-10-05T14:00:00Z",
+            "tags": ["deadlines", "applications"]
+          },
+          "items": [
+            {
+              "id": "cal_003",
+              "name": "DataDriven Corp Response Deadline",
+              "description": "Respond to phone screen invitation",
+              "type": "deadline",
+              "value": {
+                "event_type": "response_deadline",
+                "company": "DataDriven Corp",
+                "position": "Full Stack Developer",
+                "deadline": "2025-10-07T17:00:00Z",
+                "action_required": "Schedule phone screen",
+                "priority": "high"
+              },
+              "metadata": {
+                "createdAt": "2025-10-05T11:30:00Z",
+                "updatedAt": "2025-10-05T11:30:00Z",
+                "tags": ["deadline", "response_required", "urgent"]
+              },
+              "properties": {
+                "status": "pending",
+                "reminder_set": true,
+                "days_remaining": 2,
+                "application_id": "app_445"
+              }
+            }
+          ]
+        },
+        {
+          "id": "prep_sessions",
+          "name": "Interview Prep Sessions",
+          "description": "Scheduled time for interview preparation",
+          "metadata": {
+            "createdAt": "2025-10-01T00:00:00Z",
+            "updatedAt": "2025-10-05T14:00:00Z",
+            "tags": ["prep", "practice"]
+          },
+          "items": [
+            {
+              "id": "cal_004",
+              "name": "TechCorp Technical Prep",
+              "description": "Practice React and TypeScript problems",
+              "type": "prep_session",
+              "value": {
+                "event_type": "interview_prep",
+                "company": "TechCorp Inc.",
+                "prep_focus": "React patterns, TypeScript, System Design",
+                "start_time": "2025-10-09T14:00:00Z",
+                "end_time": "2025-10-09T16:00:00Z",
+                "duration_minutes": 120
+              },
+              "metadata": {
+                "createdAt": "2025-10-05T14:00:00Z",
+                "updatedAt": "2025-10-05T14:00:00Z",
+                "tags": ["prep", "technical", "practice"]
+              },
+              "properties": {
+                "status": "scheduled",
+                "related_interview_id": "cal_001",
+                "materials_needed": [
+                  "LeetCode Premium",
+                  "TypeScript docs",
+                  "React patterns book"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

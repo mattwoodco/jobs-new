@@ -1,0 +1,159 @@
+{
+  "entities": [
+    {
+      "id": "document_library",
+      "name": "Document Library",
+      "description": "Central repository for all job search documents",
+      "metadata": {
+        "createdAt": "2025-09-15T00:00:00Z",
+        "updatedAt": "2025-10-05T13:00:00Z",
+        "tags": ["documents", "files", "library"]
+      },
+      "collections": [
+        {
+          "id": "resumes",
+          "name": "Resumes",
+          "description": "All resume versions and tailored copies",
+          "metadata": {
+            "createdAt": "2025-09-15T00:00:00Z",
+            "updatedAt": "2025-10-05T13:00:00Z",
+            "tags": ["resumes", "cv"]
+          },
+          "items": [
+            {
+              "id": "doc_001",
+              "name": "Master Resume 2025",
+              "description": "Master resume with all experience and skills",
+              "type": "resume",
+              "value": {
+                "filename": "resume_master_2025.pdf",
+                "file_size_kb": 245,
+                "version": "3.2",
+                "format": "pdf",
+                "last_modified": "2025-09-15T10:00:00Z",
+                "download_url": "/documents/resume_master_2025.pdf"
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T10:00:00Z",
+                "updatedAt": "2025-09-15T10:00:00Z",
+                "tags": ["master", "complete", "current"]
+              },
+              "properties": {
+                "is_template": true,
+                "times_used": 24,
+                "last_used": "2025-10-02T16:45:00Z",
+                "page_count": 2
+              }
+            },
+            {
+              "id": "doc_002",
+              "name": "Resume - TechCorp Frontend",
+              "description": "Tailored resume for TechCorp frontend role",
+              "type": "resume",
+              "value": {
+                "filename": "resume_techcorp.pdf",
+                "file_size_kb": 238,
+                "version": "1.0",
+                "format": "pdf",
+                "last_modified": "2025-10-02T15:30:00Z",
+                "download_url": "/documents/resume_techcorp.pdf",
+                "based_on": "doc_001"
+              },
+              "metadata": {
+                "createdAt": "2025-10-02T15:30:00Z",
+                "updatedAt": "2025-10-02T15:30:00Z",
+                "tags": ["tailored", "techcorp", "frontend"]
+              },
+              "properties": {
+                "is_template": false,
+                "times_used": 1,
+                "last_used": "2025-10-02T16:45:00Z",
+                "page_count": 2,
+                "customizations": [
+                  "Emphasized React experience",
+                  "Added TypeScript projects"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "cover_letters",
+          "name": "Cover Letters",
+          "description": "All cover letter versions",
+          "metadata": {
+            "createdAt": "2025-09-15T00:00:00Z",
+            "updatedAt": "2025-10-05T13:00:00Z",
+            "tags": ["cover_letters"]
+          },
+          "items": [
+            {
+              "id": "doc_003",
+              "name": "Cover Letter - TechCorp",
+              "description": "Cover letter for TechCorp Senior Frontend Developer",
+              "type": "cover_letter",
+              "value": {
+                "filename": "cover_letter_techcorp.pdf",
+                "file_size_kb": 128,
+                "version": "1.0",
+                "format": "pdf",
+                "last_modified": "2025-10-02T15:45:00Z",
+                "download_url": "/documents/cover_letter_techcorp.pdf"
+              },
+              "metadata": {
+                "createdAt": "2025-10-02T15:45:00Z",
+                "updatedAt": "2025-10-02T15:45:00Z",
+                "tags": ["techcorp", "frontend", "personalized"]
+              },
+              "properties": {
+                "is_template": false,
+                "times_used": 1,
+                "last_used": "2025-10-02T16:45:00Z",
+                "page_count": 1,
+                "word_count": 385
+              }
+            }
+          ]
+        },
+        {
+          "id": "portfolios",
+          "name": "Portfolio Materials",
+          "description": "Portfolio pieces and project showcases",
+          "metadata": {
+            "createdAt": "2025-09-15T00:00:00Z",
+            "updatedAt": "2025-10-03T14:00:00Z",
+            "tags": ["portfolio", "projects"]
+          },
+          "items": [
+            {
+              "id": "doc_004",
+              "name": "Frontend Projects Portfolio",
+              "description": "Showcase of recent React and TypeScript projects",
+              "type": "portfolio",
+              "value": {
+                "filename": "portfolio_frontend_2025.pdf",
+                "file_size_kb": 1850,
+                "version": "2.1",
+                "format": "pdf",
+                "last_modified": "2025-10-03T14:00:00Z",
+                "download_url": "/documents/portfolio_frontend_2025.pdf"
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T00:00:00Z",
+                "updatedAt": "2025-10-03T14:00:00Z",
+                "tags": ["portfolio", "frontend", "projects", "featured"]
+              },
+              "properties": {
+                "is_template": false,
+                "times_used": 8,
+                "last_used": "2025-10-03T14:30:00Z",
+                "page_count": 12,
+                "projects_included": 6
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

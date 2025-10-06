@@ -1,0 +1,2647 @@
+{
+  "entities": [
+    {
+      "id": "company_001",
+      "name": "TechCorp",
+      "description": "Enterprise software company specializing in cloud infrastructure and developer tools",
+      "metadata": {
+        "createdAt": "2025-09-15T10:00:00Z",
+        "updatedAt": "2025-10-05T14:30:00Z",
+        "tags": ["enterprise", "cloud", "infrastructure", "target"]
+      },
+      "collections": [
+        {
+          "id": "research_notes_001",
+          "name": "Research Notes",
+          "description": "Company research and intelligence",
+          "metadata": {
+            "createdAt": "2025-09-15T10:00:00Z",
+            "updatedAt": "2025-10-05T14:30:00Z",
+            "tags": ["research", "notes", "intel"]
+          },
+          "items": [
+            {
+              "id": "note_001_overview",
+              "name": "Company Overview",
+              "description": "High-level company information",
+              "type": "research_note",
+              "value": {
+                "company_size": "2500-3000 employees",
+                "headquarters": "San Francisco, CA",
+                "founded": "2015",
+                "funding_stage": "Series D",
+                "total_funding": "$450M",
+                "valuation": "$2.5B"
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T10:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["overview", "basics", "verified"]
+              },
+              "properties": {
+                "source": "Crunchbase, LinkedIn",
+                "last_verified": "2025-10-05T14:30:00Z",
+                "accuracy": "high",
+                "ceo": "Sarah Chen",
+                "public_status": "Private",
+                "industries": [
+                  "Cloud Infrastructure",
+                  "Developer Tools",
+                  "SaaS"
+                ]
+              }
+            },
+            {
+              "id": "note_001_product",
+              "name": "Product Information",
+              "description": "Core products and market position",
+              "type": "research_note",
+              "value": {
+                "primary_product": "Cloud Infrastructure Platform",
+                "target_market": "Enterprise developers and DevOps teams",
+                "key_competitors": [
+                  "AWS",
+                  "Google Cloud",
+                  "Azure",
+                  "Cloudflare"
+                ],
+                "market_position": "Fast-growing challenger"
+              },
+              "metadata": {
+                "createdAt": "2025-09-20T11:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["product", "market", "competitive"]
+              },
+              "properties": {
+                "growth_rate_yoy": "180%",
+                "customer_count": "12000+",
+                "notable_customers": ["Stripe", "Notion", "Linear", "Vercel"],
+                "revenue_estimate": "$200M ARR"
+              }
+            },
+            {
+              "id": "note_001_hiring",
+              "name": "Hiring Activity",
+              "description": "Current hiring trends and open positions",
+              "type": "research_note",
+              "value": {
+                "total_open_roles": 87,
+                "engineering_roles": 45,
+                "actively_hiring": true,
+                "hiring_pace": "aggressive"
+              },
+              "metadata": {
+                "createdAt": "2025-09-28T09:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["hiring", "jobs", "current"]
+              },
+              "properties": {
+                "engineering_focus": [
+                  "Frontend",
+                  "Backend",
+                  "Infrastructure",
+                  "Security"
+                ],
+                "preferred_experience": "3-7 years",
+                "remote_policy": "Hybrid (3 days in office)",
+                "office_locations": [
+                  "San Francisco",
+                  "New York",
+                  "Austin",
+                  "London"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "tech_stack_001",
+          "name": "Tech Stack",
+          "description": "Technology stack and tools used",
+          "metadata": {
+            "createdAt": "2025-09-15T10:00:00Z",
+            "updatedAt": "2025-10-05T14:30:00Z",
+            "tags": ["tech_stack", "tools", "engineering"]
+          },
+          "items": [
+            {
+              "id": "stack_001_frontend",
+              "name": "Frontend Stack",
+              "description": "Frontend technologies and frameworks",
+              "type": "tech_stack",
+              "value": {
+                "primary_framework": "React",
+                "language": "TypeScript",
+                "state_management": "Redux Toolkit",
+                "styling": "Tailwind CSS + CSS Modules",
+                "build_tool": "Vite"
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T10:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["frontend", "react", "typescript"]
+              },
+              "properties": {
+                "other_libraries": [
+                  "React Query",
+                  "Zod",
+                  "React Hook Form",
+                  "Radix UI"
+                ],
+                "testing": ["Vitest", "Testing Library", "Playwright"],
+                "monorepo": "Turborepo",
+                "package_manager": "pnpm"
+              }
+            },
+            {
+              "id": "stack_001_backend",
+              "name": "Backend Stack",
+              "description": "Backend technologies and infrastructure",
+              "type": "tech_stack",
+              "value": {
+                "primary_language": "Go",
+                "secondary_language": "Rust",
+                "api_framework": "gRPC + REST",
+                "database": "PostgreSQL + Redis",
+                "message_queue": "Kafka"
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T10:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["backend", "go", "infrastructure"]
+              },
+              "properties": {
+                "cloud_provider": "AWS + GCP hybrid",
+                "container_orchestration": "Kubernetes",
+                "observability": ["Datadog", "Sentry", "PagerDuty"],
+                "ci_cd": "GitHub Actions + ArgoCD",
+                "infrastructure_as_code": "Terraform"
+              }
+            },
+            {
+              "id": "stack_001_data",
+              "name": "Data Stack",
+              "description": "Data engineering and analytics tools",
+              "type": "tech_stack",
+              "value": {
+                "data_warehouse": "Snowflake",
+                "analytics": "dbt + Looker",
+                "streaming": "Kafka + Flink",
+                "ml_platform": "Custom (Python-based)"
+              },
+              "metadata": {
+                "createdAt": "2025-09-20T11:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["data", "analytics", "ml"]
+              },
+              "properties": {
+                "python_version": "3.11",
+                "ml_frameworks": ["PyTorch", "scikit-learn"],
+                "orchestration": "Airflow",
+                "feature_store": "Feast"
+              }
+            },
+            {
+              "id": "stack_001_tools",
+              "name": "Development Tools",
+              "description": "Developer productivity and collaboration tools",
+              "type": "tech_stack",
+              "value": {
+                "version_control": "GitHub",
+                "project_management": "Linear",
+                "design": "Figma",
+                "documentation": "Notion + ReadMe"
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T10:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["tools", "productivity", "collaboration"]
+              },
+              "properties": {
+                "communication": "Slack + Zoom",
+                "code_review": "GitHub Pull Requests",
+                "knowledge_base": "Notion",
+                "incident_management": "PagerDuty + Incident.io"
+              }
+            }
+          ]
+        },
+        {
+          "id": "culture_info_001",
+          "name": "Culture Info",
+          "description": "Company culture and employee experience insights",
+          "metadata": {
+            "createdAt": "2025-09-15T10:00:00Z",
+            "updatedAt": "2025-10-05T14:30:00Z",
+            "tags": ["culture", "reviews", "employee_experience"]
+          },
+          "items": [
+            {
+              "id": "culture_001_glassdoor",
+              "name": "Glassdoor Reviews",
+              "description": "Employee reviews and ratings from Glassdoor",
+              "type": "culture_review",
+              "value": {
+                "overall_rating": 4.3,
+                "culture_rating": 4.5,
+                "work_life_balance": 4.2,
+                "compensation_benefits": 4.6,
+                "career_opportunities": 4.4,
+                "senior_leadership": 3.9
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T10:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["glassdoor", "reviews", "ratings"]
+              },
+              "properties": {
+                "total_reviews": 287,
+                "would_recommend": "89%",
+                "ceo_approval": "94%",
+                "top_pros": [
+                  "Excellent engineering culture",
+                  "Cutting-edge technology",
+                  "Smart colleagues",
+                  "Competitive compensation with strong equity"
+                ],
+                "top_cons": [
+                  "Fast-paced can be intense",
+                  "Some process gaps due to rapid growth",
+                  "High expectations"
+                ]
+              }
+            },
+            {
+              "id": "culture_001_blind",
+              "name": "Blind Discussion Themes",
+              "description": "Anonymous employee discussions from Blind",
+              "type": "culture_review",
+              "value": {
+                "sentiment": "Positive",
+                "compensation_satisfaction": "High",
+                "work_life_balance_sentiment": "Mixed-Positive",
+                "tech_stack_sentiment": "Very Positive"
+              },
+              "metadata": {
+                "createdAt": "2025-09-20T11:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["blind", "anonymous", "discussions"]
+              },
+              "properties": {
+                "common_topics": [
+                  "Equity value trending up",
+                  "Strong engineering ownership",
+                  "Good onboarding process",
+                  "Fast-paced environment",
+                  "Hybrid policy well-received"
+                ],
+                "concerns": [
+                  "Some teams more stressed than others",
+                  "Oncall rotation can be demanding",
+                  "Promotion timeline unclear for some"
+                ],
+                "recommendations": "Most would recommend to friends"
+              }
+            },
+            {
+              "id": "culture_001_values",
+              "name": "Company Values & Practices",
+              "description": "Official values and how they're practiced",
+              "type": "culture_info",
+              "value": {
+                "core_values": [
+                  "Ship quality, ship fast",
+                  "Default to transparency",
+                  "Empower teams",
+                  "Build for developers"
+                ],
+                "engineering_principles": [
+                  "Own your domain",
+                  "Write docs first",
+                  "Automate everything",
+                  "Measure what matters"
+                ]
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T10:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["values", "principles", "culture"]
+              },
+              "properties": {
+                "work_model": "Hybrid (3 days in office)",
+                "meeting_free_days": "Wednesdays",
+                "eng_to_pm_ratio": "8:1",
+                "deployment_frequency": "Multiple times per day",
+                "learning_budget": "$3000/year",
+                "conference_attendance": "Encouraged, budgeted"
+              }
+            }
+          ]
+        },
+        {
+          "id": "interview_process_001",
+          "name": "Interview Process",
+          "description": "Detailed breakdown of hiring process and interview stages",
+          "metadata": {
+            "createdAt": "2025-09-15T10:00:00Z",
+            "updatedAt": "2025-10-05T14:30:00Z",
+            "tags": ["interview", "hiring", "process"]
+          },
+          "items": [
+            {
+              "id": "interview_001_overview",
+              "name": "Process Overview",
+              "description": "High-level interview process structure",
+              "type": "interview_process",
+              "value": {
+                "total_rounds": 5,
+                "typical_duration": "3-4 weeks",
+                "response_time": "Fast (1-3 days between stages)",
+                "process_quality": "Well-organized and respectful"
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T10:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["overview", "timeline", "process"]
+              },
+              "properties": {
+                "recruiter_quality": "Excellent - responsive and transparent",
+                "candidate_experience": "4.6/5",
+                "feedback_provided": "Yes, if requested",
+                "negotiation_flexibility": "Moderate to high"
+              }
+            },
+            {
+              "id": "interview_001_round1",
+              "name": "Round 1: Recruiter Screen",
+              "description": "Initial recruiter conversation",
+              "type": "interview_round",
+              "value": {
+                "round_number": 1,
+                "round_type": "phone_screen",
+                "duration_minutes": 30,
+                "interviewer_role": "Technical Recruiter"
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T10:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["recruiter", "screen", "initial"]
+              },
+              "properties": {
+                "focus_areas": [
+                  "Background and experience",
+                  "Motivation for role/company",
+                  "Compensation expectations",
+                  "Logistics and timeline"
+                ],
+                "preparation_tips": [
+                  "Research company and product",
+                  "Know your resume cold",
+                  "Have clear compensation range",
+                  "Prepare thoughtful questions"
+                ],
+                "success_indicators": "Clear communication, genuine interest, experience match"
+              }
+            },
+            {
+              "id": "interview_001_round2",
+              "name": "Round 2: Hiring Manager Screen",
+              "description": "Technical discussion with hiring manager",
+              "type": "interview_round",
+              "value": {
+                "round_number": 2,
+                "round_type": "technical_screen",
+                "duration_minutes": 45,
+                "interviewer_role": "Engineering Manager"
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T10:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["hiring_manager", "technical", "screen"]
+              },
+              "properties": {
+                "focus_areas": [
+                  "Deep dive on technical background",
+                  "Past projects and impact",
+                  "Technical decision-making",
+                  "Team fit and values alignment"
+                ],
+                "preparation_tips": [
+                  "Prepare STAR stories for major projects",
+                  "Be ready to discuss technical tradeoffs",
+                  "Understand team structure and challenges",
+                  "Ask about team culture and processes"
+                ],
+                "success_indicators": "Deep technical knowledge, clear communication, good questions"
+              }
+            },
+            {
+              "id": "interview_001_round3",
+              "name": "Round 3: Technical Interview",
+              "description": "Live coding and system design",
+              "type": "interview_round",
+              "value": {
+                "round_number": 3,
+                "round_type": "technical_assessment",
+                "duration_minutes": 90,
+                "interviewer_role": "Senior Engineer"
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T10:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["technical", "coding", "system_design"]
+              },
+              "properties": {
+                "format": "45min coding + 45min system design",
+                "coding_platform": "CoderPad",
+                "coding_difficulty": "Medium (LeetCode medium level)",
+                "coding_topics": [
+                  "Data structures fundamentals",
+                  "Algorithms",
+                  "String manipulation",
+                  "Tree/graph traversal"
+                ],
+                "system_design_scope": "Real-world scenarios at medium scale",
+                "preparation_tips": [
+                  "Practice LeetCode medium problems",
+                  "Review system design fundamentals",
+                  "Think out loud during coding",
+                  "Ask clarifying questions",
+                  "Discuss tradeoffs in system design"
+                ],
+                "success_indicators": "Clean code, good communication, handles edge cases, considers scalability"
+              }
+            },
+            {
+              "id": "interview_001_round4",
+              "name": "Round 4: Team Interviews (Virtual Onsite)",
+              "description": "Multiple interviews with team members",
+              "type": "interview_round",
+              "value": {
+                "round_number": 4,
+                "round_type": "onsite",
+                "duration_minutes": 240,
+                "interviewer_role": "Various team members"
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T10:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["onsite", "team", "comprehensive"]
+              },
+              "properties": {
+                "total_interviews": 4,
+                "interview_breakdown": [
+                  "Technical deep dive (60min)",
+                  "Architecture & scalability (60min)",
+                  "Behavioral & culture fit (45min)",
+                  "Product thinking (45min)"
+                ],
+                "format": "Virtual (Zoom)",
+                "preparation_tips": [
+                  "Review resume and all past projects",
+                  "Prepare behavioral stories using STAR",
+                  "Study company product and tech blog",
+                  "Practice explaining complex technical concepts",
+                  "Prepare questions for each interviewer",
+                  "Get good sleep the night before"
+                ],
+                "success_indicators": "Consistent performance, collaboration mindset, technical depth, cultural fit"
+              }
+            },
+            {
+              "id": "interview_001_round5",
+              "name": "Round 5: Final Discussion & Offer",
+              "description": "Wrap-up conversation and offer discussion",
+              "type": "interview_round",
+              "value": {
+                "round_number": 5,
+                "round_type": "offer_discussion",
+                "duration_minutes": 30,
+                "interviewer_role": "Hiring Manager + Recruiter"
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T10:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["offer", "negotiation", "final"]
+              },
+              "properties": {
+                "typical_timeline": "Within 1 week of onsite",
+                "offer_components": [
+                  "Base salary",
+                  "Equity (RSUs)",
+                  "Signing bonus",
+                  "Annual bonus (10-15%)"
+                ],
+                "negotiation_tips": [
+                  "Have competing offers if possible",
+                  "Focus on total compensation",
+                  "Equity can be negotiated",
+                  "Signing bonus often flexible",
+                  "Level negotiations possible"
+                ],
+                "decision_timeline": "Typically 1 week, can extend if needed"
+              }
+            }
+          ]
+        },
+        {
+          "id": "salary_data_001",
+          "name": "Salary Data",
+          "description": "Compensation ranges and equity information",
+          "metadata": {
+            "createdAt": "2025-09-15T10:00:00Z",
+            "updatedAt": "2025-10-05T14:30:00Z",
+            "tags": ["salary", "compensation", "equity"]
+          },
+          "items": [
+            {
+              "id": "salary_001_engineer_levels",
+              "name": "Engineering Levels",
+              "description": "Engineering career ladder and compensation",
+              "type": "salary_data",
+              "value": {
+                "level_structure": "E3 through E8 + Staff/Principal/Distinguished",
+                "promotion_timeline": "Typically 2-3 years per level",
+                "performance_based": true
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T10:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["levels", "ladder", "progression"]
+              },
+              "properties": {
+                "level_names": {
+                  "E3": "Software Engineer",
+                  "E4": "Software Engineer II",
+                  "E5": "Senior Software Engineer",
+                  "E6": "Staff Engineer",
+                  "E7": "Principal Engineer",
+                  "E8": "Distinguished Engineer"
+                },
+                "typical_entry_level": "E4 for experienced hires",
+                "source": "Levels.fyi, Blind, employee reports"
+              }
+            },
+            {
+              "id": "salary_001_e4",
+              "name": "E4 - Software Engineer II",
+              "description": "Mid-level engineer compensation",
+              "type": "salary_range",
+              "value": {
+                "level": "E4",
+                "years_experience": "2-4 years",
+                "base_salary_min": 140000,
+                "base_salary_max": 170000,
+                "base_salary_median": 155000
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T10:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["E4", "mid_level", "compensation"]
+              },
+              "properties": {
+                "equity_grant": "$120K-180K over 4 years",
+                "annual_equity_value": "$30K-45K",
+                "signing_bonus": "$10K-25K",
+                "annual_bonus": "10-15% of base",
+                "total_comp_range": "$185K-240K",
+                "total_comp_median": "$210K",
+                "location_adjustments": {
+                  "SF/NYC": "100% (no adjustment)",
+                  "Austin/Seattle": "95%",
+                  "Remote": "90-95%"
+                }
+              }
+            },
+            {
+              "id": "salary_001_e5",
+              "name": "E5 - Senior Software Engineer",
+              "description": "Senior engineer compensation",
+              "type": "salary_range",
+              "value": {
+                "level": "E5",
+                "years_experience": "5-8 years",
+                "base_salary_min": 170000,
+                "base_salary_max": 210000,
+                "base_salary_median": 190000
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T10:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["E5", "senior", "compensation"]
+              },
+              "properties": {
+                "equity_grant": "$200K-300K over 4 years",
+                "annual_equity_value": "$50K-75K",
+                "signing_bonus": "$20K-40K",
+                "annual_bonus": "15% of base",
+                "total_comp_range": "$250K-340K",
+                "total_comp_median": "$295K",
+                "most_common_level": true,
+                "location_adjustments": {
+                  "SF/NYC": "100% (no adjustment)",
+                  "Austin/Seattle": "95%",
+                  "Remote": "90-95%"
+                }
+              }
+            },
+            {
+              "id": "salary_001_e6",
+              "name": "E6 - Staff Engineer",
+              "description": "Staff level engineer compensation",
+              "type": "salary_range",
+              "value": {
+                "level": "E6",
+                "years_experience": "8-12 years",
+                "base_salary_min": 210000,
+                "base_salary_max": 260000,
+                "base_salary_median": 235000
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T10:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["E6", "staff", "compensation"]
+              },
+              "properties": {
+                "equity_grant": "$350K-500K over 4 years",
+                "annual_equity_value": "$87.5K-125K",
+                "signing_bonus": "$30K-60K",
+                "annual_bonus": "15-20% of base",
+                "total_comp_range": "$345K-470K",
+                "total_comp_median": "$405K",
+                "location_adjustments": {
+                  "SF/NYC": "100% (no adjustment)",
+                  "Austin/Seattle": "95%",
+                  "Remote": "90-95%"
+                }
+              }
+            },
+            {
+              "id": "salary_001_benefits",
+              "name": "Benefits Package",
+              "description": "Non-cash compensation and perks",
+              "type": "benefits",
+              "value": {
+                "health_insurance": "Excellent (90% premium coverage)",
+                "dental_vision": "Fully covered",
+                "401k_match": "4% match",
+                "pto_policy": "Unlimited PTO (average 4 weeks taken)"
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T10:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["benefits", "perks", "compensation"]
+              },
+              "properties": {
+                "parental_leave": "20 weeks primary, 12 weeks secondary",
+                "learning_budget": "$3000/year",
+                "home_office_stipend": "$1500 one-time + $100/month",
+                "commuter_benefits": "$300/month",
+                "meals": "Lunch provided in office",
+                "gym_membership": "$100/month reimbursement",
+                "wellness_stipend": "$500/year",
+                "equipment": "Latest MacBook Pro + accessories",
+                "other_perks": [
+                  "Annual company offsite",
+                  "Team building budget",
+                  "Conference attendance",
+                  "Professional development",
+                  "Mental health support"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "recent_news_001",
+          "name": "Recent News",
+          "description": "Latest company news, funding, and developments",
+          "metadata": {
+            "createdAt": "2025-09-15T10:00:00Z",
+            "updatedAt": "2025-10-05T14:30:00Z",
+            "tags": ["news", "updates", "recent"]
+          },
+          "items": [
+            {
+              "id": "news_001_funding",
+              "name": "Series D Funding Round",
+              "description": "Latest funding announcement",
+              "type": "news",
+              "value": {
+                "event_type": "funding",
+                "date": "2025-08-15T00:00:00Z",
+                "amount": "$150M",
+                "series": "Series D",
+                "valuation": "$2.5B"
+              },
+              "metadata": {
+                "createdAt": "2025-08-16T09:00:00Z",
+                "updatedAt": "2025-08-16T09:00:00Z",
+                "tags": ["funding", "series_d", "major"]
+              },
+              "properties": {
+                "lead_investor": "Sequoia Capital",
+                "participating_investors": [
+                  "Andreessen Horowitz",
+                  "Index Ventures",
+                  "Accel"
+                ],
+                "use_of_funds": [
+                  "Product development",
+                  "International expansion",
+                  "Team growth (hiring 300+ people)"
+                ],
+                "media_coverage": [
+                  "TechCrunch",
+                  "The Information",
+                  "Bloomberg"
+                ],
+                "ceo_quote": "This funding validates our vision for developer infrastructure and accelerates our mission"
+              }
+            },
+            {
+              "id": "news_001_product_launch",
+              "name": "New AI-Powered DevTools Platform",
+              "description": "Major product launch announcement",
+              "type": "news",
+              "value": {
+                "event_type": "product_launch",
+                "date": "2025-09-20T00:00:00Z",
+                "product_name": "DevAI Platform",
+                "impact": "Major strategic initiative"
+              },
+              "metadata": {
+                "createdAt": "2025-09-20T10:00:00Z",
+                "updatedAt": "2025-09-20T10:00:00Z",
+                "tags": ["product", "launch", "ai"]
+              },
+              "properties": {
+                "description": "AI-powered code generation and infrastructure management",
+                "target_users": "Enterprise development teams",
+                "beta_customers": "500+ companies",
+                "reception": "Very positive",
+                "tech_stack": "Built on GPT-4 with custom training",
+                "team_hiring": "Aggressively hiring for AI/ML team"
+              }
+            },
+            {
+              "id": "news_001_acquisition",
+              "name": "Acquired DevSec Analytics",
+              "description": "Strategic acquisition announcement",
+              "type": "news",
+              "value": {
+                "event_type": "acquisition",
+                "date": "2025-07-10T00:00:00Z",
+                "acquired_company": "DevSec Analytics",
+                "acquisition_price": "$45M"
+              },
+              "metadata": {
+                "createdAt": "2025-07-11T09:00:00Z",
+                "updatedAt": "2025-07-11T09:00:00Z",
+                "tags": ["acquisition", "security", "strategic"]
+              },
+              "properties": {
+                "acquired_team_size": 25,
+                "technology_focus": "Security analytics and threat detection",
+                "integration_status": "In progress",
+                "team_retention": "All employees joined TechCorp",
+                "strategic_rationale": "Strengthen security capabilities for enterprise customers"
+              }
+            },
+            {
+              "id": "news_001_awards",
+              "name": "Best Places to Work 2025",
+              "description": "Industry recognition and awards",
+              "type": "news",
+              "value": {
+                "event_type": "award",
+                "date": "2025-06-01T00:00:00Z",
+                "award_name": "Best Places to Work in Tech 2025",
+                "ranking": 8
+              },
+              "metadata": {
+                "createdAt": "2025-06-02T09:00:00Z",
+                "updatedAt": "2025-06-02T09:00:00Z",
+                "tags": ["award", "culture", "recognition"]
+              },
+              "properties": {
+                "awarding_organization": "Glassdoor",
+                "category": "Mid-size companies",
+                "other_awards": [
+                  "Top 50 Startups to Watch (Forbes)",
+                  "Best Engineering Teams (BuiltIn)",
+                  "DevTool Company of the Year"
+                ],
+                "employee_satisfaction": "4.3/5 overall rating"
+              }
+            }
+          ]
+        },
+        {
+          "id": "employee_connections_001",
+          "name": "Employee Connections",
+          "description": "Personal connections and network contacts",
+          "metadata": {
+            "createdAt": "2025-09-15T10:00:00Z",
+            "updatedAt": "2025-10-05T14:30:00Z",
+            "tags": ["connections", "network", "referrals"]
+          },
+          "items": [
+            {
+              "id": "connection_001_sarah",
+              "name": "Sarah Chen",
+              "description": "Engineering Manager - Frontend Platform",
+              "type": "employee_connection",
+              "value": {
+                "name": "Sarah Chen",
+                "title": "Engineering Manager",
+                "team": "Frontend Platform",
+                "tenure": "3 years",
+                "connection_type": "LinkedIn connection"
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T10:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["manager", "frontend", "linkedin"]
+              },
+              "properties": {
+                "linkedin_url": "linkedin.com/in/sarahchen",
+                "relationship": "Met at React Conference 2024",
+                "last_contacted": "2025-09-15T10:00:00Z",
+                "referral_potential": "High",
+                "notes": "Spoke about team culture and tech stack. Very positive about company. Open to referrals.",
+                "mutual_connections": 5,
+                "can_provide_referral": true
+              }
+            },
+            {
+              "id": "connection_001_marcus",
+              "name": "Marcus Rodriguez",
+              "description": "Senior Software Engineer - Infrastructure",
+              "type": "employee_connection",
+              "value": {
+                "name": "Marcus Rodriguez",
+                "title": "Senior Software Engineer",
+                "team": "Infrastructure",
+                "tenure": "2 years",
+                "connection_type": "Former colleague"
+              },
+              "metadata": {
+                "createdAt": "2025-09-20T11:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["engineer", "infrastructure", "former_colleague"]
+              },
+              "properties": {
+                "linkedin_url": "linkedin.com/in/marcusrodriguez",
+                "relationship": "Worked together at previous company (2020-2022)",
+                "last_contacted": "2025-10-02T15:00:00Z",
+                "referral_potential": "Very high",
+                "notes": "Close working relationship. Already offered to refer. Says team is great and work is challenging in a good way.",
+                "mutual_connections": 12,
+                "can_provide_referral": true,
+                "referral_offered": true
+              }
+            },
+            {
+              "id": "connection_001_emma",
+              "name": "Emma Thompson",
+              "description": "Staff Engineer - Backend Services",
+              "type": "employee_connection",
+              "value": {
+                "name": "Emma Thompson",
+                "title": "Staff Engineer",
+                "team": "Backend Services",
+                "tenure": "4 years",
+                "connection_type": "Alumni network"
+              },
+              "metadata": {
+                "createdAt": "2025-09-28T09:00:00Z",
+                "updatedAt": "2025-10-05T14:30:00Z",
+                "tags": ["engineer", "staff", "alumni"]
+              },
+              "properties": {
+                "linkedin_url": "linkedin.com/in/emmathompson",
+                "relationship": "Same university (CS program)",
+                "last_contacted": "2025-09-28T09:00:00Z",
+                "referral_potential": "Medium-High",
+                "notes": "Connected through alumni network. Happy to chat about company. Mentioned they're hiring heavily.",
+                "mutual_connections": 8,
+                "can_provide_referral": true,
+                "school": "MIT"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "company_002",
+      "name": "Meta",
+      "description": "Global technology company building social media platforms and VR/AR products",
+      "metadata": {
+        "createdAt": "2025-09-20T10:00:00Z",
+        "updatedAt": "2025-10-05T15:00:00Z",
+        "tags": ["faang", "social_media", "vr", "target"]
+      },
+      "collections": [
+        {
+          "id": "research_notes_002",
+          "name": "Research Notes",
+          "description": "Company research and intelligence",
+          "metadata": {
+            "createdAt": "2025-09-20T10:00:00Z",
+            "updatedAt": "2025-10-05T15:00:00Z",
+            "tags": ["research", "notes", "intel"]
+          },
+          "items": [
+            {
+              "id": "note_002_overview",
+              "name": "Company Overview",
+              "description": "High-level company information",
+              "type": "research_note",
+              "value": {
+                "company_size": "86000+ employees",
+                "headquarters": "Menlo Park, CA",
+                "founded": "2004",
+                "public_status": "Public (NASDAQ: META)",
+                "market_cap": "$1.2T+"
+              },
+              "metadata": {
+                "createdAt": "2025-09-20T10:00:00Z",
+                "updatedAt": "2025-10-05T15:00:00Z",
+                "tags": ["overview", "basics", "verified"]
+              },
+              "properties": {
+                "source": "Official filings, LinkedIn",
+                "last_verified": "2025-10-05T15:00:00Z",
+                "accuracy": "high",
+                "ceo": "Mark Zuckerberg",
+                "industries": ["Social Media", "VR/AR", "AI", "Advertising"],
+                "major_products": [
+                  "Facebook",
+                  "Instagram",
+                  "WhatsApp",
+                  "Meta Quest"
+                ]
+              }
+            },
+            {
+              "id": "note_002_strategy",
+              "name": "Current Strategy & Focus",
+              "description": "Company direction and priorities",
+              "type": "research_note",
+              "value": {
+                "primary_focus": "AI and Metaverse development",
+                "strategic_priorities": [
+                  "AI infrastructure and products",
+                  "Reality Labs (VR/AR)",
+                  "Efficiency year initiatives",
+                  "Monetization optimization"
+                ]
+              },
+              "metadata": {
+                "createdAt": "2025-09-20T10:00:00Z",
+                "updatedAt": "2025-10-05T15:00:00Z",
+                "tags": ["strategy", "focus", "priorities"]
+              },
+              "properties": {
+                "year_of_efficiency": "2023-2024 restructuring complete",
+                "hiring_status": "Selective hiring, focused on AI/ML",
+                "headcount_trend": "Stabilized after reductions",
+                "focus_areas_hiring": [
+                  "AI/ML",
+                  "Infrastructure",
+                  "Product",
+                  "Reality Labs"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "tech_stack_002",
+          "name": "Tech Stack",
+          "description": "Technology stack and tools used",
+          "metadata": {
+            "createdAt": "2025-09-20T10:00:00Z",
+            "updatedAt": "2025-10-05T15:00:00Z",
+            "tags": ["tech_stack", "tools", "engineering"]
+          },
+          "items": [
+            {
+              "id": "stack_002_frontend",
+              "name": "Frontend Stack",
+              "description": "Frontend technologies",
+              "type": "tech_stack",
+              "value": {
+                "primary_framework": "React (creators)",
+                "language": "JavaScript/Flow/TypeScript",
+                "state_management": "Relay + Recoil",
+                "styling": "StyleX (internal CSS-in-JS)",
+                "build_tool": "Metro bundler"
+              },
+              "metadata": {
+                "createdAt": "2025-09-20T10:00:00Z",
+                "updatedAt": "2025-10-05T15:00:00Z",
+                "tags": ["frontend", "react", "javascript"]
+              },
+              "properties": {
+                "internal_tools": [
+                  "React",
+                  "React Native",
+                  "Relay",
+                  "StyleX",
+                  "Metro"
+                ],
+                "open_source_contributions": "Heavy OSS contributor",
+                "mobile": "React Native",
+                "testing": "Jest (created by Meta)"
+              }
+            },
+            {
+              "id": "stack_002_backend",
+              "name": "Backend Stack",
+              "description": "Backend infrastructure",
+              "type": "tech_stack",
+              "value": {
+                "primary_languages": ["Hack", "C++", "Python", "Rust"],
+                "frameworks": "Custom internal frameworks",
+                "databases": ["MySQL", "RocksDB", "TAO (custom graph store)"],
+                "messaging": "Custom infrastructure"
+              },
+              "metadata": {
+                "createdAt": "2025-09-20T10:00:00Z",
+                "updatedAt": "2025-10-05T15:00:00Z",
+                "tags": ["backend", "infrastructure", "scale"]
+              },
+              "properties": {
+                "scale": "Billions of users globally",
+                "infrastructure": "Custom data centers worldwide",
+                "cdn": "Custom CDN infrastructure",
+                "ai_infrastructure": ["PyTorch", "custom ML platforms"],
+                "created_technologies": [
+                  "HHVM",
+                  "Hack language",
+                  "PyTorch",
+                  "GraphQL"
+                ]
+              }
+            },
+            {
+              "id": "stack_002_tools",
+              "name": "Development Tools",
+              "description": "Internal tools and practices",
+              "type": "tech_stack",
+              "value": {
+                "version_control": "Git + Mercurial",
+                "code_review": "Phabricator",
+                "ci_cd": "Custom internal systems",
+                "monitoring": "Scuba, ODS (internal)"
+              },
+              "metadata": {
+                "createdAt": "2025-09-20T10:00:00Z",
+                "updatedAt": "2025-10-05T15:00:00Z",
+                "tags": ["tools", "internal", "development"]
+              },
+              "properties": {
+                "deployment": "Continuous deployment",
+                "ship_frequency": "Multiple times daily",
+                "monorepo": "Yes, massive monorepo",
+                "internal_tools_quality": "Excellent, highly optimized"
+              }
+            }
+          ]
+        },
+        {
+          "id": "culture_info_002",
+          "name": "Culture Info",
+          "description": "Company culture insights",
+          "metadata": {
+            "createdAt": "2025-09-20T10:00:00Z",
+            "updatedAt": "2025-10-05T15:00:00Z",
+            "tags": ["culture", "reviews", "employee_experience"]
+          },
+          "items": [
+            {
+              "id": "culture_002_reviews",
+              "name": "Employee Reviews Summary",
+              "description": "Aggregated review data",
+              "type": "culture_review",
+              "value": {
+                "glassdoor_rating": 4.2,
+                "work_life_balance": 3.8,
+                "compensation": 4.7,
+                "culture": 4.0,
+                "career_opportunities": 4.3
+              },
+              "metadata": {
+                "createdAt": "2025-09-20T10:00:00Z",
+                "updatedAt": "2025-10-05T15:00:00Z",
+                "tags": ["reviews", "ratings", "glassdoor"]
+              },
+              "properties": {
+                "total_reviews": "15000+",
+                "recent_trend": "Improving post-restructuring",
+                "top_pros": [
+                  "Excellent compensation and benefits",
+                  "Smart, talented colleagues",
+                  "Cutting-edge technology at scale",
+                  "Great learning opportunities",
+                  "Impact potential"
+                ],
+                "top_cons": [
+                  "Work-life balance varies by team",
+                  "Politics and bureaucracy",
+                  "Slower decision-making post-growth",
+                  "PSC reviews can be stressful"
+                ]
+              }
+            },
+            {
+              "id": "culture_002_values",
+              "name": "Company Culture & Values",
+              "description": "Cultural practices and values",
+              "type": "culture_info",
+              "value": {
+                "core_values": [
+                  "Move fast",
+                  "Be bold",
+                  "Focus on long-term impact",
+                  "Build social value",
+                  "Be open"
+                ],
+                "engineering_culture": "Highly technical, impact-driven"
+              },
+              "metadata": {
+                "createdAt": "2025-09-20T10:00:00Z",
+                "updatedAt": "2025-10-05T15:00:00Z",
+                "tags": ["culture", "values", "engineering"]
+              },
+              "properties": {
+                "work_model": "Distributed first (remote friendly)",
+                "office_policy": "Flexible, most teams hybrid",
+                "bootcamp": "6-week engineering bootcamp for new hires",
+                "team_mobility": "Can switch teams relatively easily",
+                "hackathons": "Regular hackathons",
+                "learning_culture": "Strong emphasis on growth and learning"
+              }
+            }
+          ]
+        },
+        {
+          "id": "interview_process_002",
+          "name": "Interview Process",
+          "description": "Meta interview process details",
+          "metadata": {
+            "createdAt": "2025-09-20T10:00:00Z",
+            "updatedAt": "2025-10-05T15:00:00Z",
+            "tags": ["interview", "hiring", "process"]
+          },
+          "items": [
+            {
+              "id": "interview_002_overview",
+              "name": "Process Overview",
+              "description": "Meta hiring process structure",
+              "type": "interview_process",
+              "value": {
+                "total_rounds": 5,
+                "typical_duration": "4-6 weeks",
+                "difficulty": "High (FAANG level)",
+                "process_quality": "Well-organized, standardized"
+              },
+              "metadata": {
+                "createdAt": "2025-09-20T10:00:00Z",
+                "updatedAt": "2025-10-05T15:00:00Z",
+                "tags": ["overview", "process"]
+              },
+              "properties": {
+                "coding_rounds": 2,
+                "system_design_rounds": 1,
+                "behavioral_rounds": 1,
+                "preparation_time": "1-2 months recommended",
+                "success_rate": "Relatively low (selective)"
+              }
+            },
+            {
+              "id": "interview_002_technical",
+              "name": "Technical Interview Details",
+              "description": "Coding and system design expectations",
+              "type": "interview_round",
+              "value": {
+                "coding_difficulty": "LeetCode Medium to Hard",
+                "system_design_scope": "Large-scale distributed systems",
+                "focus_areas": [
+                  "Data structures and algorithms",
+                  "Problem-solving approach",
+                  "Code quality and clarity",
+                  "Scalability thinking"
+                ]
+              },
+              "metadata": {
+                "createdAt": "2025-09-20T10:00:00Z",
+                "updatedAt": "2025-10-05T15:00:00Z",
+                "tags": ["technical", "coding", "system_design"]
+              },
+              "properties": {
+                "preparation_resources": [
+                  "LeetCode premium",
+                  "System Design Interview book",
+                  "Grokking the System Design Interview",
+                  "Meta Engineering Blog"
+                ],
+                "common_topics": [
+                  "Graph algorithms",
+                  "Dynamic programming",
+                  "Trees and tries",
+                  "Distributed systems",
+                  "Caching strategies",
+                  "Database design"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "salary_data_002",
+          "name": "Salary Data",
+          "description": "Meta compensation information",
+          "metadata": {
+            "createdAt": "2025-09-20T10:00:00Z",
+            "updatedAt": "2025-10-05T15:00:00Z",
+            "tags": ["salary", "compensation", "levels"]
+          },
+          "items": [
+            {
+              "id": "salary_002_e4",
+              "name": "E4 - Software Engineer",
+              "description": "Mid-level engineer compensation",
+              "type": "salary_range",
+              "value": {
+                "level": "E4",
+                "years_experience": "2-4 years",
+                "base_salary_min": 160000,
+                "base_salary_max": 190000,
+                "base_salary_median": 175000
+              },
+              "metadata": {
+                "createdAt": "2025-09-20T10:00:00Z",
+                "updatedAt": "2025-10-05T15:00:00Z",
+                "tags": ["E4", "compensation"]
+              },
+              "properties": {
+                "rsu_grant": "$150K-200K/year (vests quarterly)",
+                "signing_bonus": "$50K-75K",
+                "annual_bonus": "15% target",
+                "total_comp_range": "$375K-475K",
+                "total_comp_median": "$425K",
+                "refresh_grants": "Annual refreshers based on performance"
+              }
+            },
+            {
+              "id": "salary_002_e5",
+              "name": "E5 - Senior Software Engineer",
+              "description": "Senior engineer compensation",
+              "type": "salary_range",
+              "value": {
+                "level": "E5",
+                "years_experience": "5-8 years",
+                "base_salary_min": 190000,
+                "base_salary_max": 230000,
+                "base_salary_median": 210000
+              },
+              "metadata": {
+                "createdAt": "2025-09-20T10:00:00Z",
+                "updatedAt": "2025-10-05T15:00:00Z",
+                "tags": ["E5", "senior", "compensation"]
+              },
+              "properties": {
+                "rsu_grant": "$250K-350K/year",
+                "signing_bonus": "$75K-100K",
+                "annual_bonus": "15-20% target",
+                "total_comp_range": "$530K-700K",
+                "total_comp_median": "$615K",
+                "refresh_grants": "Significant annual refreshers"
+              }
+            },
+            {
+              "id": "salary_002_e6",
+              "name": "E6 - Staff Software Engineer",
+              "description": "Staff engineer compensation",
+              "type": "salary_range",
+              "value": {
+                "level": "E6",
+                "years_experience": "8-12 years",
+                "base_salary_min": 230000,
+                "base_salary_max": 280000,
+                "base_salary_median": 255000
+              },
+              "metadata": {
+                "createdAt": "2025-09-20T10:00:00Z",
+                "updatedAt": "2025-10-05T15:00:00Z",
+                "tags": ["E6", "staff", "compensation"]
+              },
+              "properties": {
+                "rsu_grant": "$400K-600K/year",
+                "signing_bonus": "$100K-150K",
+                "annual_bonus": "20-25% target",
+                "total_comp_range": "$750K-1M+",
+                "total_comp_median": "$875K",
+                "refresh_grants": "Very strong refreshers"
+              }
+            }
+          ]
+        },
+        {
+          "id": "recent_news_002",
+          "name": "Recent News",
+          "description": "Recent Meta developments",
+          "metadata": {
+            "createdAt": "2025-09-20T10:00:00Z",
+            "updatedAt": "2025-10-05T15:00:00Z",
+            "tags": ["news", "updates"]
+          },
+          "items": [
+            {
+              "id": "news_002_llama",
+              "name": "Llama 4 Release",
+              "description": "Latest open-source LLM release",
+              "type": "news",
+              "value": {
+                "event_type": "product_launch",
+                "date": "2025-09-15T00:00:00Z",
+                "product": "Llama 4",
+                "impact": "Major AI initiative"
+              },
+              "metadata": {
+                "createdAt": "2025-09-16T09:00:00Z",
+                "updatedAt": "2025-09-16T09:00:00Z",
+                "tags": ["ai", "product", "llama"]
+              },
+              "properties": {
+                "significance": "Industry-leading open source LLM",
+                "hiring_impact": "Aggressive AI/ML hiring",
+                "tech_leadership": "Demonstrates AI capabilities"
+              }
+            },
+            {
+              "id": "news_002_quest3",
+              "name": "Quest 3S Launch Success",
+              "description": "VR headset gaining traction",
+              "type": "news",
+              "value": {
+                "event_type": "product_success",
+                "date": "2025-08-01T00:00:00Z",
+                "product": "Meta Quest 3S",
+                "sales": "Strong adoption"
+              },
+              "metadata": {
+                "createdAt": "2025-08-02T09:00:00Z",
+                "updatedAt": "2025-10-05T15:00:00Z",
+                "tags": ["vr", "reality_labs", "product"]
+              },
+              "properties": {
+                "reception": "Best-selling VR headset",
+                "reality_labs_hiring": "Increasing headcount",
+                "strategic_importance": "Key to metaverse vision"
+              }
+            }
+          ]
+        },
+        {
+          "id": "employee_connections_002",
+          "name": "Employee Connections",
+          "description": "Network contacts at Meta",
+          "metadata": {
+            "createdAt": "2025-09-20T10:00:00Z",
+            "updatedAt": "2025-10-05T15:00:00Z",
+            "tags": ["connections", "network"]
+          },
+          "items": [
+            {
+              "id": "connection_002_alex",
+              "name": "Alex Kumar",
+              "description": "E6 Staff Engineer - Infrastructure",
+              "type": "employee_connection",
+              "value": {
+                "name": "Alex Kumar",
+                "title": "Staff Software Engineer",
+                "team": "Infrastructure",
+                "tenure": "6 years",
+                "connection_type": "LinkedIn connection"
+              },
+              "metadata": {
+                "createdAt": "2025-09-20T10:00:00Z",
+                "updatedAt": "2025-10-05T15:00:00Z",
+                "tags": ["staff", "infrastructure", "linkedin"]
+              },
+              "properties": {
+                "linkedin_url": "linkedin.com/in/alexkumar",
+                "relationship": "Met at conference",
+                "referral_potential": "Medium",
+                "notes": "Open to coffee chat",
+                "can_provide_referral": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "company_003",
+      "name": "Stripe",
+      "description": "Financial infrastructure platform for internet businesses",
+      "metadata": {
+        "createdAt": "2025-09-25T10:00:00Z",
+        "updatedAt": "2025-10-05T16:00:00Z",
+        "tags": ["fintech", "payments", "infrastructure", "target"]
+      },
+      "collections": [
+        {
+          "id": "research_notes_003",
+          "name": "Research Notes",
+          "description": "Company research and intelligence",
+          "metadata": {
+            "createdAt": "2025-09-25T10:00:00Z",
+            "updatedAt": "2025-10-05T16:00:00Z",
+            "tags": ["research", "notes"]
+          },
+          "items": [
+            {
+              "id": "note_003_overview",
+              "name": "Company Overview",
+              "description": "High-level information",
+              "type": "research_note",
+              "value": {
+                "company_size": "8000+ employees",
+                "headquarters": "San Francisco, CA & Dublin, Ireland",
+                "founded": "2010",
+                "funding_stage": "Private (pre-IPO)",
+                "valuation": "$65B (2024 valuation)"
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T10:00:00Z",
+                "updatedAt": "2025-10-05T16:00:00Z",
+                "tags": ["overview", "basics"]
+              },
+              "properties": {
+                "source": "Public information, Crunchbase",
+                "ceo": "Patrick Collison",
+                "president": "John Collison",
+                "industries": [
+                  "Fintech",
+                  "Payments",
+                  "Financial Infrastructure"
+                ],
+                "customers": "Millions of businesses globally",
+                "processing_volume": "$1T+ annually"
+              }
+            },
+            {
+              "id": "note_003_products",
+              "name": "Product Suite",
+              "description": "Stripe's product offerings",
+              "type": "research_note",
+              "value": {
+                "core_product": "Payment processing API",
+                "product_expansion": [
+                  "Stripe Connect (platforms)",
+                  "Stripe Billing (subscriptions)",
+                  "Stripe Terminal (in-person)",
+                  "Stripe Treasury (banking)",
+                  "Stripe Climate (carbon removal)"
+                ]
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T10:00:00Z",
+                "updatedAt": "2025-10-05T16:00:00Z",
+                "tags": ["products", "platform"]
+              },
+              "properties": {
+                "market_position": "Category leader",
+                "developer_focus": "Developer-first approach",
+                "api_quality": "Industry-leading API design",
+                "documentation": "Exceptional docs and DX"
+              }
+            }
+          ]
+        },
+        {
+          "id": "tech_stack_003",
+          "name": "Tech Stack",
+          "description": "Stripe's technology stack",
+          "metadata": {
+            "createdAt": "2025-09-25T10:00:00Z",
+            "updatedAt": "2025-10-05T16:00:00Z",
+            "tags": ["tech_stack", "engineering"]
+          },
+          "items": [
+            {
+              "id": "stack_003_backend",
+              "name": "Backend Stack",
+              "description": "Server-side technologies",
+              "type": "tech_stack",
+              "value": {
+                "primary_language": "Ruby",
+                "secondary_languages": ["Scala", "Go"],
+                "framework": "Ruby on Rails (customized)",
+                "databases": ["MongoDB", "PostgreSQL", "Redis"],
+                "infrastructure": "AWS"
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T10:00:00Z",
+                "updatedAt": "2025-10-05T16:00:00Z",
+                "tags": ["backend", "ruby", "infrastructure"]
+              },
+              "properties": {
+                "service_architecture": "Microservices",
+                "api_design": "RESTful + idempotency",
+                "reliability": "99.99%+ uptime",
+                "scale": "Handles millions of requests/sec",
+                "security": "PCI DSS Level 1 certified"
+              }
+            },
+            {
+              "id": "stack_003_frontend",
+              "name": "Frontend Stack",
+              "description": "Client-side technologies",
+              "type": "tech_stack",
+              "value": {
+                "framework": "React",
+                "language": "TypeScript",
+                "styling": "CSS Modules + Styled Components",
+                "build": "Custom build system"
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T10:00:00Z",
+                "updatedAt": "2025-10-05T16:00:00Z",
+                "tags": ["frontend", "react", "typescript"]
+              },
+              "properties": {
+                "design_system": "Stripe Design System",
+                "accessibility": "WCAG 2.1 AA compliant",
+                "performance": "Highly optimized",
+                "testing": ["Jest", "Cypress"]
+              }
+            },
+            {
+              "id": "stack_003_data",
+              "name": "Data & ML Stack",
+              "description": "Data infrastructure",
+              "type": "tech_stack",
+              "value": {
+                "data_warehouse": "Snowflake",
+                "streaming": "Kafka",
+                "ml_platform": "Custom Python-based",
+                "ml_focus": [
+                  "Fraud detection",
+                  "Risk assessment",
+                  "Optimization"
+                ]
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T10:00:00Z",
+                "updatedAt": "2025-10-05T16:00:00Z",
+                "tags": ["data", "ml", "analytics"]
+              },
+              "properties": {
+                "fraud_detection": "World-class ML models",
+                "data_science_team": "Strong DS organization",
+                "experimentation": "Robust A/B testing platform"
+              }
+            }
+          ]
+        },
+        {
+          "id": "culture_info_003",
+          "name": "Culture Info",
+          "description": "Stripe culture insights",
+          "metadata": {
+            "createdAt": "2025-09-25T10:00:00Z",
+            "updatedAt": "2025-10-05T16:00:00Z",
+            "tags": ["culture", "reviews"]
+          },
+          "items": [
+            {
+              "id": "culture_003_reviews",
+              "name": "Employee Reviews",
+              "description": "Culture feedback",
+              "type": "culture_review",
+              "value": {
+                "glassdoor_rating": 4.4,
+                "work_life_balance": 4.1,
+                "compensation": 4.6,
+                "culture": 4.5,
+                "career_opportunities": 4.4
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T10:00:00Z",
+                "updatedAt": "2025-10-05T16:00:00Z",
+                "tags": ["reviews", "glassdoor"]
+              },
+              "properties": {
+                "total_reviews": "1200+",
+                "top_pros": [
+                  "Exceptional colleagues",
+                  "Challenging problems at scale",
+                  "Strong engineering culture",
+                  "Excellent compensation",
+                  "High quality codebase",
+                  "Learning opportunities"
+                ],
+                "top_cons": [
+                  "Very high bar can be stressful",
+                  "Fast-paced environment",
+                  "Remote-first challenges post-pandemic"
+                ],
+                "engineering_culture": "Highly regarded, very strong technical culture"
+              }
+            },
+            {
+              "id": "culture_003_values",
+              "name": "Company Values",
+              "description": "Stripe's operating principles",
+              "type": "culture_info",
+              "value": {
+                "core_values": [
+                  "Users first",
+                  "Move with urgency and focus",
+                  "Think rigorously",
+                  "Trust and amplify"
+                ],
+                "engineering_principles": [
+                  "API design excellence",
+                  "Write for readability",
+                  "Obsess over quality",
+                  "Ship incrementally"
+                ]
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T10:00:00Z",
+                "updatedAt": "2025-10-05T16:00:00Z",
+                "tags": ["values", "culture"]
+              },
+              "properties": {
+                "work_model": "Remote-first",
+                "writing_culture": "Strong emphasis on written communication",
+                "documentation": "Exceptional internal and external docs",
+                "code_review": "Thorough, educational code reviews",
+                "learning": "Strong emphasis on growth and mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "interview_process_003",
+          "name": "Interview Process",
+          "description": "Stripe interview process",
+          "metadata": {
+            "createdAt": "2025-09-25T10:00:00Z",
+            "updatedAt": "2025-10-05T16:00:00Z",
+            "tags": ["interview", "process"]
+          },
+          "items": [
+            {
+              "id": "interview_003_overview",
+              "name": "Process Overview",
+              "description": "Stripe's hiring process",
+              "type": "interview_process",
+              "value": {
+                "total_rounds": 5,
+                "typical_duration": "3-4 weeks",
+                "difficulty": "High",
+                "focus": "Engineering excellence + communication"
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T10:00:00Z",
+                "updatedAt": "2025-10-05T16:00:00Z",
+                "tags": ["overview", "process"]
+              },
+              "properties": {
+                "unique_aspects": [
+                  "Bug squash exercise",
+                  "Integration problem",
+                  "Strong focus on communication",
+                  "High emphasis on writing"
+                ],
+                "preparation_time": "3-4 weeks recommended",
+                "candidate_experience": "Generally positive, well-organized"
+              }
+            },
+            {
+              "id": "interview_003_technical",
+              "name": "Technical Rounds",
+              "description": "Coding and technical assessment",
+              "type": "interview_round",
+              "value": {
+                "rounds": 3,
+                "types": [
+                  "Coding/Algorithms",
+                  "Bug Squash (debugging)",
+                  "Integration (build a feature)"
+                ]
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T10:00:00Z",
+                "updatedAt": "2025-10-05T16:00:00Z",
+                "tags": ["technical", "coding"]
+              },
+              "properties": {
+                "coding_difficulty": "LeetCode Medium",
+                "bug_squash": "Real-world debugging scenarios",
+                "integration_round": "Build feature using Stripe API",
+                "evaluation_criteria": [
+                  "Code quality",
+                  "Problem-solving approach",
+                  "Communication",
+                  "Attention to detail"
+                ],
+                "preparation_tips": [
+                  "Practice coding fundamentals",
+                  "Debug complex codebases",
+                  "Read Stripe API docs",
+                  "Practice explaining your thinking"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "salary_data_003",
+          "name": "Salary Data",
+          "description": "Stripe compensation",
+          "metadata": {
+            "createdAt": "2025-09-25T10:00:00Z",
+            "updatedAt": "2025-10-05T16:00:00Z",
+            "tags": ["salary", "compensation"]
+          },
+          "items": [
+            {
+              "id": "salary_003_l2",
+              "name": "L2 - Software Engineer",
+              "description": "Mid-level engineer",
+              "type": "salary_range",
+              "value": {
+                "level": "L2",
+                "years_experience": "2-4 years",
+                "base_salary_min": 150000,
+                "base_salary_max": 180000,
+                "base_salary_median": 165000
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T10:00:00Z",
+                "updatedAt": "2025-10-05T16:00:00Z",
+                "tags": ["L2", "compensation"]
+              },
+              "properties": {
+                "equity_grant": "$100K-150K over 4 years",
+                "signing_bonus": "$20K-40K",
+                "total_comp_range": "$195K-265K",
+                "total_comp_median": "$230K",
+                "equity_type": "Options (pre-IPO)",
+                "refresh_grants": "Annual refreshers"
+              }
+            },
+            {
+              "id": "salary_003_l3",
+              "name": "L3 - Senior Software Engineer",
+              "description": "Senior engineer",
+              "type": "salary_range",
+              "value": {
+                "level": "L3",
+                "years_experience": "5-8 years",
+                "base_salary_min": 180000,
+                "base_salary_max": 220000,
+                "base_salary_median": 200000
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T10:00:00Z",
+                "updatedAt": "2025-10-05T16:00:00Z",
+                "tags": ["L3", "senior", "compensation"]
+              },
+              "properties": {
+                "equity_grant": "$200K-300K over 4 years",
+                "signing_bonus": "$40K-60K",
+                "total_comp_range": "$290K-410K",
+                "total_comp_median": "$350K",
+                "equity_type": "Options",
+                "refresh_grants": "Strong refreshers"
+              }
+            },
+            {
+              "id": "salary_003_benefits",
+              "name": "Benefits Package",
+              "description": "Stripe benefits",
+              "type": "benefits",
+              "value": {
+                "health_insurance": "Excellent coverage",
+                "retirement": "401k with match",
+                "pto": "Unlimited PTO",
+                "parental_leave": "18 weeks primary, 10 weeks secondary"
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T10:00:00Z",
+                "updatedAt": "2025-10-05T16:00:00Z",
+                "tags": ["benefits", "perks"]
+              },
+              "properties": {
+                "remote_work": "Remote-first, flexible",
+                "home_office": "$1500 setup + $300/month",
+                "learning": "$3000/year learning budget",
+                "wellness": "$1000/year wellness stipend",
+                "equity_refresh": "Regular refresh grants",
+                "sabbatical": "After 5 years",
+                "other_perks": [
+                  "Rideshare credits",
+                  "Commuter benefits",
+                  "Mental health support",
+                  "Premium equipment"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "recent_news_003",
+          "name": "Recent News",
+          "description": "Stripe news and updates",
+          "metadata": {
+            "createdAt": "2025-09-25T10:00:00Z",
+            "updatedAt": "2025-10-05T16:00:00Z",
+            "tags": ["news", "updates"]
+          },
+          "items": [
+            {
+              "id": "news_003_growth",
+              "name": "Record Growth in 2025",
+              "description": "Business momentum",
+              "type": "news",
+              "value": {
+                "event_type": "milestone",
+                "date": "2025-09-01T00:00:00Z",
+                "achievement": "$1.2T+ processing volume (YTD)"
+              },
+              "metadata": {
+                "createdAt": "2025-09-02T09:00:00Z",
+                "updatedAt": "2025-09-02T09:00:00Z",
+                "tags": ["growth", "business"]
+              },
+              "properties": {
+                "revenue_growth": "Strong double-digit growth",
+                "customer_growth": "Expanding globally",
+                "hiring": "Actively hiring across engineering"
+              }
+            },
+            {
+              "id": "news_003_ai",
+              "name": "Stripe AI Suite Launch",
+              "description": "AI-powered features",
+              "type": "news",
+              "value": {
+                "event_type": "product_launch",
+                "date": "2025-08-15T00:00:00Z",
+                "product": "AI-powered fraud detection and optimization"
+              },
+              "metadata": {
+                "createdAt": "2025-08-16T09:00:00Z",
+                "updatedAt": "2025-08-16T09:00:00Z",
+                "tags": ["ai", "product"]
+              },
+              "properties": {
+                "impact": "Improving fraud detection by 30%",
+                "hiring": "Growing ML team significantly",
+                "innovation": "Industry-leading ML applications"
+              }
+            }
+          ]
+        },
+        {
+          "id": "employee_connections_003",
+          "name": "Employee Connections",
+          "description": "Contacts at Stripe",
+          "metadata": {
+            "createdAt": "2025-09-25T10:00:00Z",
+            "updatedAt": "2025-10-05T16:00:00Z",
+            "tags": ["connections", "network"]
+          },
+          "items": [
+            {
+              "id": "connection_003_priya",
+              "name": "Priya Sharma",
+              "description": "L3 Engineer - Developer Platform",
+              "type": "employee_connection",
+              "value": {
+                "name": "Priya Sharma",
+                "title": "Senior Software Engineer",
+                "team": "Developer Platform",
+                "tenure": "4 years",
+                "connection_type": "Friend of friend"
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T10:00:00Z",
+                "updatedAt": "2025-10-05T16:00:00Z",
+                "tags": ["engineer", "platform", "referral"]
+              },
+              "properties": {
+                "linkedin_url": "linkedin.com/in/priyasharma",
+                "relationship": "Introduced by mutual friend",
+                "referral_potential": "High",
+                "notes": "Had coffee chat. Very positive about culture. Offered to refer.",
+                "can_provide_referral": true,
+                "referral_offered": true,
+                "last_contacted": "2025-10-03T14:00:00Z"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "company_004",
+      "name": "Vercel",
+      "description": "Frontend cloud platform for deploying and scaling web applications",
+      "metadata": {
+        "createdAt": "2025-09-28T10:00:00Z",
+        "updatedAt": "2025-10-05T16:30:00Z",
+        "tags": ["frontend", "cloud", "developer_tools", "startup"]
+      },
+      "collections": [
+        {
+          "id": "research_notes_004",
+          "name": "Research Notes",
+          "description": "Company research",
+          "metadata": {
+            "createdAt": "2025-09-28T10:00:00Z",
+            "updatedAt": "2025-10-05T16:30:00Z",
+            "tags": ["research"]
+          },
+          "items": [
+            {
+              "id": "note_004_overview",
+              "name": "Company Overview",
+              "description": "Vercel basics",
+              "type": "research_note",
+              "value": {
+                "company_size": "400-500 employees",
+                "headquarters": "San Francisco, CA",
+                "founded": "2015",
+                "funding_stage": "Series D",
+                "total_funding": "$313M",
+                "valuation": "$2.5B"
+              },
+              "metadata": {
+                "createdAt": "2025-09-28T10:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["overview"]
+              },
+              "properties": {
+                "ceo": "Guillermo Rauch",
+                "products": ["Vercel Platform", "Next.js", "v0", "Turbo"],
+                "customers": "1M+ developers, 100K+ teams",
+                "notable_customers": [
+                  "OpenAI",
+                  "Uber",
+                  "Washington Post",
+                  "Notion"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "tech_stack_004",
+          "name": "Tech Stack",
+          "description": "Vercel's technology",
+          "metadata": {
+            "createdAt": "2025-09-28T10:00:00Z",
+            "updatedAt": "2025-10-05T16:30:00Z",
+            "tags": ["tech_stack"]
+          },
+          "items": [
+            {
+              "id": "stack_004_core",
+              "name": "Core Stack",
+              "description": "Primary technologies",
+              "type": "tech_stack",
+              "value": {
+                "frontend": "Next.js (creators)",
+                "language": "TypeScript",
+                "infrastructure": "Edge computing",
+                "deployment": "Global CDN"
+              },
+              "metadata": {
+                "createdAt": "2025-09-28T10:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["nextjs", "typescript", "edge"]
+              },
+              "properties": {
+                "open_source": ["Next.js", "SWR", "Turbopack", "Turborepo"],
+                "edge_runtime": "Custom edge runtime",
+                "infrastructure": "AWS + custom edge network",
+                "innovation": "Pioneering edge computing for frontend"
+              }
+            }
+          ]
+        },
+        {
+          "id": "culture_info_004",
+          "name": "Culture Info",
+          "description": "Culture insights",
+          "metadata": {
+            "createdAt": "2025-09-28T10:00:00Z",
+            "updatedAt": "2025-10-05T16:30:00Z",
+            "tags": ["culture"]
+          },
+          "items": [
+            {
+              "id": "culture_004_reviews",
+              "name": "Employee Reviews",
+              "description": "Culture feedback",
+              "type": "culture_review",
+              "value": {
+                "glassdoor_rating": 4.6,
+                "work_life_balance": 4.4,
+                "compensation": 4.5,
+                "culture": 4.7,
+                "career_opportunities": 4.5
+              },
+              "metadata": {
+                "createdAt": "2025-09-28T10:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["reviews"]
+              },
+              "properties": {
+                "top_pros": [
+                  "Amazing team and culture",
+                  "Cutting-edge technology",
+                  "Work on open source",
+                  "Transparent leadership",
+                  "Great work-life balance",
+                  "Strong developer community"
+                ],
+                "top_cons": [
+                  "Fast-paced startup environment",
+                  "Smaller company = fewer resources than big tech"
+                ],
+                "engineering_sentiment": "Exceptional, highly collaborative"
+              }
+            }
+          ]
+        },
+        {
+          "id": "interview_process_004",
+          "name": "Interview Process",
+          "description": "Hiring process",
+          "metadata": {
+            "createdAt": "2025-09-28T10:00:00Z",
+            "updatedAt": "2025-10-05T16:30:00Z",
+            "tags": ["interview"]
+          },
+          "items": [
+            {
+              "id": "interview_004_overview",
+              "name": "Process Overview",
+              "description": "Interview structure",
+              "type": "interview_process",
+              "value": {
+                "total_rounds": 4,
+                "duration": "2-3 weeks",
+                "difficulty": "Medium-High",
+                "focus": "Frontend expertise + system design"
+              },
+              "metadata": {
+                "createdAt": "2025-09-28T10:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["process"]
+              },
+              "properties": {
+                "rounds": [
+                  "Recruiter screen (30min)",
+                  "Technical screen (60min coding)",
+                  "Onsite technical (2-3 sessions)",
+                  "Culture fit + team match (45min)"
+                ],
+                "focus_areas": [
+                  "React/Next.js expertise",
+                  "Frontend architecture",
+                  "Performance optimization",
+                  "System design (frontend focus)"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "salary_data_004",
+          "name": "Salary Data",
+          "description": "Compensation",
+          "metadata": {
+            "createdAt": "2025-09-28T10:00:00Z",
+            "updatedAt": "2025-10-05T16:30:00Z",
+            "tags": ["salary"]
+          },
+          "items": [
+            {
+              "id": "salary_004_senior",
+              "name": "Senior Engineer",
+              "description": "Senior level comp",
+              "type": "salary_range",
+              "value": {
+                "level": "Senior",
+                "years_experience": "5-8 years",
+                "base_salary_min": 170000,
+                "base_salary_max": 210000,
+                "base_salary_median": 190000
+              },
+              "metadata": {
+                "createdAt": "2025-09-28T10:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["senior", "compensation"]
+              },
+              "properties": {
+                "equity_grant": "$150K-250K over 4 years",
+                "signing_bonus": "$20K-40K",
+                "total_comp_range": "$245K-350K",
+                "total_comp_median": "$295K",
+                "equity_upside": "High growth potential",
+                "benefits": "Standard startup benefits + remote work"
+              }
+            }
+          ]
+        },
+        {
+          "id": "recent_news_004",
+          "name": "Recent News",
+          "description": "Recent developments",
+          "metadata": {
+            "createdAt": "2025-09-28T10:00:00Z",
+            "updatedAt": "2025-10-05T16:30:00Z",
+            "tags": ["news"]
+          },
+          "items": [
+            {
+              "id": "news_004_v0",
+              "name": "v0 by Vercel Launch",
+              "description": "AI design tool",
+              "type": "news",
+              "value": {
+                "event_type": "product_launch",
+                "date": "2025-07-15T00:00:00Z",
+                "product": "v0 - AI-powered UI generation"
+              },
+              "metadata": {
+                "createdAt": "2025-07-16T09:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["ai", "product"]
+              },
+              "properties": {
+                "reception": "Viral success, 500K+ users",
+                "impact": "Disrupting UI development workflow",
+                "hiring": "Growing AI team rapidly"
+              }
+            }
+          ]
+        },
+        {
+          "id": "employee_connections_004",
+          "name": "Employee Connections",
+          "description": "Network",
+          "metadata": {
+            "createdAt": "2025-09-28T10:00:00Z",
+            "updatedAt": "2025-10-05T16:30:00Z",
+            "tags": ["connections"]
+          },
+          "items": [
+            {
+              "id": "connection_004_tom",
+              "name": "Tom Chen",
+              "description": "Senior Engineer - Next.js Core",
+              "type": "employee_connection",
+              "value": {
+                "name": "Tom Chen",
+                "title": "Senior Software Engineer",
+                "team": "Next.js Core",
+                "tenure": "3 years",
+                "connection_type": "GitHub follower"
+              },
+              "metadata": {
+                "createdAt": "2025-09-28T10:00:00Z",
+                "updatedAt": "2025-10-05T16:30:00Z",
+                "tags": ["engineer", "nextjs"]
+              },
+              "properties": {
+                "github_url": "github.com/tomchen",
+                "relationship": "Open source contributor connection",
+                "referral_potential": "Medium",
+                "notes": "Active in Next.js community",
+                "can_provide_referral": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "company_005",
+      "name": "Anthropic",
+      "description": "AI safety company building reliable, interpretable AI systems",
+      "metadata": {
+        "createdAt": "2025-10-01T10:00:00Z",
+        "updatedAt": "2025-10-05T17:00:00Z",
+        "tags": ["ai", "ml", "research", "target"]
+      },
+      "collections": [
+        {
+          "id": "research_notes_005",
+          "name": "Research Notes",
+          "description": "Company research",
+          "metadata": {
+            "createdAt": "2025-10-01T10:00:00Z",
+            "updatedAt": "2025-10-05T17:00:00Z",
+            "tags": ["research"]
+          },
+          "items": [
+            {
+              "id": "note_005_overview",
+              "name": "Company Overview",
+              "description": "Anthropic overview",
+              "type": "research_note",
+              "value": {
+                "company_size": "500-700 employees",
+                "headquarters": "San Francisco, CA",
+                "founded": "2021",
+                "funding_stage": "Series C",
+                "total_funding": "$7.3B",
+                "valuation": "$18.4B"
+              },
+              "metadata": {
+                "createdAt": "2025-10-01T10:00:00Z",
+                "updatedAt": "2025-10-05T17:00:00Z",
+                "tags": ["overview"]
+              },
+              "properties": {
+                "ceo": "Dario Amodei",
+                "president": "Daniela Amodei",
+                "investors": ["Google", "Salesforce", "Zoom", "Spark Capital"],
+                "mission": "AI safety and beneficial AI",
+                "product": "Claude AI assistant"
+              }
+            },
+            {
+              "id": "note_005_focus",
+              "name": "Research Focus",
+              "description": "Key areas",
+              "type": "research_note",
+              "value": {
+                "primary_research": [
+                  "Constitutional AI",
+                  "Mechanistic interpretability",
+                  "Scaling laws",
+                  "AI alignment"
+                ],
+                "commercial_product": "Claude (consumer + API)"
+              },
+              "metadata": {
+                "createdAt": "2025-10-01T10:00:00Z",
+                "updatedAt": "2025-10-05T17:00:00Z",
+                "tags": ["research", "ai_safety"]
+              },
+              "properties": {
+                "differentiation": "Safety-first approach to AI",
+                "customers": "Enterprises + developers",
+                "growth": "Rapid adoption, competing with OpenAI/Google"
+              }
+            }
+          ]
+        },
+        {
+          "id": "tech_stack_005",
+          "name": "Tech Stack",
+          "description": "Technology stack",
+          "metadata": {
+            "createdAt": "2025-10-01T10:00:00Z",
+            "updatedAt": "2025-10-05T17:00:00Z",
+            "tags": ["tech_stack"]
+          },
+          "items": [
+            {
+              "id": "stack_005_ml",
+              "name": "ML Stack",
+              "description": "AI/ML infrastructure",
+              "type": "tech_stack",
+              "value": {
+                "frameworks": ["PyTorch", "JAX"],
+                "infrastructure": "AWS (primary), GCP",
+                "compute": "Large-scale GPU clusters",
+                "languages": ["Python", "Rust", "C++"]
+              },
+              "metadata": {
+                "createdAt": "2025-10-01T10:00:00Z",
+                "updatedAt": "2025-10-05T17:00:00Z",
+                "tags": ["ml", "infrastructure"]
+              },
+              "properties": {
+                "scale": "Training models with 100B+ parameters",
+                "research_tools": "Custom interpretability tools",
+                "deployment": "Global API infrastructure",
+                "monitoring": "Custom safety monitoring systems"
+              }
+            },
+            {
+              "id": "stack_005_product",
+              "name": "Product Stack",
+              "description": "Product engineering",
+              "type": "tech_stack",
+              "value": {
+                "frontend": "React + TypeScript",
+                "backend": "Python + Rust",
+                "api": "RESTful + streaming",
+                "infrastructure": "Cloud-native on AWS"
+              },
+              "metadata": {
+                "createdAt": "2025-10-01T10:00:00Z",
+                "updatedAt": "2025-10-05T17:00:00Z",
+                "tags": ["product", "engineering"]
+              },
+              "properties": {
+                "products": [
+                  "claude.ai web app",
+                  "API platform",
+                  "Claude for Enterprise"
+                ],
+                "focus": "Reliability, safety, performance"
+              }
+            }
+          ]
+        },
+        {
+          "id": "culture_info_005",
+          "name": "Culture Info",
+          "description": "Culture insights",
+          "metadata": {
+            "createdAt": "2025-10-01T10:00:00Z",
+            "updatedAt": "2025-10-05T17:00:00Z",
+            "tags": ["culture"]
+          },
+          "items": [
+            {
+              "id": "culture_005_reviews",
+              "name": "Employee Reviews",
+              "description": "Culture feedback",
+              "type": "culture_review",
+              "value": {
+                "glassdoor_rating": 4.7,
+                "work_life_balance": 4.3,
+                "compensation": 4.8,
+                "culture": 4.8,
+                "career_opportunities": 4.6
+              },
+              "metadata": {
+                "createdAt": "2025-10-01T10:00:00Z",
+                "updatedAt": "2025-10-05T17:00:00Z",
+                "tags": ["reviews"]
+              },
+              "properties": {
+                "total_reviews": "200+",
+                "top_pros": [
+                  "Mission-driven culture",
+                  "Brilliant colleagues",
+                  "Working on cutting-edge AI",
+                  "Top-tier compensation",
+                  "Strong values alignment",
+                  "Collaborative environment"
+                ],
+                "top_cons": [
+                  "Very fast-paced",
+                  "High expectations",
+                  "Startup uncertainty"
+                ],
+                "sentiment": "Overwhelmingly positive, especially among ML/research folks"
+              }
+            },
+            {
+              "id": "culture_005_values",
+              "name": "Company Values",
+              "description": "Core principles",
+              "type": "culture_info",
+              "value": {
+                "core_values": [
+                  "Safety first",
+                  "Thoughtful innovation",
+                  "Transparency",
+                  "Long-term thinking"
+                ]
+              },
+              "metadata": {
+                "createdAt": "2025-10-01T10:00:00Z",
+                "updatedAt": "2025-10-05T17:00:00Z",
+                "tags": ["values"]
+              },
+              "properties": {
+                "work_model": "Hybrid (SF office + remote options)",
+                "research_culture": "Strong emphasis on safety research",
+                "collaboration": "High collaboration between research and product",
+                "publication": "Publishes safety research openly"
+              }
+            }
+          ]
+        },
+        {
+          "id": "interview_process_005",
+          "name": "Interview Process",
+          "description": "Hiring process",
+          "metadata": {
+            "createdAt": "2025-10-01T10:00:00Z",
+            "updatedAt": "2025-10-05T17:00:00Z",
+            "tags": ["interview"]
+          },
+          "items": [
+            {
+              "id": "interview_005_overview",
+              "name": "Process Overview",
+              "description": "Interview structure",
+              "type": "interview_process",
+              "value": {
+                "total_rounds": 5,
+                "duration": "3-4 weeks",
+                "difficulty": "Very high (top-tier talent)",
+                "focus": "Technical depth + values alignment"
+              },
+              "metadata": {
+                "createdAt": "2025-10-01T10:00:00Z",
+                "updatedAt": "2025-10-05T17:00:00Z",
+                "tags": ["process"]
+              },
+              "properties": {
+                "engineering_focus": [
+                  "ML systems (for ML roles)",
+                  "System design and scalability",
+                  "Coding fundamentals",
+                  "Safety mindset"
+                ],
+                "bar": "Very high - competing with top AI labs",
+                "values_fit": "Strong emphasis on mission alignment"
+              }
+            }
+          ]
+        },
+        {
+          "id": "salary_data_005",
+          "name": "Salary Data",
+          "description": "Compensation",
+          "metadata": {
+            "createdAt": "2025-10-01T10:00:00Z",
+            "updatedAt": "2025-10-05T17:00:00Z",
+            "tags": ["salary"]
+          },
+          "items": [
+            {
+              "id": "salary_005_swe",
+              "name": "Senior ML Engineer",
+              "description": "Senior ML role",
+              "type": "salary_range",
+              "value": {
+                "level": "Senior",
+                "years_experience": "5-8 years",
+                "base_salary_min": 200000,
+                "base_salary_max": 250000,
+                "base_salary_median": 225000
+              },
+              "metadata": {
+                "createdAt": "2025-10-01T10:00:00Z",
+                "updatedAt": "2025-10-05T17:00:00Z",
+                "tags": ["senior", "ml", "compensation"]
+              },
+              "properties": {
+                "equity_grant": "$300K-500K over 4 years",
+                "signing_bonus": "$50K-100K",
+                "total_comp_range": "$350K-550K+",
+                "total_comp_median": "$450K",
+                "note": "Competing with OpenAI, Google DeepMind",
+                "equity_upside": "Very high - fast-growing private company"
+              }
+            },
+            {
+              "id": "salary_005_benefits",
+              "name": "Benefits",
+              "description": "Benefits package",
+              "type": "benefits",
+              "value": {
+                "health": "Premium health coverage",
+                "retirement": "401k",
+                "pto": "Unlimited PTO",
+                "parental_leave": "20 weeks"
+              },
+              "metadata": {
+                "createdAt": "2025-10-01T10:00:00Z",
+                "updatedAt": "2025-10-05T17:00:00Z",
+                "tags": ["benefits"]
+              },
+              "properties": {
+                "remote_work": "Flexible hybrid",
+                "learning": "Generous learning budget",
+                "compute_access": "Access to cutting-edge compute",
+                "research_time": "20% time for research",
+                "conference": "Full conference support"
+              }
+            }
+          ]
+        },
+        {
+          "id": "recent_news_005",
+          "name": "Recent News",
+          "description": "Recent developments",
+          "metadata": {
+            "createdAt": "2025-10-01T10:00:00Z",
+            "updatedAt": "2025-10-05T17:00:00Z",
+            "tags": ["news"]
+          },
+          "items": [
+            {
+              "id": "news_005_claude35",
+              "name": "Claude 3.5 Sonnet Launch",
+              "description": "Latest model release",
+              "type": "news",
+              "value": {
+                "event_type": "product_launch",
+                "date": "2025-09-01T00:00:00Z",
+                "product": "Claude 3.5 Sonnet"
+              },
+              "metadata": {
+                "createdAt": "2025-09-02T09:00:00Z",
+                "updatedAt": "2025-10-05T17:00:00Z",
+                "tags": ["product", "ai"]
+              },
+              "properties": {
+                "reception": "Industry-leading performance",
+                "competitive_position": "Strongest Claude model yet",
+                "adoption": "Rapid enterprise uptake",
+                "hiring_impact": "Scaling teams across the board"
+              }
+            },
+            {
+              "id": "news_005_funding",
+              "name": "Google Investment",
+              "description": "Strategic partnership",
+              "type": "news",
+              "value": {
+                "event_type": "funding",
+                "date": "2025-08-10T00:00:00Z",
+                "amount": "$2B from Google",
+                "total_raised": "$7.3B total"
+              },
+              "metadata": {
+                "createdAt": "2025-08-11T09:00:00Z",
+                "updatedAt": "2025-08-11T09:00:00Z",
+                "tags": ["funding", "partnership"]
+              },
+              "properties": {
+                "valuation": "$18.4B",
+                "strategic_value": "Google Cloud partnership",
+                "runway": "Well-funded for long-term R&D",
+                "hiring_plans": "Aggressive growth plans"
+              }
+            }
+          ]
+        },
+        {
+          "id": "employee_connections_005",
+          "name": "Employee Connections",
+          "description": "Network",
+          "metadata": {
+            "createdAt": "2025-10-01T10:00:00Z",
+            "updatedAt": "2025-10-05T17:00:00Z",
+            "tags": ["connections"]
+          },
+          "items": [
+            {
+              "id": "connection_005_lisa",
+              "name": "Lisa Zhang",
+              "description": "Research Engineer - Safety",
+              "type": "employee_connection",
+              "value": {
+                "name": "Lisa Zhang",
+                "title": "Research Engineer",
+                "team": "AI Safety",
+                "tenure": "2 years",
+                "connection_type": "Conference contact"
+              },
+              "metadata": {
+                "createdAt": "2025-10-01T10:00:00Z",
+                "updatedAt": "2025-10-05T17:00:00Z",
+                "tags": ["research", "safety"]
+              },
+              "properties": {
+                "linkedin_url": "linkedin.com/in/lisazhang",
+                "relationship": "Met at NeurIPS 2024",
+                "referral_potential": "Medium",
+                "notes": "Spoke highly of mission and team",
+                "can_provide_referral": true,
+                "research_areas": ["Interpretability", "Alignment"]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

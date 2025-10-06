@@ -1,0 +1,997 @@
+{
+  "entities": [
+    {
+      "id": "team_001",
+      "name": "Engineering Team",
+      "description": "Core engineering team for product development",
+      "metadata": {
+        "createdAt": "2025-01-15T10:00:00Z",
+        "updatedAt": "2025-10-05T14:00:00Z",
+        "tags": ["engineering", "product", "active"]
+      },
+      "collections": [
+        {
+          "id": "person_001",
+          "name": "Sarah Chen",
+          "description": "Senior Frontend Engineer and Team Lead",
+          "metadata": {
+            "createdAt": "2025-01-15T10:00:00Z",
+            "updatedAt": "2025-10-05T14:00:00Z",
+            "tags": ["engineer", "team_lead", "frontend"]
+          },
+          "items": [
+            {
+              "id": "location_001",
+              "name": "San Francisco Office",
+              "description": "Primary work location",
+              "type": "location",
+              "value": {
+                "office_name": "San Francisco HQ",
+                "address": "123 Market Street, San Francisco, CA 94103",
+                "floor": "5th Floor",
+                "desk": "Desk 5A-12"
+              },
+              "metadata": {
+                "createdAt": "2025-01-15T10:00:00Z",
+                "updatedAt": "2025-09-01T08:00:00Z",
+                "tags": ["primary", "office", "hybrid"]
+              },
+              "properties": {
+                "work_arrangement": "hybrid",
+                "days_in_office": ["Monday", "Tuesday", "Thursday"],
+                "remote_days": ["Wednesday", "Friday"]
+              }
+            },
+            {
+              "id": "equipment_001",
+              "name": "MacBook Pro 16\" M3",
+              "description": "Primary development laptop",
+              "type": "equipment",
+              "value": {
+                "device_type": "laptop",
+                "model": "MacBook Pro 16-inch M3 Max",
+                "serial_number": "MBP2025-SC-001",
+                "purchase_date": "2025-01-10T00:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-01-15T10:00:00Z",
+                "updatedAt": "2025-01-15T10:00:00Z",
+                "tags": ["laptop", "primary", "active"]
+              },
+              "properties": {
+                "status": "assigned",
+                "specs": {
+                  "memory": "64GB",
+                  "storage": "2TB SSD",
+                  "processor": "M3 Max"
+                },
+                "warranty_expires": "2028-01-10T00:00:00Z"
+              }
+            },
+            {
+              "id": "equipment_002",
+              "name": "Dell UltraSharp 32\" Monitor",
+              "description": "External display",
+              "type": "equipment",
+              "value": {
+                "device_type": "monitor",
+                "model": "Dell UltraSharp U3223QE",
+                "serial_number": "MON2025-SC-001",
+                "purchase_date": "2025-01-10T00:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-01-15T10:00:00Z",
+                "updatedAt": "2025-01-15T10:00:00Z",
+                "tags": ["monitor", "peripheral", "active"]
+              },
+              "properties": {
+                "status": "assigned",
+                "specs": {
+                  "resolution": "4K",
+                  "size": "32 inches"
+                }
+              }
+            },
+            {
+              "id": "contact_001",
+              "name": "Work Email",
+              "description": "Primary work email address",
+              "type": "contact",
+              "value": {
+                "contact_type": "email",
+                "value": "sarah.chen@company.com",
+                "is_primary": true
+              },
+              "metadata": {
+                "createdAt": "2025-01-15T10:00:00Z",
+                "updatedAt": "2025-01-15T10:00:00Z",
+                "tags": ["email", "primary", "work"]
+              },
+              "properties": {
+                "verified": true,
+                "notifications_enabled": true
+              }
+            },
+            {
+              "id": "contact_002",
+              "name": "Work Phone",
+              "description": "Company mobile phone",
+              "type": "contact",
+              "value": {
+                "contact_type": "phone",
+                "value": "+1 (415) 555-0123",
+                "is_primary": false
+              },
+              "metadata": {
+                "createdAt": "2025-01-15T10:00:00Z",
+                "updatedAt": "2025-01-15T10:00:00Z",
+                "tags": ["phone", "mobile", "work"]
+              },
+              "properties": {
+                "verified": true,
+                "sms_enabled": true
+              }
+            },
+            {
+              "id": "contact_003",
+              "name": "Slack",
+              "description": "Team communication platform",
+              "type": "contact",
+              "value": {
+                "contact_type": "slack",
+                "value": "@sarah.chen",
+                "is_primary": false
+              },
+              "metadata": {
+                "createdAt": "2025-01-15T10:00:00Z",
+                "updatedAt": "2025-01-15T10:00:00Z",
+                "tags": ["slack", "messaging", "work"]
+              },
+              "properties": {
+                "status": "active",
+                "response_time": "fast"
+              }
+            }
+          ]
+        },
+        {
+          "id": "person_002",
+          "name": "Marcus Rodriguez",
+          "description": "Backend Engineer specializing in APIs",
+          "metadata": {
+            "createdAt": "2025-02-01T09:00:00Z",
+            "updatedAt": "2025-10-05T14:00:00Z",
+            "tags": ["engineer", "backend", "apis"]
+          },
+          "items": [
+            {
+              "id": "location_002",
+              "name": "New York Office",
+              "description": "Primary work location",
+              "type": "location",
+              "value": {
+                "office_name": "New York Office",
+                "address": "456 Broadway, New York, NY 10013",
+                "floor": "12th Floor",
+                "desk": "Desk 12B-08"
+              },
+              "metadata": {
+                "createdAt": "2025-02-01T09:00:00Z",
+                "updatedAt": "2025-02-01T09:00:00Z",
+                "tags": ["primary", "office", "remote"]
+              },
+              "properties": {
+                "work_arrangement": "fully_remote",
+                "timezone": "America/New_York"
+              }
+            },
+            {
+              "id": "equipment_003",
+              "name": "ThinkPad X1 Carbon",
+              "description": "Development laptop",
+              "type": "equipment",
+              "value": {
+                "device_type": "laptop",
+                "model": "Lenovo ThinkPad X1 Carbon Gen 12",
+                "serial_number": "TPX2025-MR-001",
+                "purchase_date": "2025-01-25T00:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-02-01T09:00:00Z",
+                "updatedAt": "2025-02-01T09:00:00Z",
+                "tags": ["laptop", "primary", "active"]
+              },
+              "properties": {
+                "status": "assigned",
+                "specs": {
+                  "memory": "32GB",
+                  "storage": "1TB SSD",
+                  "processor": "Intel Core Ultra 7"
+                },
+                "warranty_expires": "2028-01-25T00:00:00Z"
+              }
+            },
+            {
+              "id": "equipment_004",
+              "name": "LG UltraWide Monitor",
+              "description": "External ultrawide display",
+              "type": "equipment",
+              "value": {
+                "device_type": "monitor",
+                "model": "LG 38WN95C-W",
+                "serial_number": "MON2025-MR-001",
+                "purchase_date": "2025-01-25T00:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-02-01T09:00:00Z",
+                "updatedAt": "2025-02-01T09:00:00Z",
+                "tags": ["monitor", "ultrawide", "active"]
+              },
+              "properties": {
+                "status": "assigned",
+                "specs": {
+                  "resolution": "3840x1600",
+                  "size": "38 inches",
+                  "curved": true
+                }
+              }
+            },
+            {
+              "id": "contact_004",
+              "name": "Work Email",
+              "description": "Primary work email address",
+              "type": "contact",
+              "value": {
+                "contact_type": "email",
+                "value": "marcus.rodriguez@company.com",
+                "is_primary": true
+              },
+              "metadata": {
+                "createdAt": "2025-02-01T09:00:00Z",
+                "updatedAt": "2025-02-01T09:00:00Z",
+                "tags": ["email", "primary", "work"]
+              },
+              "properties": {
+                "verified": true,
+                "notifications_enabled": true
+              }
+            },
+            {
+              "id": "contact_005",
+              "name": "Personal Mobile",
+              "description": "Personal phone for urgent matters",
+              "type": "contact",
+              "value": {
+                "contact_type": "phone",
+                "value": "+1 (212) 555-0456",
+                "is_primary": false
+              },
+              "metadata": {
+                "createdAt": "2025-02-01T09:00:00Z",
+                "updatedAt": "2025-02-01T09:00:00Z",
+                "tags": ["phone", "personal", "emergency"]
+              },
+              "properties": {
+                "verified": true,
+                "for_emergencies_only": true
+              }
+            },
+            {
+              "id": "contact_006",
+              "name": "Slack",
+              "description": "Team communication",
+              "type": "contact",
+              "value": {
+                "contact_type": "slack",
+                "value": "@marcus.r",
+                "is_primary": false
+              },
+              "metadata": {
+                "createdAt": "2025-02-01T09:00:00Z",
+                "updatedAt": "2025-02-01T09:00:00Z",
+                "tags": ["slack", "messaging", "work"]
+              },
+              "properties": {
+                "status": "active",
+                "response_time": "moderate"
+              }
+            }
+          ]
+        },
+        {
+          "id": "person_003",
+          "name": "Emily Watson",
+          "description": "DevOps Engineer and Infrastructure Lead",
+          "metadata": {
+            "createdAt": "2025-03-15T11:00:00Z",
+            "updatedAt": "2025-10-05T14:00:00Z",
+            "tags": ["engineer", "devops", "infrastructure"]
+          },
+          "items": [
+            {
+              "id": "location_003",
+              "name": "Austin Office",
+              "description": "Regional office location",
+              "type": "location",
+              "value": {
+                "office_name": "Austin Tech Hub",
+                "address": "789 Congress Avenue, Austin, TX 78701",
+                "floor": "3rd Floor",
+                "desk": "Desk 3C-05"
+              },
+              "metadata": {
+                "createdAt": "2025-03-15T11:00:00Z",
+                "updatedAt": "2025-03-15T11:00:00Z",
+                "tags": ["primary", "office", "hybrid"]
+              },
+              "properties": {
+                "work_arrangement": "hybrid",
+                "days_in_office": ["Tuesday", "Wednesday", "Thursday"],
+                "remote_days": ["Monday", "Friday"]
+              }
+            },
+            {
+              "id": "equipment_005",
+              "name": "MacBook Pro 14\" M3",
+              "description": "Primary laptop for infrastructure work",
+              "type": "equipment",
+              "value": {
+                "device_type": "laptop",
+                "model": "MacBook Pro 14-inch M3 Pro",
+                "serial_number": "MBP2025-EW-001",
+                "purchase_date": "2025-03-10T00:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-03-15T11:00:00Z",
+                "updatedAt": "2025-03-15T11:00:00Z",
+                "tags": ["laptop", "primary", "active"]
+              },
+              "properties": {
+                "status": "assigned",
+                "specs": {
+                  "memory": "36GB",
+                  "storage": "1TB SSD",
+                  "processor": "M3 Pro"
+                },
+                "warranty_expires": "2028-03-10T00:00:00Z"
+              }
+            },
+            {
+              "id": "equipment_006",
+              "name": "iPad Pro 12.9\"",
+              "description": "Secondary device for monitoring",
+              "type": "equipment",
+              "value": {
+                "device_type": "tablet",
+                "model": "iPad Pro 12.9-inch M2",
+                "serial_number": "IPD2025-EW-001",
+                "purchase_date": "2025-03-10T00:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-03-15T11:00:00Z",
+                "updatedAt": "2025-03-15T11:00:00Z",
+                "tags": ["tablet", "monitoring", "active"]
+              },
+              "properties": {
+                "status": "assigned",
+                "specs": {
+                  "storage": "256GB",
+                  "cellular": true
+                },
+                "use_case": "On-call monitoring and incident response"
+              }
+            },
+            {
+              "id": "equipment_007",
+              "name": "Samsung Odyssey G9",
+              "description": "Ultra-wide curved monitor",
+              "type": "equipment",
+              "value": {
+                "device_type": "monitor",
+                "model": "Samsung Odyssey G9 49\"",
+                "serial_number": "MON2025-EW-001",
+                "purchase_date": "2025-03-10T00:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-03-15T11:00:00Z",
+                "updatedAt": "2025-03-15T11:00:00Z",
+                "tags": ["monitor", "ultrawide", "active"]
+              },
+              "properties": {
+                "status": "assigned",
+                "specs": {
+                  "resolution": "5120x1440",
+                  "size": "49 inches",
+                  "refresh_rate": "240Hz"
+                }
+              }
+            },
+            {
+              "id": "contact_007",
+              "name": "Work Email",
+              "description": "Primary work email",
+              "type": "contact",
+              "value": {
+                "contact_type": "email",
+                "value": "emily.watson@company.com",
+                "is_primary": true
+              },
+              "metadata": {
+                "createdAt": "2025-03-15T11:00:00Z",
+                "updatedAt": "2025-03-15T11:00:00Z",
+                "tags": ["email", "primary", "work"]
+              },
+              "properties": {
+                "verified": true,
+                "notifications_enabled": true
+              }
+            },
+            {
+              "id": "contact_008",
+              "name": "On-Call Phone",
+              "description": "Company phone for on-call rotation",
+              "type": "contact",
+              "value": {
+                "contact_type": "phone",
+                "value": "+1 (512) 555-0789",
+                "is_primary": true
+              },
+              "metadata": {
+                "createdAt": "2025-03-15T11:00:00Z",
+                "updatedAt": "2025-03-15T11:00:00Z",
+                "tags": ["phone", "on-call", "work"]
+              },
+              "properties": {
+                "verified": true,
+                "on_call_enabled": true,
+                "escalation_level": "primary"
+              }
+            },
+            {
+              "id": "contact_009",
+              "name": "PagerDuty",
+              "description": "Incident management system",
+              "type": "contact",
+              "value": {
+                "contact_type": "pagerduty",
+                "value": "emily.watson@company.pagerduty.com",
+                "is_primary": false
+              },
+              "metadata": {
+                "createdAt": "2025-03-15T11:00:00Z",
+                "updatedAt": "2025-03-15T11:00:00Z",
+                "tags": ["pagerduty", "incident", "work"]
+              },
+              "properties": {
+                "status": "active",
+                "on_call_schedule": "weekly_rotation"
+              }
+            },
+            {
+              "id": "contact_010",
+              "name": "Slack",
+              "description": "Team communication",
+              "type": "contact",
+              "value": {
+                "contact_type": "slack",
+                "value": "@emily.watson",
+                "is_primary": false
+              },
+              "metadata": {
+                "createdAt": "2025-03-15T11:00:00Z",
+                "updatedAt": "2025-03-15T11:00:00Z",
+                "tags": ["slack", "messaging", "work"]
+              },
+              "properties": {
+                "status": "active",
+                "response_time": "fast"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "team_002",
+      "name": "Design Team",
+      "description": "Product design and UX team",
+      "metadata": {
+        "createdAt": "2025-01-20T10:00:00Z",
+        "updatedAt": "2025-10-05T14:00:00Z",
+        "tags": ["design", "ux", "product"]
+      },
+      "collections": [
+        {
+          "id": "person_004",
+          "name": "Jordan Lee",
+          "description": "Senior Product Designer",
+          "metadata": {
+            "createdAt": "2025-01-20T10:00:00Z",
+            "updatedAt": "2025-10-05T14:00:00Z",
+            "tags": ["designer", "product", "senior"]
+          },
+          "items": [
+            {
+              "id": "location_004",
+              "name": "Seattle Office",
+              "description": "Primary work location",
+              "type": "location",
+              "value": {
+                "office_name": "Seattle Design Studio",
+                "address": "321 Pine Street, Seattle, WA 98101",
+                "floor": "8th Floor",
+                "desk": "Desk 8D-03"
+              },
+              "metadata": {
+                "createdAt": "2025-01-20T10:00:00Z",
+                "updatedAt": "2025-01-20T10:00:00Z",
+                "tags": ["primary", "office", "in-person"]
+              },
+              "properties": {
+                "work_arrangement": "in_office",
+                "days_in_office": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday"
+                ],
+                "has_private_workspace": true
+              }
+            },
+            {
+              "id": "equipment_008",
+              "name": "MacBook Pro 16\" M3 Max",
+              "description": "Design workstation",
+              "type": "equipment",
+              "value": {
+                "device_type": "laptop",
+                "model": "MacBook Pro 16-inch M3 Max",
+                "serial_number": "MBP2025-JL-001",
+                "purchase_date": "2025-01-15T00:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-01-20T10:00:00Z",
+                "updatedAt": "2025-01-20T10:00:00Z",
+                "tags": ["laptop", "primary", "active"]
+              },
+              "properties": {
+                "status": "assigned",
+                "specs": {
+                  "memory": "96GB",
+                  "storage": "4TB SSD",
+                  "processor": "M3 Max",
+                  "gpu": "40-core GPU"
+                },
+                "warranty_expires": "2028-01-15T00:00:00Z"
+              }
+            },
+            {
+              "id": "equipment_009",
+              "name": "BenQ PD3220U Designer Monitor",
+              "description": "Color-accurate 4K display",
+              "type": "equipment",
+              "value": {
+                "device_type": "monitor",
+                "model": "BenQ PD3220U",
+                "serial_number": "MON2025-JL-001",
+                "purchase_date": "2025-01-15T00:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-01-20T10:00:00Z",
+                "updatedAt": "2025-01-20T10:00:00Z",
+                "tags": ["monitor", "color_accurate", "active"]
+              },
+              "properties": {
+                "status": "assigned",
+                "specs": {
+                  "resolution": "4K",
+                  "size": "32 inches",
+                  "color_gamut": "99% Adobe RGB",
+                  "calibrated": true
+                }
+              }
+            },
+            {
+              "id": "equipment_010",
+              "name": "Wacom Cintiq Pro 24",
+              "description": "Digital drawing tablet",
+              "type": "equipment",
+              "value": {
+                "device_type": "drawing_tablet",
+                "model": "Wacom Cintiq Pro 24",
+                "serial_number": "WAC2025-JL-001",
+                "purchase_date": "2025-01-15T00:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-01-20T10:00:00Z",
+                "updatedAt": "2025-01-20T10:00:00Z",
+                "tags": ["tablet", "drawing", "active"]
+              },
+              "properties": {
+                "status": "assigned",
+                "specs": {
+                  "size": "24 inches",
+                  "resolution": "4K",
+                  "pressure_levels": "8192"
+                },
+                "includes_pen": true
+              }
+            },
+            {
+              "id": "contact_011",
+              "name": "Work Email",
+              "description": "Primary work email",
+              "type": "contact",
+              "value": {
+                "contact_type": "email",
+                "value": "jordan.lee@company.com",
+                "is_primary": true
+              },
+              "metadata": {
+                "createdAt": "2025-01-20T10:00:00Z",
+                "updatedAt": "2025-01-20T10:00:00Z",
+                "tags": ["email", "primary", "work"]
+              },
+              "properties": {
+                "verified": true,
+                "notifications_enabled": true
+              }
+            },
+            {
+              "id": "contact_012",
+              "name": "Figma",
+              "description": "Design collaboration tool",
+              "type": "contact",
+              "value": {
+                "contact_type": "figma",
+                "value": "jordan.lee@company.com",
+                "is_primary": false
+              },
+              "metadata": {
+                "createdAt": "2025-01-20T10:00:00Z",
+                "updatedAt": "2025-01-20T10:00:00Z",
+                "tags": ["figma", "design", "work"]
+              },
+              "properties": {
+                "status": "active",
+                "license_type": "professional",
+                "teams": ["Product Design", "Design System"]
+              }
+            },
+            {
+              "id": "contact_013",
+              "name": "Slack",
+              "description": "Team communication",
+              "type": "contact",
+              "value": {
+                "contact_type": "slack",
+                "value": "@jordan.lee",
+                "is_primary": false
+              },
+              "metadata": {
+                "createdAt": "2025-01-20T10:00:00Z",
+                "updatedAt": "2025-01-20T10:00:00Z",
+                "tags": ["slack", "messaging", "work"]
+              },
+              "properties": {
+                "status": "active",
+                "response_time": "moderate"
+              }
+            }
+          ]
+        },
+        {
+          "id": "person_005",
+          "name": "Alex Kim",
+          "description": "UX Researcher",
+          "metadata": {
+            "createdAt": "2025-04-01T09:00:00Z",
+            "updatedAt": "2025-10-05T14:00:00Z",
+            "tags": ["researcher", "ux", "user_insights"]
+          },
+          "items": [
+            {
+              "id": "location_005",
+              "name": "Remote - Portland",
+              "description": "Home office location",
+              "type": "location",
+              "value": {
+                "office_name": "Remote - Home Office",
+                "address": "Portland, OR",
+                "workspace_type": "dedicated_home_office"
+              },
+              "metadata": {
+                "createdAt": "2025-04-01T09:00:00Z",
+                "updatedAt": "2025-04-01T09:00:00Z",
+                "tags": ["remote", "home_office"]
+              },
+              "properties": {
+                "work_arrangement": "fully_remote",
+                "timezone": "America/Los_Angeles",
+                "nearest_office": "Seattle Design Studio"
+              }
+            },
+            {
+              "id": "equipment_011",
+              "name": "MacBook Air 15\" M3",
+              "description": "Portable research laptop",
+              "type": "equipment",
+              "value": {
+                "device_type": "laptop",
+                "model": "MacBook Air 15-inch M3",
+                "serial_number": "MBA2025-AK-001",
+                "purchase_date": "2025-03-25T00:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-04-01T09:00:00Z",
+                "updatedAt": "2025-04-01T09:00:00Z",
+                "tags": ["laptop", "primary", "active"]
+              },
+              "properties": {
+                "status": "assigned",
+                "specs": {
+                  "memory": "24GB",
+                  "storage": "512GB SSD",
+                  "processor": "M3"
+                },
+                "warranty_expires": "2028-03-25T00:00:00Z"
+              }
+            },
+            {
+              "id": "equipment_012",
+              "name": "Zoom Recording Kit",
+              "description": "User interview recording equipment",
+              "type": "equipment",
+              "value": {
+                "device_type": "recording_kit",
+                "model": "Professional Interview Kit",
+                "serial_number": "REC2025-AK-001",
+                "purchase_date": "2025-03-25T00:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-04-01T09:00:00Z",
+                "updatedAt": "2025-04-01T09:00:00Z",
+                "tags": ["recording", "research", "active"]
+              },
+              "properties": {
+                "status": "assigned",
+                "includes": [
+                  "USB Microphone",
+                  "HD Webcam",
+                  "Ring Light",
+                  "Headphones"
+                ]
+              }
+            },
+            {
+              "id": "contact_014",
+              "name": "Work Email",
+              "description": "Primary work email",
+              "type": "contact",
+              "value": {
+                "contact_type": "email",
+                "value": "alex.kim@company.com",
+                "is_primary": true
+              },
+              "metadata": {
+                "createdAt": "2025-04-01T09:00:00Z",
+                "updatedAt": "2025-04-01T09:00:00Z",
+                "tags": ["email", "primary", "work"]
+              },
+              "properties": {
+                "verified": true,
+                "notifications_enabled": true
+              }
+            },
+            {
+              "id": "contact_015",
+              "name": "Calendly",
+              "description": "User interview scheduling",
+              "type": "contact",
+              "value": {
+                "contact_type": "calendly",
+                "value": "calendly.com/alex-kim-ux",
+                "is_primary": false
+              },
+              "metadata": {
+                "createdAt": "2025-04-01T09:00:00Z",
+                "updatedAt": "2025-04-01T09:00:00Z",
+                "tags": ["calendly", "scheduling", "work"]
+              },
+              "properties": {
+                "status": "active",
+                "meeting_types": [
+                  "User Interview (60min)",
+                  "Quick Research Chat (30min)",
+                  "Usability Testing Session (90min)"
+                ]
+              }
+            },
+            {
+              "id": "contact_016",
+              "name": "Slack",
+              "description": "Team communication",
+              "type": "contact",
+              "value": {
+                "contact_type": "slack",
+                "value": "@alex.kim",
+                "is_primary": false
+              },
+              "metadata": {
+                "createdAt": "2025-04-01T09:00:00Z",
+                "updatedAt": "2025-04-01T09:00:00Z",
+                "tags": ["slack", "messaging", "work"]
+              },
+              "properties": {
+                "status": "active",
+                "response_time": "moderate"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "team_003",
+      "name": "Marketing Team",
+      "description": "Product marketing and growth team",
+      "metadata": {
+        "createdAt": "2025-02-10T10:00:00Z",
+        "updatedAt": "2025-10-05T14:00:00Z",
+        "tags": ["marketing", "growth", "active"]
+      },
+      "collections": [
+        {
+          "id": "person_006",
+          "name": "Taylor Morgan",
+          "description": "Head of Marketing",
+          "metadata": {
+            "createdAt": "2025-02-10T10:00:00Z",
+            "updatedAt": "2025-10-05T14:00:00Z",
+            "tags": ["marketing", "leadership", "head"]
+          },
+          "items": [
+            {
+              "id": "location_006",
+              "name": "Boston Office",
+              "description": "Executive office location",
+              "type": "location",
+              "value": {
+                "office_name": "Boston HQ - Marketing Floor",
+                "address": "100 Summer Street, Boston, MA 02110",
+                "floor": "15th Floor",
+                "desk": "Executive Office 15-E02"
+              },
+              "metadata": {
+                "createdAt": "2025-02-10T10:00:00Z",
+                "updatedAt": "2025-02-10T10:00:00Z",
+                "tags": ["primary", "office", "executive"]
+              },
+              "properties": {
+                "work_arrangement": "hybrid",
+                "days_in_office": ["Monday", "Wednesday", "Thursday"],
+                "remote_days": ["Tuesday", "Friday"],
+                "has_private_office": true
+              }
+            },
+            {
+              "id": "equipment_013",
+              "name": "MacBook Pro 14\" M3 Pro",
+              "description": "Primary work laptop",
+              "type": "equipment",
+              "value": {
+                "device_type": "laptop",
+                "model": "MacBook Pro 14-inch M3 Pro",
+                "serial_number": "MBP2025-TM-001",
+                "purchase_date": "2025-02-05T00:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-02-10T10:00:00Z",
+                "updatedAt": "2025-02-10T10:00:00Z",
+                "tags": ["laptop", "primary", "active"]
+              },
+              "properties": {
+                "status": "assigned",
+                "specs": {
+                  "memory": "36GB",
+                  "storage": "1TB SSD",
+                  "processor": "M3 Pro"
+                },
+                "warranty_expires": "2028-02-05T00:00:00Z"
+              }
+            },
+            {
+              "id": "equipment_014",
+              "name": "iPhone 15 Pro",
+              "description": "Company phone for business",
+              "type": "equipment",
+              "value": {
+                "device_type": "phone",
+                "model": "iPhone 15 Pro Max",
+                "serial_number": "IPH2025-TM-001",
+                "purchase_date": "2025-02-05T00:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-02-10T10:00:00Z",
+                "updatedAt": "2025-02-10T10:00:00Z",
+                "tags": ["phone", "mobile", "active"]
+              },
+              "properties": {
+                "status": "assigned",
+                "specs": {
+                  "storage": "512GB",
+                  "carrier": "Verizon Business"
+                },
+                "includes_mobile_plan": true
+              }
+            },
+            {
+              "id": "contact_017",
+              "name": "Work Email",
+              "description": "Primary work email",
+              "type": "contact",
+              "value": {
+                "contact_type": "email",
+                "value": "taylor.morgan@company.com",
+                "is_primary": true
+              },
+              "metadata": {
+                "createdAt": "2025-02-10T10:00:00Z",
+                "updatedAt": "2025-02-10T10:00:00Z",
+                "tags": ["email", "primary", "work"]
+              },
+              "properties": {
+                "verified": true,
+                "notifications_enabled": true,
+                "has_assistant": true
+              }
+            },
+            {
+              "id": "contact_018",
+              "name": "Work Phone",
+              "description": "Direct business line",
+              "type": "contact",
+              "value": {
+                "contact_type": "phone",
+                "value": "+1 (617) 555-1234",
+                "is_primary": true
+              },
+              "metadata": {
+                "createdAt": "2025-02-10T10:00:00Z",
+                "updatedAt": "2025-02-10T10:00:00Z",
+                "tags": ["phone", "business", "work"]
+              },
+              "properties": {
+                "verified": true,
+                "voicemail_enabled": true,
+                "call_forwarding": true
+              }
+            },
+            {
+              "id": "contact_019",
+              "name": "LinkedIn",
+              "description": "Professional networking",
+              "type": "contact",
+              "value": {
+                "contact_type": "linkedin",
+                "value": "linkedin.com/in/taylormorgan",
+                "is_primary": false
+              },
+              "metadata": {
+                "createdAt": "2025-02-10T10:00:00Z",
+                "updatedAt": "2025-02-10T10:00:00Z",
+                "tags": ["linkedin", "professional", "public"]
+              },
+              "properties": {
+                "status": "active",
+                "public_profile": true,
+                "thought_leadership": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "entities": [
+    {
+      "id": "notif_category_applications",
+      "name": "Application Notifications",
+      "description": "All notifications related to job applications",
+      "metadata": {
+        "createdAt": "2025-10-01T00:00:00Z",
+        "updatedAt": "2025-10-05T11:30:00Z",
+        "tags": ["applications", "active"]
+      },
+      "collections": [
+        {
+          "id": "notif_techcorp",
+          "name": "TechCorp Inc. Notifications",
+          "description": "Notifications for TechCorp Inc. Senior Frontend Developer application",
+          "metadata": {
+            "createdAt": "2025-10-04T15:00:00Z",
+            "updatedAt": "2025-10-05T10:00:00Z",
+            "tags": ["techcorp", "frontend", "active_application"]
+          },
+          "items": [
+            {
+              "id": "notif_004",
+              "name": "New Message from Recruiter",
+              "description": "Sarah Johnson sent you a message",
+              "type": "message",
+              "value": {
+                "sender": "Sarah Johnson",
+                "company": "TechCorp Inc.",
+                "message_preview": "We'd love to schedule a technical interview...",
+                "full_message_id": "msg_789"
+              },
+              "metadata": {
+                "createdAt": "2025-10-04T15:00:00Z",
+                "updatedAt": "2025-10-04T18:00:00Z",
+                "tags": ["message", "recruiter", "read"]
+              },
+              "properties": {
+                "read": true,
+                "priority": "medium",
+                "action_required": false,
+                "related_thread_id": "thread_001",
+                "read_at": "2025-10-04T18:00:00Z"
+              }
+            },
+            {
+              "id": "notif_002",
+              "name": "Interview Reminder",
+              "description": "Technical interview with TechCorp tomorrow",
+              "type": "interview_reminder",
+              "value": {
+                "company": "TechCorp Inc.",
+                "position": "Senior Frontend Developer",
+                "interview_type": "Technical Interview",
+                "scheduled_time": "2025-10-06T14:00:00Z",
+                "duration_minutes": 60
+              },
+              "metadata": {
+                "createdAt": "2025-10-05T10:00:00Z",
+                "updatedAt": "2025-10-05T10:00:00Z",
+                "tags": ["interview", "reminder", "important"]
+              },
+              "properties": {
+                "read": false,
+                "priority": "critical",
+                "action_required": true,
+                "related_thread_id": "thread_001",
+                "reminder_sent": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "notif_datadriven",
+          "name": "DataDriven Corp Notifications",
+          "description": "Notifications for DataDriven Corp Full Stack Developer application",
+          "metadata": {
+            "createdAt": "2025-10-05T11:30:00Z",
+            "updatedAt": "2025-10-05T11:30:00Z",
+            "tags": ["datadriven", "fullstack", "progressing"]
+          },
+          "items": [
+            {
+              "id": "notif_003",
+              "name": "Application Status Update",
+              "description": "Your application moved to next stage",
+              "type": "status_update",
+              "value": {
+                "company": "DataDriven Corp",
+                "position": "Full Stack Developer",
+                "old_status": "initial_review",
+                "new_status": "phone_screen",
+                "message": "Congratulations! We'd like to schedule a phone screen."
+              },
+              "metadata": {
+                "createdAt": "2025-10-05T11:30:00Z",
+                "updatedAt": "2025-10-05T11:30:00Z",
+                "tags": ["status_update", "positive", "action_needed"]
+              },
+              "properties": {
+                "read": false,
+                "priority": "high",
+                "action_required": true,
+                "application_id": "app_445",
+                "response_deadline": "2025-10-07T17:00:00Z"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "notif_category_searches",
+      "name": "Job Search Notifications",
+      "description": "Notifications for saved job searches and new matches",
+      "metadata": {
+        "createdAt": "2025-09-01T00:00:00Z",
+        "updatedAt": "2025-10-05T08:15:00Z",
+        "tags": ["job_search", "matches", "alerts"]
+      },
+      "collections": [
+        {
+          "id": "notif_search_frontend",
+          "name": "Frontend Developer Search",
+          "description": "Job match notifications for frontend developer saved search",
+          "metadata": {
+            "createdAt": "2025-09-01T00:00:00Z",
+            "updatedAt": "2025-10-05T08:15:00Z",
+            "tags": ["frontend", "matches"]
+          },
+          "items": [
+            {
+              "id": "notif_001",
+              "name": "New Job Match",
+              "description": "A new job matching your saved search was posted",
+              "type": "job_match",
+              "value": {
+                "job_title": "Senior React Developer",
+                "company": "InnovateTech",
+                "location": "San Francisco, CA",
+                "match_score": 95,
+                "posted_date": "2025-10-05T08:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-10-05T08:15:00Z",
+                "updatedAt": "2025-10-05T08:15:00Z",
+                "tags": ["job_match", "high_match", "urgent"]
+              },
+              "properties": {
+                "read": false,
+                "priority": "high",
+                "action_required": true,
+                "related_search_id": "search_001",
+                "expires_at": "2025-10-12T08:00:00Z"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

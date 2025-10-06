@@ -1,0 +1,1435 @@
+{
+  "entities": [
+    {
+      "id": "workflow_001",
+      "name": "TechCorp - Senior Frontend Developer Application",
+      "description": "Application workflow for TechCorp senior position",
+      "metadata": {
+        "createdAt": "2025-09-28T10:00:00Z",
+        "updatedAt": "2025-10-05T13:00:00Z",
+        "tags": ["active", "interview-stage", "high-priority"]
+      },
+      "collections": [
+        {
+          "id": "col_stages_001",
+          "name": "Workflow Stages",
+          "description": "Application process stages and their status",
+          "metadata": {
+            "createdAt": "2025-09-28T10:00:00Z",
+            "updatedAt": "2025-10-05T13:00:00Z",
+            "tags": ["stages", "progress"]
+          },
+          "items": [
+            {
+              "id": "stage_001_applied",
+              "name": "Applied",
+              "description": "Initial application submitted",
+              "type": "workflow_stage",
+              "value": {
+                "stage_name": "applied",
+                "status": "completed",
+                "sequence_order": 1
+              },
+              "metadata": {
+                "createdAt": "2025-09-28T10:00:00Z",
+                "updatedAt": "2025-09-28T10:00:00Z",
+                "tags": ["completed", "initial"]
+              },
+              "properties": {
+                "completion_date": "2025-09-28T10:00:00Z",
+                "notes": "Applied through company careers page"
+              }
+            },
+            {
+              "id": "stage_001_resume_review",
+              "name": "Resume Review",
+              "description": "Resume screening by recruiter",
+              "type": "workflow_stage",
+              "value": {
+                "stage_name": "resume_review",
+                "status": "completed",
+                "sequence_order": 2
+              },
+              "metadata": {
+                "createdAt": "2025-09-28T10:00:00Z",
+                "updatedAt": "2025-09-30T14:00:00Z",
+                "tags": ["completed", "screening"]
+              },
+              "properties": {
+                "completion_date": "2025-09-30T14:00:00Z",
+                "notes": "Passed initial screening, received positive feedback on React experience"
+              }
+            },
+            {
+              "id": "stage_001_phone_screen",
+              "name": "Phone Screen",
+              "description": "Initial phone interview with recruiter",
+              "type": "workflow_stage",
+              "value": {
+                "stage_name": "phone_screen",
+                "status": "completed",
+                "sequence_order": 3
+              },
+              "metadata": {
+                "createdAt": "2025-09-28T10:00:00Z",
+                "updatedAt": "2025-10-02T15:30:00Z",
+                "tags": ["completed", "interview"]
+              },
+              "properties": {
+                "completion_date": "2025-10-02T15:30:00Z",
+                "duration_minutes": 30,
+                "interviewer": "Sarah Johnson",
+                "notes": "Great conversation about team culture and project scope"
+              }
+            },
+            {
+              "id": "stage_001_technical_interview",
+              "name": "Technical Interview",
+              "description": "Technical assessment and coding interview",
+              "type": "workflow_stage",
+              "value": {
+                "stage_name": "technical_interview",
+                "status": "in_progress",
+                "sequence_order": 4
+              },
+              "metadata": {
+                "createdAt": "2025-09-28T10:00:00Z",
+                "updatedAt": "2025-10-05T13:00:00Z",
+                "tags": ["in_progress", "interview", "technical"]
+              },
+              "properties": {
+                "scheduled_date": "2025-10-06T14:00:00Z",
+                "estimated_duration_minutes": 90,
+                "format": "Live coding + system design",
+                "notes": "Prepare React patterns, performance optimization, and system design basics"
+              }
+            },
+            {
+              "id": "stage_001_onsite_interview",
+              "name": "Onsite Interview",
+              "description": "Final onsite interview rounds",
+              "type": "workflow_stage",
+              "value": {
+                "stage_name": "onsite_interview",
+                "status": "pending",
+                "sequence_order": 5
+              },
+              "metadata": {
+                "createdAt": "2025-09-28T10:00:00Z",
+                "updatedAt": "2025-09-28T10:00:00Z",
+                "tags": ["pending", "interview"]
+              },
+              "properties": {
+                "estimated_duration_hours": 4,
+                "format": "Multiple rounds with team members"
+              }
+            },
+            {
+              "id": "stage_001_offer_negotiation",
+              "name": "Offer Negotiation",
+              "description": "Offer discussion and negotiation",
+              "type": "workflow_stage",
+              "value": {
+                "stage_name": "offer_negotiation",
+                "status": "pending",
+                "sequence_order": 6
+              },
+              "metadata": {
+                "createdAt": "2025-09-28T10:00:00Z",
+                "updatedAt": "2025-09-28T10:00:00Z",
+                "tags": ["pending", "offer"]
+              },
+              "properties": {
+                "target_salary": 180000
+              }
+            }
+          ]
+        },
+        {
+          "id": "col_documents_001",
+          "name": "Application Documents",
+          "description": "Documents submitted for this application",
+          "metadata": {
+            "createdAt": "2025-09-28T10:00:00Z",
+            "updatedAt": "2025-09-28T10:00:00Z",
+            "tags": ["documents", "submissions"]
+          },
+          "items": [
+            {
+              "id": "doc_001_resume",
+              "name": "TechCorp Resume",
+              "description": "Tailored resume for TechCorp position",
+              "type": "document",
+              "value": {
+                "document_type": "resume",
+                "format": "pdf",
+                "version": "3.2"
+              },
+              "metadata": {
+                "createdAt": "2025-09-28T09:00:00Z",
+                "updatedAt": "2025-09-28T09:30:00Z",
+                "tags": ["resume", "submitted"]
+              },
+              "properties": {
+                "submitted": true,
+                "submission_date": "2025-09-28T10:00:00Z",
+                "highlights": [
+                  "React",
+                  "TypeScript",
+                  "Performance optimization"
+                ]
+              }
+            },
+            {
+              "id": "doc_001_cover_letter",
+              "name": "TechCorp Cover Letter",
+              "description": "Personalized cover letter",
+              "type": "document",
+              "value": {
+                "document_type": "cover_letter",
+                "format": "pdf",
+                "version": "1.0"
+              },
+              "metadata": {
+                "createdAt": "2025-09-28T09:00:00Z",
+                "updatedAt": "2025-09-28T09:30:00Z",
+                "tags": ["cover_letter", "submitted"]
+              },
+              "properties": {
+                "submitted": true,
+                "submission_date": "2025-09-28T10:00:00Z",
+                "word_count": 320
+              }
+            },
+            {
+              "id": "doc_001_portfolio",
+              "name": "TechCorp Portfolio",
+              "description": "Portfolio showcasing relevant projects",
+              "type": "document",
+              "value": {
+                "document_type": "portfolio",
+                "format": "url",
+                "url": "https://portfolio.example.com"
+              },
+              "metadata": {
+                "createdAt": "2025-09-28T09:00:00Z",
+                "updatedAt": "2025-09-28T09:30:00Z",
+                "tags": ["portfolio", "submitted"]
+              },
+              "properties": {
+                "submitted": true,
+                "submission_date": "2025-09-28T10:00:00Z",
+                "projects_featured": 5
+              }
+            }
+          ]
+        },
+        {
+          "id": "col_contacts_001",
+          "name": "Contacts",
+          "description": "Key contacts for this application",
+          "metadata": {
+            "createdAt": "2025-09-28T10:00:00Z",
+            "updatedAt": "2025-10-02T15:30:00Z",
+            "tags": ["contacts", "people"]
+          },
+          "items": [
+            {
+              "id": "contact_001_sarah",
+              "name": "Sarah Johnson",
+              "description": "Senior Recruiter at TechCorp",
+              "type": "contact",
+              "value": {
+                "full_name": "Sarah Johnson",
+                "role": "Senior Recruiter",
+                "company": "TechCorp Inc.",
+                "email": "sarah.j@techcorp.com"
+              },
+              "metadata": {
+                "createdAt": "2025-09-28T10:00:00Z",
+                "updatedAt": "2025-10-02T15:30:00Z",
+                "tags": ["recruiter", "primary_contact"]
+              },
+              "properties": {
+                "last_contacted": "2025-10-02T15:30:00Z",
+                "total_interactions": 3,
+                "relationship": "Primary point of contact for application process"
+              }
+            }
+          ]
+        },
+        {
+          "id": "col_milestones_001",
+          "name": "Key Milestones",
+          "description": "Important milestones and deadlines",
+          "metadata": {
+            "createdAt": "2025-09-28T10:00:00Z",
+            "updatedAt": "2025-10-05T13:00:00Z",
+            "tags": ["milestones", "deadlines"]
+          },
+          "items": [
+            {
+              "id": "milestone_001_application",
+              "name": "Application Submitted",
+              "description": "Initial application submission milestone",
+              "type": "milestone",
+              "value": {
+                "milestone_type": "application_submitted",
+                "date": "2025-09-28T10:00:00Z",
+                "status": "completed"
+              },
+              "metadata": {
+                "createdAt": "2025-09-28T10:00:00Z",
+                "updatedAt": "2025-09-28T10:00:00Z",
+                "tags": ["completed", "initial"]
+              },
+              "properties": {
+                "achievement": "Successfully submitted application with all required materials"
+              }
+            },
+            {
+              "id": "milestone_001_technical",
+              "name": "Technical Interview Scheduled",
+              "description": "Technical interview scheduled for October 6",
+              "type": "milestone",
+              "value": {
+                "milestone_type": "interview_scheduled",
+                "date": "2025-10-06T14:00:00Z",
+                "status": "upcoming"
+              },
+              "metadata": {
+                "createdAt": "2025-10-05T13:00:00Z",
+                "updatedAt": "2025-10-05T13:00:00Z",
+                "tags": ["upcoming", "interview"]
+              },
+              "properties": {
+                "preparation_required": true,
+                "preparation_notes": "Review React patterns, performance optimization, system design"
+              }
+            }
+          ]
+        },
+        {
+          "id": "col_metadata_001",
+          "name": "Application Metadata",
+          "description": "Overall application information and progress",
+          "metadata": {
+            "createdAt": "2025-09-28T10:00:00Z",
+            "updatedAt": "2025-10-05T13:00:00Z",
+            "tags": ["metadata", "tracking"]
+          },
+          "items": [
+            {
+              "id": "meta_001_progress",
+              "name": "Progress Tracker",
+              "description": "Current application progress and metrics",
+              "type": "metadata",
+              "value": {
+                "company": "TechCorp Inc.",
+                "position": "Senior Frontend Developer",
+                "application_date": "2025-09-28T10:00:00Z",
+                "current_stage": "technical_interview"
+              },
+              "metadata": {
+                "createdAt": "2025-09-28T10:00:00Z",
+                "updatedAt": "2025-10-05T13:00:00Z",
+                "tags": ["progress", "metrics"]
+              },
+              "properties": {
+                "total_stages": 6,
+                "stages_completed": 3,
+                "progress_percentage": 50,
+                "next_action": "Prepare for technical interview",
+                "next_deadline": "2025-10-06T14:00:00Z",
+                "salary_expectation": 180000,
+                "notes": "Great culture fit, exciting product. Team uses React + TypeScript."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "workflow_002",
+      "name": "StartupXYZ - Full Stack Engineer Application",
+      "description": "Application process for startup full stack role",
+      "metadata": {
+        "createdAt": "2025-10-03T09:00:00Z",
+        "updatedAt": "2025-10-04T16:00:00Z",
+        "tags": ["active", "early-stage", "startup"]
+      },
+      "collections": [
+        {
+          "id": "col_stages_002",
+          "name": "Workflow Stages",
+          "description": "Application process stages and their status",
+          "metadata": {
+            "createdAt": "2025-10-03T09:00:00Z",
+            "updatedAt": "2025-10-04T16:00:00Z",
+            "tags": ["stages", "progress"]
+          },
+          "items": [
+            {
+              "id": "stage_002_applied",
+              "name": "Applied",
+              "description": "Initial application submitted",
+              "type": "workflow_stage",
+              "value": {
+                "stage_name": "applied",
+                "status": "completed",
+                "sequence_order": 1
+              },
+              "metadata": {
+                "createdAt": "2025-10-03T09:00:00Z",
+                "updatedAt": "2025-10-03T09:00:00Z",
+                "tags": ["completed", "initial"]
+              },
+              "properties": {
+                "completion_date": "2025-10-03T09:00:00Z",
+                "notes": "Applied via company website"
+              }
+            },
+            {
+              "id": "stage_002_resume_review",
+              "name": "Resume Review",
+              "description": "Resume screening in progress",
+              "type": "workflow_stage",
+              "value": {
+                "stage_name": "resume_review",
+                "status": "in_progress",
+                "sequence_order": 2
+              },
+              "metadata": {
+                "createdAt": "2025-10-03T09:00:00Z",
+                "updatedAt": "2025-10-04T16:00:00Z",
+                "tags": ["in_progress", "screening"]
+              },
+              "properties": {
+                "notes": "Waiting for recruiter response"
+              }
+            },
+            {
+              "id": "stage_002_phone_screen",
+              "name": "Phone Screen",
+              "description": "Initial phone interview",
+              "type": "workflow_stage",
+              "value": {
+                "stage_name": "phone_screen",
+                "status": "pending",
+                "sequence_order": 3
+              },
+              "metadata": {
+                "createdAt": "2025-10-03T09:00:00Z",
+                "updatedAt": "2025-10-03T09:00:00Z",
+                "tags": ["pending", "interview"]
+              },
+              "properties": {}
+            },
+            {
+              "id": "stage_002_technical_interview",
+              "name": "Technical Interview",
+              "description": "Technical assessment",
+              "type": "workflow_stage",
+              "value": {
+                "stage_name": "technical_interview",
+                "status": "pending",
+                "sequence_order": 4
+              },
+              "metadata": {
+                "createdAt": "2025-10-03T09:00:00Z",
+                "updatedAt": "2025-10-03T09:00:00Z",
+                "tags": ["pending", "interview"]
+              },
+              "properties": {}
+            },
+            {
+              "id": "stage_002_offer_negotiation",
+              "name": "Offer Negotiation",
+              "description": "Offer discussion and negotiation",
+              "type": "workflow_stage",
+              "value": {
+                "stage_name": "offer_negotiation",
+                "status": "pending",
+                "sequence_order": 5
+              },
+              "metadata": {
+                "createdAt": "2025-10-03T09:00:00Z",
+                "updatedAt": "2025-10-03T09:00:00Z",
+                "tags": ["pending", "offer"]
+              },
+              "properties": {
+                "target_salary": 160000
+              }
+            }
+          ]
+        },
+        {
+          "id": "col_documents_002",
+          "name": "Application Documents",
+          "description": "Documents submitted for this application",
+          "metadata": {
+            "createdAt": "2025-10-03T09:00:00Z",
+            "updatedAt": "2025-10-03T09:00:00Z",
+            "tags": ["documents", "submissions"]
+          },
+          "items": [
+            {
+              "id": "doc_002_resume",
+              "name": "StartupXYZ Resume",
+              "description": "Resume for StartupXYZ application",
+              "type": "document",
+              "value": {
+                "document_type": "resume",
+                "format": "pdf",
+                "version": "2.1"
+              },
+              "metadata": {
+                "createdAt": "2025-10-03T08:30:00Z",
+                "updatedAt": "2025-10-03T08:45:00Z",
+                "tags": ["resume", "submitted"]
+              },
+              "properties": {
+                "submitted": true,
+                "submission_date": "2025-10-03T09:00:00Z",
+                "highlights": ["Full stack", "TypeScript", "Node.js"]
+              }
+            },
+            {
+              "id": "doc_002_github",
+              "name": "GitHub Profile",
+              "description": "Link to GitHub profile",
+              "type": "document",
+              "value": {
+                "document_type": "github_profile",
+                "format": "url",
+                "url": "https://github.com/username"
+              },
+              "metadata": {
+                "createdAt": "2025-10-03T09:00:00Z",
+                "updatedAt": "2025-10-03T09:00:00Z",
+                "tags": ["github", "submitted"]
+              },
+              "properties": {
+                "submitted": true,
+                "submission_date": "2025-10-03T09:00:00Z"
+              }
+            }
+          ]
+        },
+        {
+          "id": "col_contacts_002",
+          "name": "Contacts",
+          "description": "Key contacts for this application",
+          "metadata": {
+            "createdAt": "2025-10-03T09:00:00Z",
+            "updatedAt": "2025-10-03T09:00:00Z",
+            "tags": ["contacts", "people"]
+          },
+          "items": [
+            {
+              "id": "contact_002_mike",
+              "name": "Mike Chen",
+              "description": "Engineering Manager at StartupXYZ",
+              "type": "contact",
+              "value": {
+                "full_name": "Mike Chen",
+                "role": "Engineering Manager",
+                "company": "StartupXYZ",
+                "email": "mike@startupxyz.com"
+              },
+              "metadata": {
+                "createdAt": "2025-10-03T09:00:00Z",
+                "updatedAt": "2025-10-03T09:00:00Z",
+                "tags": ["hiring_manager"]
+              },
+              "properties": {
+                "last_contacted": null,
+                "total_interactions": 0,
+                "relationship": "Listed as hiring manager in job posting"
+              }
+            }
+          ]
+        },
+        {
+          "id": "col_milestones_002",
+          "name": "Key Milestones",
+          "description": "Important milestones and deadlines",
+          "metadata": {
+            "createdAt": "2025-10-03T09:00:00Z",
+            "updatedAt": "2025-10-03T09:00:00Z",
+            "tags": ["milestones", "deadlines"]
+          },
+          "items": [
+            {
+              "id": "milestone_002_application",
+              "name": "Application Submitted",
+              "description": "Initial application submission milestone",
+              "type": "milestone",
+              "value": {
+                "milestone_type": "application_submitted",
+                "date": "2025-10-03T09:00:00Z",
+                "status": "completed"
+              },
+              "metadata": {
+                "createdAt": "2025-10-03T09:00:00Z",
+                "updatedAt": "2025-10-03T09:00:00Z",
+                "tags": ["completed", "initial"]
+              },
+              "properties": {
+                "achievement": "Successfully submitted application"
+              }
+            }
+          ]
+        },
+        {
+          "id": "col_metadata_002",
+          "name": "Application Metadata",
+          "description": "Overall application information and progress",
+          "metadata": {
+            "createdAt": "2025-10-03T09:00:00Z",
+            "updatedAt": "2025-10-04T16:00:00Z",
+            "tags": ["metadata", "tracking"]
+          },
+          "items": [
+            {
+              "id": "meta_002_progress",
+              "name": "Progress Tracker",
+              "description": "Current application progress and metrics",
+              "type": "metadata",
+              "value": {
+                "company": "StartupXYZ",
+                "position": "Full Stack Engineer",
+                "application_date": "2025-10-03T09:00:00Z",
+                "current_stage": "resume_review"
+              },
+              "metadata": {
+                "createdAt": "2025-10-03T09:00:00Z",
+                "updatedAt": "2025-10-04T16:00:00Z",
+                "tags": ["progress", "metrics"]
+              },
+              "properties": {
+                "total_stages": 5,
+                "stages_completed": 1,
+                "progress_percentage": 20,
+                "next_action": "Wait for recruiter response",
+                "next_deadline": null,
+                "salary_expectation": 160000,
+                "notes": "Early stage startup, equity-heavy compensation. Flexible remote work."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "workflow_003",
+      "name": "DataDriven Corp - Full Stack Developer Application",
+      "description": "Application for data-focused development role",
+      "metadata": {
+        "createdAt": "2025-09-25T14:00:00Z",
+        "updatedAt": "2025-10-05T11:30:00Z",
+        "tags": ["active", "phone-screen", "data-engineering"]
+      },
+      "collections": [
+        {
+          "id": "col_stages_003",
+          "name": "Workflow Stages",
+          "description": "Application process stages and their status",
+          "metadata": {
+            "createdAt": "2025-09-25T14:00:00Z",
+            "updatedAt": "2025-10-05T11:30:00Z",
+            "tags": ["stages", "progress"]
+          },
+          "items": [
+            {
+              "id": "stage_003_applied",
+              "name": "Applied",
+              "description": "Initial application submitted",
+              "type": "workflow_stage",
+              "value": {
+                "stage_name": "applied",
+                "status": "completed",
+                "sequence_order": 1
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T14:00:00Z",
+                "updatedAt": "2025-09-25T14:00:00Z",
+                "tags": ["completed", "initial"]
+              },
+              "properties": {
+                "completion_date": "2025-09-25T14:00:00Z",
+                "notes": "Applied through LinkedIn"
+              }
+            },
+            {
+              "id": "stage_003_resume_review",
+              "name": "Resume Review",
+              "description": "Resume screening completed",
+              "type": "workflow_stage",
+              "value": {
+                "stage_name": "resume_review",
+                "status": "completed",
+                "sequence_order": 2
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T14:00:00Z",
+                "updatedAt": "2025-09-27T10:00:00Z",
+                "tags": ["completed", "screening"]
+              },
+              "properties": {
+                "completion_date": "2025-09-27T10:00:00Z",
+                "notes": "Recruiter reached out to schedule phone screen"
+              }
+            },
+            {
+              "id": "stage_003_phone_screen",
+              "name": "Phone Screen",
+              "description": "Phone screen to be scheduled",
+              "type": "workflow_stage",
+              "value": {
+                "stage_name": "phone_screen",
+                "status": "in_progress",
+                "sequence_order": 3
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T14:00:00Z",
+                "updatedAt": "2025-10-05T11:30:00Z",
+                "tags": ["in_progress", "interview"]
+              },
+              "properties": {
+                "deadline": "2025-10-07T17:00:00Z",
+                "notes": "Need to schedule by October 7"
+              }
+            },
+            {
+              "id": "stage_003_technical_interview",
+              "name": "Technical Interview",
+              "description": "Technical assessment",
+              "type": "workflow_stage",
+              "value": {
+                "stage_name": "technical_interview",
+                "status": "pending",
+                "sequence_order": 4
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T14:00:00Z",
+                "updatedAt": "2025-09-25T14:00:00Z",
+                "tags": ["pending", "interview"]
+              },
+              "properties": {}
+            },
+            {
+              "id": "stage_003_offer_negotiation",
+              "name": "Offer Negotiation",
+              "description": "Offer discussion and negotiation",
+              "type": "workflow_stage",
+              "value": {
+                "stage_name": "offer_negotiation",
+                "status": "pending",
+                "sequence_order": 5
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T14:00:00Z",
+                "updatedAt": "2025-09-25T14:00:00Z",
+                "tags": ["pending", "offer"]
+              },
+              "properties": {
+                "target_salary": 170000
+              }
+            }
+          ]
+        },
+        {
+          "id": "col_documents_003",
+          "name": "Application Documents",
+          "description": "Documents submitted for this application",
+          "metadata": {
+            "createdAt": "2025-09-25T14:00:00Z",
+            "updatedAt": "2025-09-25T14:00:00Z",
+            "tags": ["documents", "submissions"]
+          },
+          "items": [
+            {
+              "id": "doc_003_resume",
+              "name": "DataDriven Resume",
+              "description": "Resume emphasizing data engineering",
+              "type": "document",
+              "value": {
+                "document_type": "resume",
+                "format": "pdf",
+                "version": "4.1"
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T13:30:00Z",
+                "updatedAt": "2025-09-25T13:45:00Z",
+                "tags": ["resume", "submitted"]
+              },
+              "properties": {
+                "submitted": true,
+                "submission_date": "2025-09-25T14:00:00Z",
+                "highlights": ["Python", "TypeScript", "Data pipelines"]
+              }
+            },
+            {
+              "id": "doc_003_cover_letter",
+              "name": "DataDriven Cover Letter",
+              "description": "Cover letter for data-focused role",
+              "type": "document",
+              "value": {
+                "document_type": "cover_letter",
+                "format": "pdf",
+                "version": "1.0"
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T13:30:00Z",
+                "updatedAt": "2025-09-25T13:45:00Z",
+                "tags": ["cover_letter", "submitted"]
+              },
+              "properties": {
+                "submitted": true,
+                "submission_date": "2025-09-25T14:00:00Z",
+                "word_count": 310
+              }
+            }
+          ]
+        },
+        {
+          "id": "col_contacts_003",
+          "name": "Contacts",
+          "description": "Key contacts for this application",
+          "metadata": {
+            "createdAt": "2025-09-25T14:00:00Z",
+            "updatedAt": "2025-09-27T10:00:00Z",
+            "tags": ["contacts", "people"]
+          },
+          "items": [
+            {
+              "id": "contact_003_jennifer",
+              "name": "Jennifer Martinez",
+              "description": "Talent Acquisition Lead at DataDriven Corp",
+              "type": "contact",
+              "value": {
+                "full_name": "Jennifer Martinez",
+                "role": "Talent Acquisition Lead",
+                "company": "DataDriven Corp",
+                "email": "j.martinez@datadriven.com"
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T14:00:00Z",
+                "updatedAt": "2025-09-27T10:00:00Z",
+                "tags": ["recruiter", "primary_contact"]
+              },
+              "properties": {
+                "last_contacted": "2025-09-27T10:00:00Z",
+                "total_interactions": 1,
+                "relationship": "Recruiter who reached out after resume review"
+              }
+            }
+          ]
+        },
+        {
+          "id": "col_milestones_003",
+          "name": "Key Milestones",
+          "description": "Important milestones and deadlines",
+          "metadata": {
+            "createdAt": "2025-09-25T14:00:00Z",
+            "updatedAt": "2025-10-05T11:30:00Z",
+            "tags": ["milestones", "deadlines"]
+          },
+          "items": [
+            {
+              "id": "milestone_003_application",
+              "name": "Application Submitted",
+              "description": "Initial application submission milestone",
+              "type": "milestone",
+              "value": {
+                "milestone_type": "application_submitted",
+                "date": "2025-09-25T14:00:00Z",
+                "status": "completed"
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T14:00:00Z",
+                "updatedAt": "2025-09-25T14:00:00Z",
+                "tags": ["completed", "initial"]
+              },
+              "properties": {
+                "achievement": "Successfully submitted application via LinkedIn"
+              }
+            },
+            {
+              "id": "milestone_003_schedule_deadline",
+              "name": "Phone Screen Scheduling Deadline",
+              "description": "Deadline to schedule phone screen",
+              "type": "milestone",
+              "value": {
+                "milestone_type": "deadline",
+                "date": "2025-10-07T17:00:00Z",
+                "status": "upcoming"
+              },
+              "metadata": {
+                "createdAt": "2025-10-05T11:30:00Z",
+                "updatedAt": "2025-10-05T11:30:00Z",
+                "tags": ["upcoming", "deadline"]
+              },
+              "properties": {
+                "urgency": "high",
+                "action_required": "Contact Jennifer Martinez to schedule phone screen"
+              }
+            }
+          ]
+        },
+        {
+          "id": "col_metadata_003",
+          "name": "Application Metadata",
+          "description": "Overall application information and progress",
+          "metadata": {
+            "createdAt": "2025-09-25T14:00:00Z",
+            "updatedAt": "2025-10-05T11:30:00Z",
+            "tags": ["metadata", "tracking"]
+          },
+          "items": [
+            {
+              "id": "meta_003_progress",
+              "name": "Progress Tracker",
+              "description": "Current application progress and metrics",
+              "type": "metadata",
+              "value": {
+                "company": "DataDriven Corp",
+                "position": "Full Stack Developer",
+                "application_date": "2025-09-25T14:00:00Z",
+                "current_stage": "phone_screen"
+              },
+              "metadata": {
+                "createdAt": "2025-09-25T14:00:00Z",
+                "updatedAt": "2025-10-05T11:30:00Z",
+                "tags": ["progress", "metrics"]
+              },
+              "properties": {
+                "total_stages": 5,
+                "stages_completed": 2,
+                "progress_percentage": 40,
+                "next_action": "Schedule phone screen",
+                "next_deadline": "2025-10-07T17:00:00Z",
+                "salary_expectation": 170000,
+                "notes": "Strong data engineering component. Python + TypeScript stack."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "workflow_004",
+      "name": "GlobalTech Solutions - React Developer Application",
+      "description": "Application rejected - position filled internally",
+      "metadata": {
+        "createdAt": "2025-09-15T11:00:00Z",
+        "updatedAt": "2025-10-01T10:00:00Z",
+        "tags": ["completed", "rejected", "closed"]
+      },
+      "collections": [
+        {
+          "id": "col_stages_004",
+          "name": "Workflow Stages",
+          "description": "Application process stages and their status",
+          "metadata": {
+            "createdAt": "2025-09-15T11:00:00Z",
+            "updatedAt": "2025-10-01T10:00:00Z",
+            "tags": ["stages", "completed"]
+          },
+          "items": [
+            {
+              "id": "stage_004_applied",
+              "name": "Applied",
+              "description": "Initial application submitted",
+              "type": "workflow_stage",
+              "value": {
+                "stage_name": "applied",
+                "status": "completed",
+                "sequence_order": 1
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T11:00:00Z",
+                "updatedAt": "2025-09-15T11:00:00Z",
+                "tags": ["completed", "initial"]
+              },
+              "properties": {
+                "completion_date": "2025-09-15T11:00:00Z",
+                "notes": "Applied through company careers page"
+              }
+            },
+            {
+              "id": "stage_004_resume_review",
+              "name": "Resume Review",
+              "description": "Resume screening completed",
+              "type": "workflow_stage",
+              "value": {
+                "stage_name": "resume_review",
+                "status": "completed",
+                "sequence_order": 2
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T11:00:00Z",
+                "updatedAt": "2025-09-18T14:00:00Z",
+                "tags": ["completed", "screening"]
+              },
+              "properties": {
+                "completion_date": "2025-09-18T14:00:00Z",
+                "notes": "Passed initial screening"
+              }
+            },
+            {
+              "id": "stage_004_phone_screen",
+              "name": "Phone Screen",
+              "description": "Phone interview completed",
+              "type": "workflow_stage",
+              "value": {
+                "stage_name": "phone_screen",
+                "status": "completed",
+                "sequence_order": 3
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T11:00:00Z",
+                "updatedAt": "2025-09-22T16:00:00Z",
+                "tags": ["completed", "interview"]
+              },
+              "properties": {
+                "completion_date": "2025-09-22T16:00:00Z",
+                "duration_minutes": 30,
+                "interviewer": "Lisa Wang",
+                "notes": "Good interview, positive feedback on technical skills"
+              }
+            },
+            {
+              "id": "stage_004_rejected",
+              "name": "Rejected",
+              "description": "Application rejected - position filled internally",
+              "type": "workflow_stage",
+              "value": {
+                "stage_name": "rejected",
+                "status": "completed",
+                "sequence_order": 4
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T11:00:00Z",
+                "updatedAt": "2025-10-01T10:00:00Z",
+                "tags": ["completed", "rejected"]
+              },
+              "properties": {
+                "completion_date": "2025-10-01T10:00:00Z",
+                "rejection_reason": "Position filled internally",
+                "notes": "Received positive feedback, encouraged to apply for future openings"
+              }
+            }
+          ]
+        },
+        {
+          "id": "col_documents_004",
+          "name": "Application Documents",
+          "description": "Documents submitted for this application",
+          "metadata": {
+            "createdAt": "2025-09-15T11:00:00Z",
+            "updatedAt": "2025-09-15T11:00:00Z",
+            "tags": ["documents", "submissions"]
+          },
+          "items": [
+            {
+              "id": "doc_004_resume",
+              "name": "GlobalTech Resume",
+              "description": "Resume for GlobalTech application",
+              "type": "document",
+              "value": {
+                "document_type": "resume",
+                "format": "pdf",
+                "version": "3.0"
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T10:30:00Z",
+                "updatedAt": "2025-09-15T10:45:00Z",
+                "tags": ["resume", "submitted"]
+              },
+              "properties": {
+                "submitted": true,
+                "submission_date": "2025-09-15T11:00:00Z",
+                "highlights": ["React", "JavaScript", "UI/UX"]
+              }
+            },
+            {
+              "id": "doc_004_cover_letter",
+              "name": "GlobalTech Cover Letter",
+              "description": "Cover letter for GlobalTech position",
+              "type": "document",
+              "value": {
+                "document_type": "cover_letter",
+                "format": "pdf",
+                "version": "1.0"
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T10:30:00Z",
+                "updatedAt": "2025-09-15T10:45:00Z",
+                "tags": ["cover_letter", "submitted"]
+              },
+              "properties": {
+                "submitted": true,
+                "submission_date": "2025-09-15T11:00:00Z",
+                "word_count": 295
+              }
+            }
+          ]
+        },
+        {
+          "id": "col_contacts_004",
+          "name": "Contacts",
+          "description": "Key contacts for this application",
+          "metadata": {
+            "createdAt": "2025-09-15T11:00:00Z",
+            "updatedAt": "2025-10-01T10:00:00Z",
+            "tags": ["contacts", "people"]
+          },
+          "items": [
+            {
+              "id": "contact_004_lisa",
+              "name": "Lisa Wang",
+              "description": "Senior Recruiter at GlobalTech Solutions",
+              "type": "contact",
+              "value": {
+                "full_name": "Lisa Wang",
+                "role": "Senior Recruiter",
+                "company": "GlobalTech Solutions",
+                "email": "lisa@globaltech.com"
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T11:00:00Z",
+                "updatedAt": "2025-10-01T10:00:00Z",
+                "tags": ["recruiter", "primary_contact"]
+              },
+              "properties": {
+                "last_contacted": "2025-10-01T10:00:00Z",
+                "total_interactions": 3,
+                "relationship": "Primary recruiter, delivered rejection notice with positive feedback"
+              }
+            }
+          ]
+        },
+        {
+          "id": "col_milestones_004",
+          "name": "Key Milestones",
+          "description": "Important milestones throughout the process",
+          "metadata": {
+            "createdAt": "2025-09-15T11:00:00Z",
+            "updatedAt": "2025-10-01T10:00:00Z",
+            "tags": ["milestones", "historical"]
+          },
+          "items": [
+            {
+              "id": "milestone_004_application",
+              "name": "Application Submitted",
+              "description": "Initial application submission milestone",
+              "type": "milestone",
+              "value": {
+                "milestone_type": "application_submitted",
+                "date": "2025-09-15T11:00:00Z",
+                "status": "completed"
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T11:00:00Z",
+                "updatedAt": "2025-09-15T11:00:00Z",
+                "tags": ["completed", "initial"]
+              },
+              "properties": {
+                "achievement": "Successfully submitted application"
+              }
+            },
+            {
+              "id": "milestone_004_phone_screen",
+              "name": "Phone Screen Completed",
+              "description": "Successfully completed phone screen interview",
+              "type": "milestone",
+              "value": {
+                "milestone_type": "interview_completed",
+                "date": "2025-09-22T16:00:00Z",
+                "status": "completed"
+              },
+              "metadata": {
+                "createdAt": "2025-09-22T16:00:00Z",
+                "updatedAt": "2025-09-22T16:00:00Z",
+                "tags": ["completed", "interview"]
+              },
+              "properties": {
+                "achievement": "Good interview with positive feedback"
+              }
+            },
+            {
+              "id": "milestone_004_rejection",
+              "name": "Application Rejected",
+              "description": "Application rejected - position filled internally",
+              "type": "milestone",
+              "value": {
+                "milestone_type": "application_rejected",
+                "date": "2025-10-01T10:00:00Z",
+                "status": "completed"
+              },
+              "metadata": {
+                "createdAt": "2025-10-01T10:00:00Z",
+                "updatedAt": "2025-10-01T10:00:00Z",
+                "tags": ["completed", "rejection"]
+              },
+              "properties": {
+                "outcome": "Position filled internally",
+                "feedback": "Positive feedback received, encouraged to apply for future openings"
+              }
+            }
+          ]
+        },
+        {
+          "id": "col_metadata_004",
+          "name": "Application Metadata",
+          "description": "Overall application information and final outcome",
+          "metadata": {
+            "createdAt": "2025-09-15T11:00:00Z",
+            "updatedAt": "2025-10-01T10:00:00Z",
+            "tags": ["metadata", "completed"]
+          },
+          "items": [
+            {
+              "id": "meta_004_progress",
+              "name": "Final Status",
+              "description": "Final application status and outcome",
+              "type": "metadata",
+              "value": {
+                "company": "GlobalTech Solutions",
+                "position": "React Developer",
+                "application_date": "2025-09-15T11:00:00Z",
+                "current_stage": "rejected",
+                "final_outcome": "rejected",
+                "rejection_reason": "Position filled internally"
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T11:00:00Z",
+                "updatedAt": "2025-10-01T10:00:00Z",
+                "tags": ["completed", "rejected"]
+              },
+              "properties": {
+                "total_stages": 5,
+                "stages_completed": 3,
+                "progress_percentage": 60,
+                "completion_date": "2025-10-01T10:00:00Z",
+                "salary_expectation": 155000,
+                "notes": "Good interview, but they went with internal candidate. Positive feedback received."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "template_001",
+      "name": "Standard Tech Company Workflow Template",
+      "description": "Typical 6-stage process for established tech companies",
+      "metadata": {
+        "createdAt": "2025-08-15T01:00:00Z",
+        "updatedAt": "2025-09-01T12:00:00Z",
+        "tags": ["template", "standard", "tech"]
+      },
+      "collections": [
+        {
+          "id": "col_template_stages",
+          "name": "Template Stages",
+          "description": "Standard workflow stages for tech companies",
+          "metadata": {
+            "createdAt": "2025-08-15T01:00:00Z",
+            "updatedAt": "2025-09-01T12:00:00Z",
+            "tags": ["template", "stages"]
+          },
+          "items": [
+            {
+              "id": "template_stage_001",
+              "name": "Applied",
+              "description": "Initial application submission",
+              "type": "template_stage",
+              "value": {
+                "stage_name": "applied",
+                "sequence_order": 1,
+                "typical_duration_days": 0
+              },
+              "metadata": {
+                "createdAt": "2025-08-15T01:00:00Z",
+                "updatedAt": "2025-09-01T12:00:00Z",
+                "tags": ["template", "initial"]
+              },
+              "properties": {
+                "description": "Submit application materials through company portal or recruiter",
+                "best_practices": [
+                  "Tailor resume to job description",
+                  "Write personalized cover letter"
+                ]
+              }
+            },
+            {
+              "id": "template_stage_002",
+              "name": "Resume Review",
+              "description": "Initial resume screening",
+              "type": "template_stage",
+              "value": {
+                "stage_name": "resume_review",
+                "sequence_order": 2,
+                "typical_duration_days": 7
+              },
+              "metadata": {
+                "createdAt": "2025-08-15T01:00:00Z",
+                "updatedAt": "2025-09-01T12:00:00Z",
+                "tags": ["template", "screening"]
+              },
+              "properties": {
+                "description": "Recruiter or hiring manager reviews application materials",
+                "success_factors": [
+                  "Relevant experience",
+                  "Skills match",
+                  "Clear achievements"
+                ]
+              }
+            },
+            {
+              "id": "template_stage_003",
+              "name": "Phone Screen",
+              "description": "Initial phone interview",
+              "type": "template_stage",
+              "value": {
+                "stage_name": "phone_screen",
+                "sequence_order": 3,
+                "typical_duration_days": 14
+              },
+              "metadata": {
+                "createdAt": "2025-08-15T01:00:00Z",
+                "updatedAt": "2025-09-01T12:00:00Z",
+                "tags": ["template", "interview"]
+              },
+              "properties": {
+                "description": "30-minute call with recruiter to discuss background and fit",
+                "preparation_tips": [
+                  "Research company",
+                  "Prepare questions",
+                  "Review job description"
+                ]
+              }
+            },
+            {
+              "id": "template_stage_004",
+              "name": "Technical Interview",
+              "description": "Technical assessment and coding interview",
+              "type": "template_stage",
+              "value": {
+                "stage_name": "technical_interview",
+                "sequence_order": 4,
+                "typical_duration_days": 21
+              },
+              "metadata": {
+                "createdAt": "2025-08-15T01:00:00Z",
+                "updatedAt": "2025-09-01T12:00:00Z",
+                "tags": ["template", "interview", "technical"]
+              },
+              "properties": {
+                "description": "Technical coding challenge and/or live coding session",
+                "preparation_tips": [
+                  "Review data structures and algorithms",
+                  "Practice coding problems",
+                  "Prepare to explain thought process"
+                ]
+              }
+            },
+            {
+              "id": "template_stage_005",
+              "name": "Onsite Interview",
+              "description": "Final onsite interview rounds",
+              "type": "template_stage",
+              "value": {
+                "stage_name": "onsite_interview",
+                "sequence_order": 5,
+                "typical_duration_days": 35
+              },
+              "metadata": {
+                "createdAt": "2025-08-15T01:00:00Z",
+                "updatedAt": "2025-09-01T12:00:00Z",
+                "tags": ["template", "interview", "final"]
+              },
+              "properties": {
+                "description": "Full day of interviews with multiple team members",
+                "preparation_tips": [
+                  "Practice system design",
+                  "Prepare behavioral stories in STAR format",
+                  "Research team and projects"
+                ]
+              }
+            },
+            {
+              "id": "template_stage_006",
+              "name": "Offer Negotiation",
+              "description": "Offer discussion and negotiation",
+              "type": "template_stage",
+              "value": {
+                "stage_name": "offer_negotiation",
+                "sequence_order": 6,
+                "typical_duration_days": 45
+              },
+              "metadata": {
+                "createdAt": "2025-08-15T01:00:00Z",
+                "updatedAt": "2025-09-01T12:00:00Z",
+                "tags": ["template", "offer"]
+              },
+              "properties": {
+                "description": "Review offer and negotiate terms",
+                "preparation_tips": [
+                  "Research market rates",
+                  "Understand total compensation",
+                  "Be prepared to negotiate professionally"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "col_template_metadata",
+          "name": "Template Metadata",
+          "description": "Information about this workflow template",
+          "metadata": {
+            "createdAt": "2025-08-15T01:00:00Z",
+            "updatedAt": "2025-09-01T12:00:00Z",
+            "tags": ["template", "info"]
+          },
+          "items": [
+            {
+              "id": "template_meta_001",
+              "name": "Template Information",
+              "description": "Details about this workflow template",
+              "type": "template_metadata",
+              "value": {
+                "template_name": "Standard Tech Company Workflow",
+                "estimated_duration_days": 45,
+                "typical_timeline": "6-8 weeks from application to offer"
+              },
+              "metadata": {
+                "createdAt": "2025-08-15T01:00:00Z",
+                "updatedAt": "2025-09-01T12:00:00Z",
+                "tags": ["template", "metadata"]
+              },
+              "properties": {
+                "success_rate": 0.15,
+                "avg_salary_range": [140000, 200000],
+                "common_requirements": [
+                  "coding_challenge",
+                  "system_design",
+                  "behavioral"
+                ],
+                "preparation_tips": [
+                  "Review data structures and algorithms",
+                  "Practice system design problems",
+                  "Prepare STAR format stories"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

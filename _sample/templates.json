@@ -1,0 +1,337 @@
+{
+  "entities": [
+    {
+      "id": "template_library",
+      "name": "Template & Automation Library",
+      "description": "Reusable templates and automation rules for job search",
+      "metadata": {
+        "createdAt": "2025-09-01T00:00:00Z",
+        "updatedAt": "2025-10-05T17:00:00Z",
+        "tags": ["templates", "automation", "efficiency"]
+      },
+      "collections": [
+        {
+          "id": "email_templates",
+          "name": "Email Templates",
+          "description": "Pre-written email templates for common scenarios",
+          "metadata": {
+            "createdAt": "2025-09-01T00:00:00Z",
+            "updatedAt": "2025-10-05T17:00:00Z",
+            "tags": ["email", "templates", "communication"]
+          },
+          "items": [
+            {
+              "id": "template_001",
+              "name": "Initial Response to Recruiter",
+              "description": "Standard response to initial recruiter outreach",
+              "type": "email_template",
+              "value": {
+                "template_name": "Initial Response to Recruiter",
+                "subject": "Re: {job_title} opportunity",
+                "body": "Hi {recruiter_name},\n\nThank you for reaching out about the {job_title} position at {company_name}. I'm interested in learning more about this opportunity.\n\nCould you share more details about:\n- The team structure and who I'd be working with\n- The tech stack and development practices\n- The interview process and timeline\n- The compensation range for this role\n\nI'm also happy to schedule a call if you'd prefer to discuss.\n\nBest regards,\n{my_name}",
+                "variables": [
+                  "recruiter_name",
+                  "job_title",
+                  "company_name",
+                  "my_name"
+                ],
+                "use_case": "First response to recruiter"
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T17:00:00Z",
+                "tags": ["email", "recruiter", "initial_contact"]
+              },
+              "properties": {
+                "times_used": 18,
+                "last_used": "2025-10-03T18:00:00Z",
+                "success_rate": 85,
+                "avg_response_time_hours": 4.2
+              }
+            },
+            {
+              "id": "template_002",
+              "name": "Interview Thank You",
+              "description": "Post-interview thank you email",
+              "type": "email_template",
+              "value": {
+                "template_name": "Interview Thank You",
+                "subject": "Thank you - {job_title} Interview",
+                "body": "Hi {interviewer_name},\n\nThank you for taking the time to speak with me today about the {job_title} role at {company_name}. I really enjoyed our conversation about {specific_topic}.\n\nI'm excited about the opportunity to {specific_contribution} and contribute to {team_goal}. Please let me know if there's any additional information I can provide.\n\nLooking forward to the next steps!\n\nBest,\n{my_name}",
+                "variables": [
+                  "interviewer_name",
+                  "job_title",
+                  "company_name",
+                  "specific_topic",
+                  "specific_contribution",
+                  "team_goal",
+                  "my_name"
+                ],
+                "use_case": "Send within 24 hours of interview"
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-04T16:00:00Z",
+                "tags": ["email", "interview", "thank_you"]
+              },
+              "properties": {
+                "times_used": 6,
+                "last_used": "2025-10-04T16:00:00Z",
+                "success_rate": 100,
+                "send_within_hours": 12
+              }
+            },
+            {
+              "id": "template_003",
+              "name": "Follow-up After Application",
+              "description": "Follow-up email if no response after application",
+              "type": "email_template",
+              "value": {
+                "template_name": "Follow-up After Application",
+                "subject": "Following up on {job_title} application",
+                "body": "Hi {recruiter_name},\n\nI wanted to follow up on my application for the {job_title} position that I submitted on {application_date}. I'm very interested in this opportunity and would love to discuss how my experience with {relevant_skill} could contribute to {company_name}.\n\nIs there any update on the hiring timeline? I'm happy to provide any additional information that would be helpful.\n\nThank you for your consideration!\n\nBest,\n{my_name}",
+                "variables": [
+                  "recruiter_name",
+                  "job_title",
+                  "application_date",
+                  "relevant_skill",
+                  "company_name",
+                  "my_name"
+                ],
+                "use_case": "Send 7-10 days after application if no response"
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T00:00:00Z",
+                "updatedAt": "2025-10-02T14:00:00Z",
+                "tags": ["email", "follow_up", "application"]
+              },
+              "properties": {
+                "times_used": 4,
+                "last_used": "2025-10-02T14:00:00Z",
+                "success_rate": 50,
+                "wait_days": 8
+              }
+            }
+          ]
+        },
+        {
+          "id": "document_templates",
+          "name": "Document Templates",
+          "description": "Templates for resumes, cover letters, and other documents",
+          "metadata": {
+            "createdAt": "2025-09-01T00:00:00Z",
+            "updatedAt": "2025-10-05T17:00:00Z",
+            "tags": ["documents", "templates"]
+          },
+          "items": [
+            {
+              "id": "template_004",
+              "name": "Cover Letter Template - Tech Role",
+              "description": "Standard cover letter for technical positions",
+              "type": "document_template",
+              "value": {
+                "template_name": "Cover Letter - Tech Role",
+                "format": "markdown",
+                "sections": [
+                  {
+                    "name": "Opening",
+                    "content": "I am writing to express my strong interest in the {job_title} position at {company_name}."
+                  },
+                  {
+                    "name": "Why Company",
+                    "content": "I'm particularly drawn to {company_name} because {company_specific_reason}."
+                  },
+                  {
+                    "name": "Relevant Experience",
+                    "content": "In my {years} years as a {current_role}, I have {achievement_1} and {achievement_2}."
+                  },
+                  {
+                    "name": "Technical Skills",
+                    "content": "My technical expertise includes {skill_1}, {skill_2}, and {skill_3}, which aligns well with your requirements."
+                  },
+                  {
+                    "name": "Closing",
+                    "content": "I would welcome the opportunity to discuss how I can contribute to {team_goal}."
+                  }
+                ],
+                "variables": [
+                  "job_title",
+                  "company_name",
+                  "company_specific_reason",
+                  "years",
+                  "current_role",
+                  "achievement_1",
+                  "achievement_2",
+                  "skill_1",
+                  "skill_2",
+                  "skill_3",
+                  "team_goal"
+                ]
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T17:00:00Z",
+                "tags": ["cover_letter", "technical", "template"]
+              },
+              "properties": {
+                "times_used": 15,
+                "last_used": "2025-10-02T15:45:00Z",
+                "avg_customization_time_minutes": 25,
+                "success_rate": 80
+              }
+            }
+          ]
+        },
+        {
+          "id": "automation_rules",
+          "name": "Automation Rules",
+          "description": "Automated workflows and triggers",
+          "metadata": {
+            "createdAt": "2025-09-01T00:00:00Z",
+            "updatedAt": "2025-10-05T17:00:00Z",
+            "tags": ["automation", "workflows", "rules"]
+          },
+          "items": [
+            {
+              "id": "rule_001",
+              "name": "Auto-send Thank You Email",
+              "description": "Automatically send thank you email after interview",
+              "type": "automation_rule",
+              "value": {
+                "rule_name": "Auto-send Thank You Email",
+                "trigger": "interview_completed",
+                "conditions": [
+                  {
+                    "field": "interview_type",
+                    "operator": "in",
+                    "value": ["phone_screen", "technical", "onsite"]
+                  }
+                ],
+                "actions": [
+                  {
+                    "type": "create_draft_email",
+                    "template_id": "template_002",
+                    "delay_hours": 2,
+                    "require_approval": true
+                  },
+                  {
+                    "type": "set_reminder",
+                    "message": "Review and send thank you email",
+                    "delay_hours": 4
+                  }
+                ],
+                "enabled": true
+              },
+              "metadata": {
+                "createdAt": "2025-09-10T00:00:00Z",
+                "updatedAt": "2025-10-05T17:00:00Z",
+                "tags": ["automation", "email", "interview"]
+              },
+              "properties": {
+                "times_triggered": 6,
+                "last_triggered": "2025-10-04T16:00:00Z",
+                "success_rate": 100,
+                "time_saved_minutes": 180
+              }
+            },
+            {
+              "id": "rule_002",
+              "name": "Application Follow-up Reminder",
+              "description": "Remind to follow up on applications with no response",
+              "type": "automation_rule",
+              "value": {
+                "rule_name": "Application Follow-up Reminder",
+                "trigger": "time_based",
+                "conditions": [
+                  {
+                    "field": "days_since_application",
+                    "operator": "equals",
+                    "value": 7
+                  },
+                  {
+                    "field": "status",
+                    "operator": "equals",
+                    "value": "applied"
+                  }
+                ],
+                "actions": [
+                  {
+                    "type": "create_notification",
+                    "message": "Consider following up on {company_name} application",
+                    "priority": "medium"
+                  },
+                  {
+                    "type": "suggest_template",
+                    "template_id": "template_003"
+                  }
+                ],
+                "enabled": true
+              },
+              "metadata": {
+                "createdAt": "2025-09-15T00:00:00Z",
+                "updatedAt": "2025-10-05T17:00:00Z",
+                "tags": ["automation", "follow_up", "reminder"]
+              },
+              "properties": {
+                "times_triggered": 4,
+                "last_triggered": "2025-10-02T09:00:00Z",
+                "action_taken_rate": 75,
+                "time_saved_minutes": 60
+              }
+            },
+            {
+              "id": "rule_003",
+              "name": "Interview Prep Reminder",
+              "description": "Create prep session before scheduled interview",
+              "type": "automation_rule",
+              "value": {
+                "rule_name": "Interview Prep Reminder",
+                "trigger": "interview_scheduled",
+                "conditions": [
+                  {
+                    "field": "interview_type",
+                    "operator": "in",
+                    "value": ["technical", "onsite", "final_round"]
+                  }
+                ],
+                "actions": [
+                  {
+                    "type": "create_calendar_event",
+                    "event_type": "prep_session",
+                    "duration_minutes": 120,
+                    "before_interview_hours": 24
+                  },
+                  {
+                    "type": "compile_prep_materials",
+                    "include": [
+                      "company_research",
+                      "tech_stack",
+                      "interview_questions"
+                    ]
+                  },
+                  {
+                    "type": "create_notification",
+                    "message": "Prep session scheduled for {company_name} interview",
+                    "priority": "high"
+                  }
+                ],
+                "enabled": true
+              },
+              "metadata": {
+                "createdAt": "2025-09-20T00:00:00Z",
+                "updatedAt": "2025-10-05T17:00:00Z",
+                "tags": ["automation", "interview", "prep"]
+              },
+              "properties": {
+                "times_triggered": 3,
+                "last_triggered": "2025-10-05T11:30:00Z",
+                "success_rate": 100,
+                "time_saved_minutes": 90
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

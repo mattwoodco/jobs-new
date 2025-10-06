@@ -1,0 +1,201 @@
+{
+  "entities": [
+    {
+      "id": "professional_network",
+      "name": "Professional Network",
+      "description": "Connections, referrals, and networking contacts for job search",
+      "metadata": {
+        "createdAt": "2025-09-01T00:00:00Z",
+        "updatedAt": "2025-10-05T18:00:00Z",
+        "tags": ["network", "contacts", "referrals"]
+      },
+      "collections": [
+        {
+          "id": "connections",
+          "name": "LinkedIn Connections",
+          "description": "Professional connections who can help with job search",
+          "metadata": {
+            "createdAt": "2025-09-01T00:00:00Z",
+            "updatedAt": "2025-10-05T18:00:00Z",
+            "tags": ["linkedin", "connections"]
+          },
+          "items": [
+            {
+              "id": "contact_001",
+              "name": "Alex Martinez",
+              "description": "Senior Engineering Manager at TechCorp",
+              "type": "connection",
+              "value": {
+                "full_name": "Alex Martinez",
+                "current_company": "TechCorp Inc.",
+                "current_title": "Senior Engineering Manager",
+                "relationship": "Former colleague",
+                "connection_strength": "strong",
+                "linkedin_url": "https://linkedin.com/in/alexmartinez",
+                "email": "alex.martinez@techcorp.com",
+                "phone": "+1-555-0123"
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T18:00:00Z",
+                "tags": ["techcorp", "manager", "strong_connection"]
+              },
+              "properties": {
+                "can_refer": true,
+                "last_contacted": "2025-09-28T10:00:00Z",
+                "response_rate": "high",
+                "helped_with": ["TechCorp referral", "Resume review"],
+                "mutual_connections": 12
+              }
+            },
+            {
+              "id": "contact_002",
+              "name": "Jessica Chen",
+              "description": "Frontend Tech Lead at InnovateTech",
+              "type": "connection",
+              "value": {
+                "full_name": "Jessica Chen",
+                "current_company": "InnovateTech",
+                "current_title": "Frontend Tech Lead",
+                "relationship": "Bootcamp cohort",
+                "connection_strength": "medium",
+                "linkedin_url": "https://linkedin.com/in/jessicachen",
+                "email": "jchen@innovatetech.com"
+              },
+              "metadata": {
+                "createdAt": "2025-09-10T00:00:00Z",
+                "updatedAt": "2025-10-05T18:00:00Z",
+                "tags": ["frontend", "tech_lead", "bootcamp"]
+              },
+              "properties": {
+                "can_refer": true,
+                "last_contacted": "2025-10-05T08:30:00Z",
+                "response_rate": "medium",
+                "helped_with": ["Job lead at InnovateTech"],
+                "mutual_connections": 8
+              }
+            }
+          ]
+        },
+        {
+          "id": "referrals",
+          "name": "Referral Requests",
+          "description": "Active and completed referral requests",
+          "metadata": {
+            "createdAt": "2025-09-15T00:00:00Z",
+            "updatedAt": "2025-10-05T18:00:00Z",
+            "tags": ["referrals", "requests"]
+          },
+          "items": [
+            {
+              "id": "referral_001",
+              "name": "TechCorp Referral",
+              "description": "Referral from Alex Martinez for Senior Frontend Developer",
+              "type": "referral",
+              "value": {
+                "company": "TechCorp Inc.",
+                "position": "Senior Frontend Developer",
+                "referrer_id": "contact_001",
+                "referrer_name": "Alex Martinez",
+                "requested_date": "2025-09-28T10:00:00Z",
+                "submitted_date": "2025-09-29T14:00:00Z",
+                "status": "submitted",
+                "referral_code": "REF-TECH-9876"
+              },
+              "metadata": {
+                "createdAt": "2025-09-28T10:00:00Z",
+                "updatedAt": "2025-09-29T14:00:00Z",
+                "tags": ["techcorp", "submitted", "active"]
+              },
+              "properties": {
+                "response_time_hours": 28,
+                "follow_up_scheduled": "2025-10-12T10:00:00Z",
+                "notes": "Alex spoke directly to hiring manager",
+                "related_application_id": "app_001"
+              }
+            }
+          ]
+        },
+        {
+          "id": "alumni_network",
+          "name": "Alumni Network",
+          "description": "University and bootcamp alumni connections",
+          "metadata": {
+            "createdAt": "2025-09-01T00:00:00Z",
+            "updatedAt": "2025-10-05T18:00:00Z",
+            "tags": ["alumni", "university", "bootcamp"]
+          },
+          "items": [
+            {
+              "id": "alumni_001",
+              "name": "Stanford CS Alumni Group",
+              "description": "Stanford Computer Science alumni network",
+              "type": "alumni_group",
+              "value": {
+                "group_name": "Stanford CS Alumni",
+                "institution": "Stanford University",
+                "type": "university",
+                "member_count": 350,
+                "active_members": 120,
+                "platform": "LinkedIn Group",
+                "group_url": "https://linkedin.com/groups/stanford-cs"
+              },
+              "metadata": {
+                "createdAt": "2025-09-01T00:00:00Z",
+                "updatedAt": "2025-10-05T18:00:00Z",
+                "tags": ["stanford", "alumni", "active"]
+              },
+              "properties": {
+                "engagement_level": "high",
+                "job_posts_per_month": 15,
+                "last_visited": "2025-10-05T09:00:00Z",
+                "connections_made": 8
+              }
+            }
+          ]
+        },
+        {
+          "id": "warm_intros",
+          "name": "Warm Introductions",
+          "description": "Pending and completed warm introductions",
+          "metadata": {
+            "createdAt": "2025-09-15T00:00:00Z",
+            "updatedAt": "2025-10-05T18:00:00Z",
+            "tags": ["introductions", "networking"]
+          },
+          "items": [
+            {
+              "id": "intro_001",
+              "name": "Intro to StartupXYZ CTO",
+              "description": "Introduction to Sarah Lee, CTO at StartupXYZ",
+              "type": "warm_intro",
+              "value": {
+                "target_person": "Sarah Lee",
+                "target_title": "CTO",
+                "target_company": "StartupXYZ",
+                "introducer_id": "contact_003",
+                "introducer_name": "David Park",
+                "requested_date": "2025-10-03T16:00:00Z",
+                "intro_made_date": "2025-10-04T10:00:00Z",
+                "status": "completed",
+                "meeting_scheduled": true,
+                "meeting_date": "2025-10-12T10:00:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-10-03T16:00:00Z",
+                "updatedAt": "2025-10-04T10:00:00Z",
+                "tags": ["startup", "cto", "completed"]
+              },
+              "properties": {
+                "response_time_hours": 18,
+                "conversation_quality": "excellent",
+                "follow_up_required": true,
+                "related_application": "StartupXYZ Full Stack Engineer"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

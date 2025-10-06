@@ -1,0 +1,117 @@
+{
+  "entities": [
+    {
+      "id": "activity_feed",
+      "name": "Activity Feed",
+      "description": "Chronological feed of all job search activities and events",
+      "metadata": {
+        "createdAt": "2025-10-01T00:00:00Z",
+        "updatedAt": "2025-10-05T12:30:00Z",
+        "tags": ["events", "activity", "timeline"]
+      },
+      "collections": [
+        {
+          "id": "user_actions",
+          "name": "User Actions",
+          "description": "Actions taken by the user",
+          "metadata": {
+            "createdAt": "2025-10-01T00:00:00Z",
+            "updatedAt": "2025-10-05T12:30:00Z",
+            "tags": ["user", "actions"]
+          },
+          "items": [
+            {
+              "id": "event_001",
+              "name": "Application Submitted",
+              "description": "Applied to Senior Frontend Developer at TechCorp",
+              "type": "application_submitted",
+              "value": {
+                "action": "application_submitted",
+                "company": "TechCorp Inc.",
+                "position": "Senior Frontend Developer",
+                "application_id": "app_001",
+                "timestamp": "2025-10-02T16:45:00Z",
+                "documents_sent": [
+                  "resume_techcorp.pdf",
+                  "cover_letter_techcorp.pdf"
+                ]
+              },
+              "metadata": {
+                "createdAt": "2025-10-02T16:45:00Z",
+                "updatedAt": "2025-10-02T16:45:00Z",
+                "tags": ["application", "techcorp", "submitted"]
+              },
+              "properties": {
+                "importance": "high",
+                "category": "application",
+                "related_thread_id": "thread_001"
+              }
+            },
+            {
+              "id": "event_002",
+              "name": "Interview Scheduled",
+              "description": "Scheduled technical interview with TechCorp",
+              "type": "interview_scheduled",
+              "value": {
+                "action": "interview_scheduled",
+                "company": "TechCorp Inc.",
+                "position": "Senior Frontend Developer",
+                "interview_type": "Technical Interview",
+                "scheduled_time": "2025-10-10T14:00:00Z",
+                "duration_minutes": 60,
+                "timestamp": "2025-10-05T11:30:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-10-05T11:30:00Z",
+                "updatedAt": "2025-10-05T11:30:00Z",
+                "tags": ["interview", "scheduled", "techcorp"]
+              },
+              "properties": {
+                "importance": "critical",
+                "category": "interview",
+                "related_thread_id": "thread_001",
+                "calendar_synced": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "system_events",
+          "name": "System Events",
+          "description": "Automated system actions and notifications",
+          "metadata": {
+            "createdAt": "2025-10-01T00:00:00Z",
+            "updatedAt": "2025-10-05T12:30:00Z",
+            "tags": ["system", "automated"]
+          },
+          "items": [
+            {
+              "id": "event_003",
+              "name": "Job Match Found",
+              "description": "New job matching saved search criteria",
+              "type": "job_match",
+              "value": {
+                "action": "job_match_found",
+                "job_title": "Senior React Developer",
+                "company": "InnovateTech",
+                "match_score": 95,
+                "saved_search_id": "search_001",
+                "timestamp": "2025-10-05T08:15:00Z"
+              },
+              "metadata": {
+                "createdAt": "2025-10-05T08:15:00Z",
+                "updatedAt": "2025-10-05T08:15:00Z",
+                "tags": ["match", "automated", "high_score"]
+              },
+              "properties": {
+                "importance": "high",
+                "category": "match",
+                "notification_sent": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
