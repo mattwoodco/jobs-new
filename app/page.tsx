@@ -69,8 +69,8 @@ export default function Home() {
               variant="outline"
               className="w-full h-32 flex flex-col items-start justify-start p-6 text-left"
             >
-              <span className="text-xl font-semibold mb-2">{entity.name}</span>
-              <span className="text-sm text-muted-foreground">
+              <span className="text-xl font-semibold mb-2 whitespace-normal break-words">{entity.name}</span>
+              <span className="text-sm text-muted-foreground whitespace-normal break-words">
                 {entity.description}
               </span>
             </Button>

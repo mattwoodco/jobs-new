@@ -25,7 +25,9 @@ export function ItemList({ items, selectedId, onSelect }: ItemListProps) {
               )}
             >
               <div className="font-medium truncate w-full">{item.name}</div>
-              <div className="text-sm text-muted-foreground truncate w-full">{item.type}</div>
+              <div className="text-sm text-muted-foreground truncate w-full">
+                {item.type}
+              </div>
             </button>
           ))}
         </div>
